@@ -1,0 +1,5 @@
+id_rsa*
+env.sh
+jenkins_home/
+jenkins-localhost.iml
+.idea
