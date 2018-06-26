@@ -1,0 +1,2997 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skips="0" tests="6" time="655.457"><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="9" name="test_titanic_survived_with_parent_revision" time="185.79388666152954"><system-out>Connecting to SparkBeyond
+Server version: 1.21
+Loading titanic
+Executing learning request
+Saving Train to /tmp/tmp8o15l__f/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz before upload
+File /tmp/tmp8o15l__f/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz size 20099 bytes. Executed in 0 seconds
+Uploading Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 60.1MB/s]
+You are now running in a Blocking Mode
+LearningJob (7f0bc397-6bee-43fc-a898-77bf0d4bf3e9) position at the queue is 1.
+14:16:30 - Learning to classify survived (revision #1). Evaluating using AUC
+14:16:30 - Training set contains 11 columns
+14:16:32 - Best feature (RIG: 0.2427) of 1 from gender is: gender != male
+14:16:32 - Best feature (RIG: 0.0762) of 3 from pclass is: pclass &lt; 3
+14:16:32 - Best feature (RIG: 0.0162) of 5 from parch is: parch inRange (0.0 to 3)
+14:16:32 - Best feature (RIG: 0.0207) of 7 from sibsp is: sibsp inRange (0.0 to 2)
+14:16:32 - Best feature (RIG: 0.0186) of 41 from age is: roundToInt(age) inRange (3 to 6)
+14:16:32 - Best feature (RIG: 0.0186) of 28 from age is: |age| inRange (2.5 to 6.5)
+14:16:32 - Best feature (RIG: 0.0682) of 49 from fare is: approximatePercentile(inverse(fare)) &lt; 0.6
+14:16:32 - Best feature (RIG: 0.0682) of 132 from fare is: fare &gt;= 15.17
+14:16:32 - Best feature (RIG: 0.0682) of 50 from fare is: log1p(fare) &gt;= 2.78
+14:16:32 - Best feature (RIG: 0.0186) of 36 from age is: ceil(age) inRange (2.5 to 6.5)
+14:16:32 - Best feature (RIG: 0.0682) of 75 from fare is: |fare| &gt;= 15.17
+14:16:32 - Best feature (RIG: 0.0263) of 3 from embarked is: embarked != S
+14:16:32 - Best feature (RIG: 0.0665) of 54 from cabin is: apply(cabin) != Zipcode(&quot;&quot;)
+14:16:32 - Best feature (RIG: 0.2465) of 170 from name is: name.salutation != mr.
+14:16:32 - Best feature (RIG: 0.0665) of 17 from cabin is: cabin.headOption.nonEmpty
+14:16:32 - Best feature (RIG: 0.0186) of 37 from age is: age.toInt inRange (3 to 6)
+14:16:32 - Best feature (RIG: 0.2465) of 182 from name is: name.inferredGenderPrefix != male
+14:16:32 - Best feature (RIG: 0.0665) of 73 from cabin is: cabin.length != 0
+14:16:32 - Best feature (RIG: 0.0392) of 328 from ticket is: numbers(ticket).sum &gt;= 248,739
+14:16:32 - Best feature (RIG: 0.0422) of 70 from ticket is: numberIn(ticket) &gt;= 336,058
+14:16:32 - Best feature (RIG: 0.0422) of 82 from ticket is: numberInUSFormat(ticket) &gt;= 336,058
+14:16:32 - Best feature (RIG: 0.2465) of 217 from name is: name does not contain mr.
+14:16:32 - Best feature (RIG: 0.0665) of 149 from cabin is: cabin != &quot;&quot;
+14:16:32 - Best feature (RIG: 0.0392) of 54 from ticket is: numbersUSFormat(ticket).sum &gt;= 248,739
+14:16:32 - Best feature (RIG: 0.2465) of 318 from name is: name does not contain mr
+14:16:32 - stage end, feature generation took 0.4 seconds to this point
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:16:52 - feature generation on 10 column subsets took 0.4 seconds
+14:16:53 - Enriching training set with discovered features...
+14:16:53 - Enriched training set contains 302 features
+     idx                                            feature  \
+0      0                          name does not contain mr.   
+1      1                                         pclass &lt; 3   
+2      2                                      fare &gt;= 15.17   
+3      3                 numberIn(cabin) inRange (3 to 108)   
+4      4                                     gender != male   
+5      5         FractionalPart(fare) inRange (0.89 to 0.9)   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked == C   
+8      8                                        pclass == 1   
+9      9                     alphanumericRatio(name) &lt; 0.73   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                   punctuationRatio(name) == 0.1111   
+12    12                          numberOfChars(name) == 44   
+13    13                     punctuationRatio(name) &gt;= 0.13   
+14    14      upperCaseRatio(ticket) inRange (0.05 to 0.13)   
+15    15                             roundToInt(fare) == 19   
+16    16                                    name contains )   
+17    17                           numberOfWords(name) == 7   
+18    18     consecutiveCharactersText(ticket) contains 747   
+19    19                           numberOfWords(name) &gt;= 6   
+20    20                         numberOfChars(ticket) == 5   
+21    21     consecutiveCharactersText(ticket) contains 349   
+22    22     consecutiveCharactersText(ticket) contains 174   
+23    23                               sigmoid(fare) == 1.0   
+24    24                                         sibsp &gt;= 5   
+25    25             wordFrequencies(name) for john &gt;= 0.47   
+26    26                          numberOfChars(name) &gt;= 29   
+27    27                      FractionalPart(fare) == 0.125   
+28    28                                ticket contains s.o   
+29    29                      upperCaseRatio(name) == 0.125   
+..   ...                                                ...   
+270  270                                       fare == 23.0   
+271  271                             roundToInt(fare) == 22   
+272  272                                     age.toInt == 3   
+273  273     consecutiveCharactersText(ticket) contains 774   
+274  274                     FractionalPart(fare) == 0.3875   
+275  275     consecutiveCharactersText(ticket) contains 757   
+276  276     consecutiveCharactersText(ticket) contains 088   
+277  277                               name contains gustaf   
+278  278     consecutiveCharactersText(ticket) contains 536   
+279  279    consecutiveCharactersText(ticket) contains 3672   
+280  280  normalizedHistogram(cabin) for 2 inRange (0.26...   
+281  281                 letterUpperCaseRatio(name) == 0.15   
+282  282                   upperCaseRatio(ticket) == 0.1111   
+283  283      wordFrequencies(name) contains (charles, 0.5)   
+284  284                            name contains elizabeth   
+285  285                                 ceil(fare) == 15.0   
+286  286                alphanumericRatio(ticket) == 0.7778   
+287  287               smallSubsets(cabin) contains List(6)   
+288  288                                    age.toInt == 15   
+289  289     consecutiveCharactersText(ticket) contains 136   
+290  290                      seperatorsRatio(name) == 0.16   
+291  291    consecutiveCharactersText(ticket) contains 3309   
+292  292                                name contains kelly   
+293  293                   Histogram(cabin) contains (1, 2)   
+294  294     consecutiveCharactersText(ticket) contains 477   
+295  295     consecutiveCharactersText(ticket) contains 356   
+296  296                    seperatorsRatio(name) == 0.2308   
+297  297     consecutiveCharactersText(ticket) contains 706   
+298  298                        upperCaseRatio(name) == 0.2   
+299  299               letterUpperCaseRatio(name) == 0.1724   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.246524      name       0.244942    0.442831   91.0   
+1                    1  0.076232    pclass       0.069140    0.479130  142.0   
+2                    1  0.068179      fare       0.021909    0.490472  156.0   
+3                    1  0.065055     cabin       0.017687    0.663144   49.0   
+4                    1  0.242668    gender       0.017623    0.421453   64.0   
+5                    0  0.031719      fare       0.017414    0.618313   38.0   
+6                    0  0.036000    ticket       0.012790    0.525380  105.0   
+7                    1  0.023690  embarked       0.010860    0.500711   62.0   
+8                    1  0.062929    pclass       0.010016    0.486789   64.0   
+9                    1  0.010142      name       0.009490    0.534370   10.0   
+10                   0  0.012218    ticket       0.009061    0.533117   12.0   
+11                   0  0.012731      name       0.008958    0.530490   36.0   
+12                   1  0.014615      name       0.008732    0.530033    0.0   
+13                   1  0.014968      name       0.008678    0.533262   14.0   
+14                   0  0.018753    ticket       0.008116    0.618305   25.0   
+15                   1  0.012512      fare       0.007948    0.530670    0.0   
+16                   1  0.010550      name       0.007648    0.531910    3.0   
+17                   1  0.032385      name       0.007378    0.522944    4.0   
+18                   1  0.016723    ticket       0.007198    0.531983    0.0   
+19                   1  0.058777      name       0.007154    0.514032   20.0   
+20                   1  0.028665    ticket       0.007153    0.523836   38.0   
+21                   0  0.027657    ticket       0.007009    0.529434   39.0   
+22                   1  0.023250    ticket       0.006741    0.528680    4.0   
+23                   1  0.046715      fare       0.006594    0.519724   65.0   
+24                   0  0.011190     sibsp       0.006498    0.508555   11.0   
+25                   0  0.014925      name       0.006372    0.620215   21.0   
+26                   1  0.058304      name       0.006257    0.505696  101.0   
+27                   0  0.009139      fare       0.006210    0.532356    9.0   
+28                   0  0.009139    ticket       0.006165    0.533656    9.0   
+29                   1  0.013092      name       0.006050    0.529678    4.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  1  0.006233      fare       0.001312    0.507206    0.0   
+271                  1  0.006233      fare       0.001311    0.532566    0.0   
+272                  1  0.008321       age       0.001310    0.531937    0.0   
+273                  1  0.004000    ticket       0.001270    0.535605    1.0   
+274                  1  0.004000      fare       0.001268    0.532998    1.0   
+275                  1  0.005662    ticket       0.001241    0.535026    1.0   
+276                  0  0.004043    ticket       0.001241    0.536130    4.0   
+277                  0  0.003030      name       0.001235    0.532451    3.0   
+278                  0  0.003030    ticket       0.001234    0.536362    3.0   
+279                  1  0.003503    ticket       0.001208    0.535761    2.0   
+280                  1  0.020599     cabin       0.001194    0.706939    5.0   
+281                  1  0.004934      name       0.001192    0.533939    2.0   
+282                  0  0.011190    ticket       0.001190    0.531884   11.0   
+283                  0  0.006763      name       0.001165    0.535125   12.0   
+284                  1  0.014951      name       0.001163    0.527861    2.0   
+285                  0  0.010294      fare       0.001159    0.531600   16.0   
+286                  0  0.005537    ticket       0.001142    0.532766   14.0   
+287                  1  0.003605     cabin       0.001117    0.533118   16.0   
+288                  1  0.002453       age       0.001115    0.533545    1.0   
+289                  1  0.004000    ticket       0.001115    0.535605    1.0   
+290                  1  0.002453      name       0.001114    0.533545    1.0   
+291                  1  0.006460    ticket       0.001111    0.534697    2.0   
+292                  1  0.002453      name       0.001108    0.532245    1.0   
+293                  1  0.005662     cabin       0.001108    0.532422    1.0   
+294                  1  0.004000    ticket       0.001108    0.535605    1.0   
+295                  1  0.002453    ticket       0.001108    0.536154    1.0   
+296                  1  0.002199      name       0.001101    0.533629    2.0   
+297                  0  0.002742    ticket       0.001077    0.536223    7.0   
+298                  0  0.005503      name       0.001072    0.532732   17.0   
+299                  1  0.007401      name       0.001069    0.533127    1.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    208.0  20.59%  77.61%      299      42.11                710  2.00   
+1    173.0  32.13%  64.55%      315      44.37                  3  1.00   
+2    177.0  35.29%  66.04%      333      46.90                227  1.00   
+3     96.0  11.09%  35.82%      145      20.42                124  2.00   
+4    187.0  14.48%  69.78%      251      35.35                  2  1.00   
+5      1.0    8.6%   0.37%       39       5.49                227  2.00   
+6     20.0  23.76%   7.46%      125      17.61                710  2.10   
+7     77.0  14.03%  28.73%      139      19.58                  4  1.00   
+8    108.0  14.48%   40.3%      172      24.23                  3  1.00   
+9     19.0   2.26%   7.09%       29       4.08                710  2.00   
+10     0.0   2.71%    0.0%       12       1.69                710  2.00   
+11     6.0   8.14%   2.24%       42       5.92                710  2.00   
+12     7.0    0.0%   2.61%        7       0.99                710  2.00   
+13    27.0   3.17%  10.07%       41       5.77                710  2.00   
+14     1.0   5.66%   0.37%       26       3.66                710  2.00   
+15     6.0    0.0%   2.24%        6       0.85                227  2.00   
+16    11.0   0.68%    4.1%       14       1.97                710  2.05   
+17    25.0    0.9%   9.33%       29       4.08                710  2.00   
+18     8.0    0.0%   2.99%        8       1.13                710  2.10   
+19    62.0   4.52%  23.13%       82      11.55                710  2.00   
+20    61.0    8.6%  22.76%       99      13.94                710  2.00   
+21     2.0   8.82%   0.75%       41       5.77                710  2.10   
+22    20.0    0.9%   7.46%       24       3.38                710  2.10   
+23    98.0  14.71%  36.57%      163      22.96                227  2.10   
+24     0.0   2.49%    0.0%       11       1.55                  7  1.00   
+25     0.0   4.75%   0.37%       22       3.10                710  2.10   
+26   134.0  22.85%     50%      235      33.10                710  2.00   
+27     0.0   2.04%    0.0%        9       1.27                227  2.00   
+28     0.0   2.04%    0.0%        9       1.27                710  2.05   
+29    14.0    0.9%   5.22%       18       2.54                710  2.00   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    3.0    0.0%   1.12%        3       0.42                227  1.00   
+271    3.0    0.0%   1.12%        3       0.42                227  2.00   
+272    4.0    0.0%   1.49%        4       0.56                 83  2.00   
+273    4.0   0.23%   1.49%        5       0.70                710  2.10   
+274    4.0   0.23%   1.49%        5       0.70                227  2.00   
+275    5.0   0.23%   1.87%        6       0.85                710  2.10   
+276    0.0    0.9%    0.0%        4       0.56                710  2.10   
+277    0.0   0.68%    0.0%        3       0.42                710  1.95   
+278    0.0   0.68%    0.0%        3       0.42                710  2.10   
+279    5.0   0.45%   1.87%        7       0.99                710  2.10   
+280   20.0   1.13%   7.46%       25       3.52                124  2.00   
+281    6.0   0.45%   2.24%        8       1.13                710  2.05   
+282    0.0   2.49%    0.0%       11       1.55                710  2.00   
+283    1.0   2.71%   0.37%       13       1.83                710  2.10   
+284   12.0   0.45%   4.48%       14       1.97                710  1.95   
+285    1.0   3.62%   0.37%       17       2.39                227  2.00   
+286    2.0   3.17%   0.75%       16       2.25                710  2.00   
+287   18.0   3.62%   6.72%       34       4.79                124  2.00   
+288    3.0   0.23%   1.12%        4       0.56                 83  2.00   
+289    4.0   0.23%   1.49%        5       0.70                710  2.10   
+290    3.0   0.23%   1.12%        4       0.56                710  2.00   
+291    7.0   0.45%   2.61%        9       1.27                710  2.10   
+292    3.0   0.23%   1.12%        4       0.56                710  1.95   
+293    5.0   0.23%   1.87%        6       0.85                124  2.00   
+294    4.0   0.23%   1.49%        5       0.70                710  2.10   
+295    3.0   0.23%   1.12%        4       0.56                710  2.10   
+296    4.0   0.45%   1.49%        6       0.85                710  2.00   
+297    1.0   1.58%   0.37%        8       1.13                710  2.10   
+298    3.0   3.85%   1.12%       20       2.82                710  2.00   
+299    6.0   0.23%   2.24%        7       0.99                710  2.05   
+
+     invocation time    Lift 0    Lift 1  
+0                  1  0.488885  1.842959  
+1                  0  0.724126  1.454987  
+2                  0  0.752517  1.408162  
+3                  2  0.542830  1.753989  
+4                  0  0.409583  1.973747  
+5                  1  1.565147  0.067930  
+6                 61  1.349321  0.423881  
+7                  0  0.716495  1.467572  
+8                  0  0.597706  1.663485  
+9                  2  0.553909  1.735718  
+10                 2  1.606335  0.000000  
+11                 4  1.376858  0.378465  
+12                 1  0.000000  2.649254  
+13                 4  0.548505  1.744631  
+14                 4  1.544553  0.101894  
+15                 1  0.000000  2.649254  
+16                 3  0.344215  2.081557  
+17                 2  0.221563  2.283839  
+18                61  0.000000  2.649254  
+19                 2  0.391789  2.003094  
+20                 1  0.616573  1.632368  
+21                61  1.527977  0.129232  
+22                61  0.267722  2.207711  
+23                 1  0.640563  1.592803  
+24                 0  1.606335  0.000000  
+25                 5  1.533320  0.120421  
+26                 1  0.690382  1.510638  
+27                 1  1.606335  0.000000  
+28                 1  1.606335  0.000000  
+29                 4  0.356963  2.060531  
+..               ...       ...       ...  
+270                0  0.000000  2.649254  
+271                1  0.000000  2.649254  
+272                1  0.000000  2.649254  
+273               61  0.321267  2.119403  
+274                1  0.321267  2.119403  
+275               61  0.267722  2.207711  
+276               61  1.606335  0.000000  
+277                4  1.606335  0.000000  
+278               61  1.606335  0.000000  
+279               61  0.458953  1.892324  
+280                3  0.321267  2.119403  
+281                4  0.401584  1.986940  
+282                4  1.606335  0.000000  
+283                5  1.482771  0.203789  
+284                4  0.229476  2.270789  
+285                1  1.511845  0.155838  
+286                2  1.405543  0.331157  
+287                9  0.755922  1.402546  
+288                1  0.401584  1.986940  
+289               61  0.321267  2.119403  
+290                8  0.401584  1.986940  
+291               61  0.356963  2.060531  
+292                4  0.401584  1.986940  
+293                1  0.267722  2.207711  
+294               61  0.321267  2.119403  
+295               61  0.401584  1.986940  
+296                8  0.535445  1.766169  
+297               61  1.405543  0.331157  
+298                4  1.365385  0.397388  
+299                4  0.229476  2.270789  
+
+[300 rows x 18 columns]
+14:17:06 - Building models...
+14:17:06 - Model building completed. Test-set AUC score of best algorithm: 0.5
+                                               
+Correctly Classified Instances     107   59.12%
+Incorrectly Classified Instances   74    40.88%
+Total Number of Instances          181         
+                                               
+Executing learning request when parent revision is root
+You are now running in a Blocking Mode
+LearningJob (58a42e34-a55e-484b-8613-b1b00136789a) position at the queue is 1.
+14:17:20 - Learning to classify survived (revision #2). Evaluating using AUC
+14:17:20 - Training set contains 11 columns
+14:17:20 - Loading features from cache for DS--1925935928_CTX_DS-473519988_FG-2029577747_300 from DS--1925935928_CTX_DS-473519988_FG-2029577747_300
+14:17:21 - 
+Reading features from cache (key: DS--1925935928_CTX_DS-473519988_FG-2029577747_300)
+14:17:21 - Enriching training set with discovered features...
+14:17:21 - Enriched training set contains 302 features
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+     idx                                            feature  \
+0      0                          name does not contain mr.   
+1      1                                         pclass &lt; 3   
+2      2                                      fare &gt;= 15.17   
+3      3                 numberIn(cabin) inRange (3 to 108)   
+4      4                                     gender != male   
+5      5         FractionalPart(fare) inRange (0.89 to 0.9)   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked == C   
+8      8                                        pclass == 1   
+9      9                     alphanumericRatio(name) &lt; 0.73   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                   punctuationRatio(name) == 0.1111   
+12    12                          numberOfChars(name) == 44   
+13    13                     punctuationRatio(name) &gt;= 0.13   
+14    14      upperCaseRatio(ticket) inRange (0.05 to 0.13)   
+15    15                             roundToInt(fare) == 19   
+16    16                                    name contains )   
+17    17                           numberOfWords(name) == 7   
+18    18     consecutiveCharactersText(ticket) contains 747   
+19    19                           numberOfWords(name) &gt;= 6   
+20    20                         numberOfChars(ticket) == 5   
+21    21     consecutiveCharactersText(ticket) contains 349   
+22    22     consecutiveCharactersText(ticket) contains 174   
+23    23                               sigmoid(fare) == 1.0   
+24    24                                         sibsp &gt;= 5   
+25    25             wordFrequencies(name) for john &gt;= 0.47   
+26    26                          numberOfChars(name) &gt;= 29   
+27    27                      FractionalPart(fare) == 0.125   
+28    28                                ticket contains s.o   
+29    29                      upperCaseRatio(name) == 0.125   
+..   ...                                                ...   
+270  270                                       fare == 23.0   
+271  271                             roundToInt(fare) == 22   
+272  272                                     age.toInt == 3   
+273  273     consecutiveCharactersText(ticket) contains 774   
+274  274                     FractionalPart(fare) == 0.3875   
+275  275     consecutiveCharactersText(ticket) contains 757   
+276  276     consecutiveCharactersText(ticket) contains 088   
+277  277                               name contains gustaf   
+278  278     consecutiveCharactersText(ticket) contains 536   
+279  279    consecutiveCharactersText(ticket) contains 3672   
+280  280  normalizedHistogram(cabin) for 2 inRange (0.26...   
+281  281                 letterUpperCaseRatio(name) == 0.15   
+282  282                   upperCaseRatio(ticket) == 0.1111   
+283  283      wordFrequencies(name) contains (charles, 0.5)   
+284  284                            name contains elizabeth   
+285  285                                 ceil(fare) == 15.0   
+286  286                alphanumericRatio(ticket) == 0.7778   
+287  287               smallSubsets(cabin) contains List(6)   
+288  288                                    age.toInt == 15   
+289  289     consecutiveCharactersText(ticket) contains 136   
+290  290                      seperatorsRatio(name) == 0.16   
+291  291    consecutiveCharactersText(ticket) contains 3309   
+292  292                                name contains kelly   
+293  293                   Histogram(cabin) contains (1, 2)   
+294  294     consecutiveCharactersText(ticket) contains 477   
+295  295     consecutiveCharactersText(ticket) contains 356   
+296  296                    seperatorsRatio(name) == 0.2308   
+297  297     consecutiveCharactersText(ticket) contains 706   
+298  298                        upperCaseRatio(name) == 0.2   
+299  299               letterUpperCaseRatio(name) == 0.1724   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.246524      name       0.244942    0.442831   91.0   
+1                    1  0.076232    pclass       0.069140    0.479130  142.0   
+2                    1  0.068179      fare       0.021909    0.490472  156.0   
+3                    1  0.065055     cabin       0.017687    0.663144   49.0   
+4                    1  0.242668    gender       0.017623    0.421453   64.0   
+5                    0  0.031719      fare       0.017414    0.618313   38.0   
+6                    0  0.036000    ticket       0.012790    0.525380  105.0   
+7                    1  0.023690  embarked       0.010860    0.500711   62.0   
+8                    1  0.062929    pclass       0.010016    0.486789   64.0   
+9                    1  0.010142      name       0.009490    0.534370   10.0   
+10                   0  0.012218    ticket       0.009061    0.533117   12.0   
+11                   0  0.012731      name       0.008958    0.530490   36.0   
+12                   1  0.014615      name       0.008732    0.530033    0.0   
+13                   1  0.014968      name       0.008678    0.533262   14.0   
+14                   0  0.018753    ticket       0.008116    0.618305   25.0   
+15                   1  0.012512      fare       0.007948    0.530670    0.0   
+16                   1  0.010550      name       0.007648    0.531910    3.0   
+17                   1  0.032385      name       0.007378    0.522944    4.0   
+18                   1  0.016723    ticket       0.007198    0.531983    0.0   
+19                   1  0.058777      name       0.007154    0.514032   20.0   
+20                   1  0.028665    ticket       0.007153    0.523836   38.0   
+21                   0  0.027657    ticket       0.007009    0.529434   39.0   
+22                   1  0.023250    ticket       0.006741    0.528680    4.0   
+23                   1  0.046715      fare       0.006594    0.519724   65.0   
+24                   0  0.011190     sibsp       0.006498    0.508555   11.0   
+25                   0  0.014925      name       0.006372    0.620215   21.0   
+26                   1  0.058304      name       0.006257    0.505696  101.0   
+27                   0  0.009139      fare       0.006210    0.532356    9.0   
+28                   0  0.009139    ticket       0.006165    0.533656    9.0   
+29                   1  0.013092      name       0.006050    0.529678    4.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  1  0.006233      fare       0.001312    0.507206    0.0   
+271                  1  0.006233      fare       0.001311    0.532566    0.0   
+272                  1  0.008321       age       0.001310    0.531937    0.0   
+273                  1  0.004000    ticket       0.001270    0.535605    1.0   
+274                  1  0.004000      fare       0.001268    0.532998    1.0   
+275                  1  0.005662    ticket       0.001241    0.535026    1.0   
+276                  0  0.004043    ticket       0.001241    0.536130    4.0   
+277                  0  0.003030      name       0.001235    0.532451    3.0   
+278                  0  0.003030    ticket       0.001234    0.536362    3.0   
+279                  1  0.003503    ticket       0.001208    0.535761    2.0   
+280                  1  0.020599     cabin       0.001194    0.706939    5.0   
+281                  1  0.004934      name       0.001192    0.533939    2.0   
+282                  0  0.011190    ticket       0.001190    0.531884   11.0   
+283                  0  0.006763      name       0.001165    0.535125   12.0   
+284                  1  0.014951      name       0.001163    0.527861    2.0   
+285                  0  0.010294      fare       0.001159    0.531600   16.0   
+286                  0  0.005537    ticket       0.001142    0.532766   14.0   
+287                  1  0.003605     cabin       0.001117    0.533118   16.0   
+288                  1  0.002453       age       0.001115    0.533545    1.0   
+289                  1  0.004000    ticket       0.001115    0.535605    1.0   
+290                  1  0.002453      name       0.001114    0.533545    1.0   
+291                  1  0.006460    ticket       0.001111    0.534697    2.0   
+292                  1  0.002453      name       0.001108    0.532245    1.0   
+293                  1  0.005662     cabin       0.001108    0.532422    1.0   
+294                  1  0.004000    ticket       0.001108    0.535605    1.0   
+295                  1  0.002453    ticket       0.001108    0.536154    1.0   
+296                  1  0.002199      name       0.001101    0.533629    2.0   
+297                  0  0.002742    ticket       0.001077    0.536223    7.0   
+298                  0  0.005503      name       0.001072    0.532732   17.0   
+299                  1  0.007401      name       0.001069    0.533127    1.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    208.0  20.59%  77.61%      299      42.11                710  2.00   
+1    173.0  32.13%  64.55%      315      44.37                  3  1.00   
+2    177.0  35.29%  66.04%      333      46.90                227  1.00   
+3     96.0  11.09%  35.82%      145      20.42                124  2.00   
+4    187.0  14.48%  69.78%      251      35.35                  2  1.00   
+5      1.0    8.6%   0.37%       39       5.49                227  2.00   
+6     20.0  23.76%   7.46%      125      17.61                710  2.10   
+7     77.0  14.03%  28.73%      139      19.58                  4  1.00   
+8    108.0  14.48%   40.3%      172      24.23                  3  1.00   
+9     19.0   2.26%   7.09%       29       4.08                710  2.00   
+10     0.0   2.71%    0.0%       12       1.69                710  2.00   
+11     6.0   8.14%   2.24%       42       5.92                710  2.00   
+12     7.0    0.0%   2.61%        7       0.99                710  2.00   
+13    27.0   3.17%  10.07%       41       5.77                710  2.00   
+14     1.0   5.66%   0.37%       26       3.66                710  2.00   
+15     6.0    0.0%   2.24%        6       0.85                227  2.00   
+16    11.0   0.68%    4.1%       14       1.97                710  2.05   
+17    25.0    0.9%   9.33%       29       4.08                710  2.00   
+18     8.0    0.0%   2.99%        8       1.13                710  2.10   
+19    62.0   4.52%  23.13%       82      11.55                710  2.00   
+20    61.0    8.6%  22.76%       99      13.94                710  2.00   
+21     2.0   8.82%   0.75%       41       5.77                710  2.10   
+22    20.0    0.9%   7.46%       24       3.38                710  2.10   
+23    98.0  14.71%  36.57%      163      22.96                227  2.10   
+24     0.0   2.49%    0.0%       11       1.55                  7  1.00   
+25     0.0   4.75%   0.37%       22       3.10                710  2.10   
+26   134.0  22.85%     50%      235      33.10                710  2.00   
+27     0.0   2.04%    0.0%        9       1.27                227  2.00   
+28     0.0   2.04%    0.0%        9       1.27                710  2.05   
+29    14.0    0.9%   5.22%       18       2.54                710  2.00   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    3.0    0.0%   1.12%        3       0.42                227  1.00   
+271    3.0    0.0%   1.12%        3       0.42                227  2.00   
+272    4.0    0.0%   1.49%        4       0.56                 83  2.00   
+273    4.0   0.23%   1.49%        5       0.70                710  2.10   
+274    4.0   0.23%   1.49%        5       0.70                227  2.00   
+275    5.0   0.23%   1.87%        6       0.85                710  2.10   
+276    0.0    0.9%    0.0%        4       0.56                710  2.10   
+277    0.0   0.68%    0.0%        3       0.42                710  1.95   
+278    0.0   0.68%    0.0%        3       0.42                710  2.10   
+279    5.0   0.45%   1.87%        7       0.99                710  2.10   
+280   20.0   1.13%   7.46%       25       3.52                124  2.00   
+281    6.0   0.45%   2.24%        8       1.13                710  2.05   
+282    0.0   2.49%    0.0%       11       1.55                710  2.00   
+283    1.0   2.71%   0.37%       13       1.83                710  2.10   
+284   12.0   0.45%   4.48%       14       1.97                710  1.95   
+285    1.0   3.62%   0.37%       17       2.39                227  2.00   
+286    2.0   3.17%   0.75%       16       2.25                710  2.00   
+287   18.0   3.62%   6.72%       34       4.79                124  2.00   
+288    3.0   0.23%   1.12%        4       0.56                 83  2.00   
+289    4.0   0.23%   1.49%        5       0.70                710  2.10   
+290    3.0   0.23%   1.12%        4       0.56                710  2.00   
+291    7.0   0.45%   2.61%        9       1.27                710  2.10   
+292    3.0   0.23%   1.12%        4       0.56                710  1.95   
+293    5.0   0.23%   1.87%        6       0.85                124  2.00   
+294    4.0   0.23%   1.49%        5       0.70                710  2.10   
+295    3.0   0.23%   1.12%        4       0.56                710  2.10   
+296    4.0   0.45%   1.49%        6       0.85                710  2.00   
+297    1.0   1.58%   0.37%        8       1.13                710  2.10   
+298    3.0   3.85%   1.12%       20       2.82                710  2.00   
+299    6.0   0.23%   2.24%        7       0.99                710  2.05   
+
+     invocation time    Lift 0    Lift 1  
+0                  1  0.488885  1.842959  
+1                  0  0.724126  1.454987  
+2                  0  0.752517  1.408162  
+3                  2  0.542830  1.753989  
+4                  0  0.409583  1.973747  
+5                  1  1.565147  0.067930  
+6                 61  1.349321  0.423881  
+7                  0  0.716495  1.467572  
+8                  0  0.597706  1.663485  
+9                  2  0.553909  1.735718  
+10                 2  1.606335  0.000000  
+11                 4  1.376858  0.378465  
+12                 1  0.000000  2.649254  
+13                 4  0.548505  1.744631  
+14                 4  1.544553  0.101894  
+15                 1  0.000000  2.649254  
+16                 3  0.344215  2.081557  
+17                 2  0.221563  2.283839  
+18                61  0.000000  2.649254  
+19                 2  0.391789  2.003094  
+20                 1  0.616573  1.632368  
+21                61  1.527977  0.129232  
+22                61  0.267722  2.207711  
+23                 1  0.640563  1.592803  
+24                 0  1.606335  0.000000  
+25                 5  1.533320  0.120421  
+26                 1  0.690382  1.510638  
+27                 1  1.606335  0.000000  
+28                 1  1.606335  0.000000  
+29                 4  0.356963  2.060531  
+..               ...       ...       ...  
+270                0  0.000000  2.649254  
+271                1  0.000000  2.649254  
+272                1  0.000000  2.649254  
+273               61  0.321267  2.119403  
+274                1  0.321267  2.119403  
+275               61  0.267722  2.207711  
+276               61  1.606335  0.000000  
+277                4  1.606335  0.000000  
+278               61  1.606335  0.000000  
+279               61  0.458953  1.892324  
+280                3  0.321267  2.119403  
+281                4  0.401584  1.986940  
+282                4  1.606335  0.000000  
+283                5  1.482771  0.203789  
+284                4  0.229476  2.270789  
+285                1  1.511845  0.155838  
+286                2  1.405543  0.331157  
+287                9  0.755922  1.402546  
+288                1  0.401584  1.986940  
+289               61  0.321267  2.119403  
+290                8  0.401584  1.986940  
+291               61  0.356963  2.060531  
+292                4  0.401584  1.986940  
+293                1  0.267722  2.207711  
+294               61  0.321267  2.119403  
+295               61  0.401584  1.986940  
+296                8  0.535445  1.766169  
+297               61  1.405543  0.331157  
+298                4  1.365385  0.397388  
+299                4  0.229476  2.270789  
+
+[300 rows x 18 columns]
+14:17:33 - Building models...
+14:17:34 - Model building completed. Test-set AUC score of best algorithm: 0.5
+                                               
+Correctly Classified Instances     107   59.12%
+Incorrectly Classified Instances   74    40.88%
+Total Number of Instances          181         
+                                               
+Executing learning request when parent revision is rev1
+You are now running in a Blocking Mode
+LearningJob (ad5d3049-88ac-47c3-968e-927bd6910b04) position at the queue is 1.
+14:17:47 - Learning to classify survived (revision #3). Evaluating using AUC
+14:17:47 - Training set contains 11 columns
+14:17:47 - Loading features from cache for DS--1925935928_CTX_DS-473519988_FG-2029577747_300 from DS--1925935928_CTX_DS-473519988_FG-2029577747_300
+14:17:48 - 
+Reading features from cache (key: DS--1925935928_CTX_DS-473519988_FG-2029577747_300)
+14:17:49 - Enriching training set with discovered features...
+14:17:49 - Enriched training set contains 302 features
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+     idx                                            feature  \
+0      0                          name does not contain mr.   
+1      1                                         pclass &lt; 3   
+2      2                                      fare &gt;= 15.17   
+3      3                 numberIn(cabin) inRange (3 to 108)   
+4      4                                     gender != male   
+5      5         FractionalPart(fare) inRange (0.89 to 0.9)   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked == C   
+8      8                                        pclass == 1   
+9      9                     alphanumericRatio(name) &lt; 0.73   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                   punctuationRatio(name) == 0.1111   
+12    12                          numberOfChars(name) == 44   
+13    13                     punctuationRatio(name) &gt;= 0.13   
+14    14      upperCaseRatio(ticket) inRange (0.05 to 0.13)   
+15    15                             roundToInt(fare) == 19   
+16    16                                    name contains )   
+17    17                           numberOfWords(name) == 7   
+18    18     consecutiveCharactersText(ticket) contains 747   
+19    19                           numberOfWords(name) &gt;= 6   
+20    20                         numberOfChars(ticket) == 5   
+21    21     consecutiveCharactersText(ticket) contains 349   
+22    22     consecutiveCharactersText(ticket) contains 174   
+23    23                               sigmoid(fare) == 1.0   
+24    24                                         sibsp &gt;= 5   
+25    25             wordFrequencies(name) for john &gt;= 0.47   
+26    26                          numberOfChars(name) &gt;= 29   
+27    27                      FractionalPart(fare) == 0.125   
+28    28                                ticket contains s.o   
+29    29                      upperCaseRatio(name) == 0.125   
+..   ...                                                ...   
+270  270                                       fare == 23.0   
+271  271                             roundToInt(fare) == 22   
+272  272                                     age.toInt == 3   
+273  273     consecutiveCharactersText(ticket) contains 774   
+274  274                     FractionalPart(fare) == 0.3875   
+275  275     consecutiveCharactersText(ticket) contains 757   
+276  276     consecutiveCharactersText(ticket) contains 088   
+277  277                               name contains gustaf   
+278  278     consecutiveCharactersText(ticket) contains 536   
+279  279    consecutiveCharactersText(ticket) contains 3672   
+280  280  normalizedHistogram(cabin) for 2 inRange (0.26...   
+281  281                 letterUpperCaseRatio(name) == 0.15   
+282  282                   upperCaseRatio(ticket) == 0.1111   
+283  283      wordFrequencies(name) contains (charles, 0.5)   
+284  284                            name contains elizabeth   
+285  285                                 ceil(fare) == 15.0   
+286  286                alphanumericRatio(ticket) == 0.7778   
+287  287               smallSubsets(cabin) contains List(6)   
+288  288                                    age.toInt == 15   
+289  289     consecutiveCharactersText(ticket) contains 136   
+290  290                      seperatorsRatio(name) == 0.16   
+291  291    consecutiveCharactersText(ticket) contains 3309   
+292  292                                name contains kelly   
+293  293                   Histogram(cabin) contains (1, 2)   
+294  294     consecutiveCharactersText(ticket) contains 477   
+295  295     consecutiveCharactersText(ticket) contains 356   
+296  296                    seperatorsRatio(name) == 0.2308   
+297  297     consecutiveCharactersText(ticket) contains 706   
+298  298                        upperCaseRatio(name) == 0.2   
+299  299               letterUpperCaseRatio(name) == 0.1724   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.246524      name       0.244942    0.442831   91.0   
+1                    1  0.076232    pclass       0.069140    0.479130  142.0   
+2                    1  0.068179      fare       0.021909    0.490472  156.0   
+3                    1  0.065055     cabin       0.017687    0.663144   49.0   
+4                    1  0.242668    gender       0.017623    0.421453   64.0   
+5                    0  0.031719      fare       0.017414    0.618313   38.0   
+6                    0  0.036000    ticket       0.012790    0.525380  105.0   
+7                    1  0.023690  embarked       0.010860    0.500711   62.0   
+8                    1  0.062929    pclass       0.010016    0.486789   64.0   
+9                    1  0.010142      name       0.009490    0.534370   10.0   
+10                   0  0.012218    ticket       0.009061    0.533117   12.0   
+11                   0  0.012731      name       0.008958    0.530490   36.0   
+12                   1  0.014615      name       0.008732    0.530033    0.0   
+13                   1  0.014968      name       0.008678    0.533262   14.0   
+14                   0  0.018753    ticket       0.008116    0.618305   25.0   
+15                   1  0.012512      fare       0.007948    0.530670    0.0   
+16                   1  0.010550      name       0.007648    0.531910    3.0   
+17                   1  0.032385      name       0.007378    0.522944    4.0   
+18                   1  0.016723    ticket       0.007198    0.531983    0.0   
+19                   1  0.058777      name       0.007154    0.514032   20.0   
+20                   1  0.028665    ticket       0.007153    0.523836   38.0   
+21                   0  0.027657    ticket       0.007009    0.529434   39.0   
+22                   1  0.023250    ticket       0.006741    0.528680    4.0   
+23                   1  0.046715      fare       0.006594    0.519724   65.0   
+24                   0  0.011190     sibsp       0.006498    0.508555   11.0   
+25                   0  0.014925      name       0.006372    0.620215   21.0   
+26                   1  0.058304      name       0.006257    0.505696  101.0   
+27                   0  0.009139      fare       0.006210    0.532356    9.0   
+28                   0  0.009139    ticket       0.006165    0.533656    9.0   
+29                   1  0.013092      name       0.006050    0.529678    4.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  1  0.006233      fare       0.001312    0.507206    0.0   
+271                  1  0.006233      fare       0.001311    0.532566    0.0   
+272                  1  0.008321       age       0.001310    0.531937    0.0   
+273                  1  0.004000    ticket       0.001270    0.535605    1.0   
+274                  1  0.004000      fare       0.001268    0.532998    1.0   
+275                  1  0.005662    ticket       0.001241    0.535026    1.0   
+276                  0  0.004043    ticket       0.001241    0.536130    4.0   
+277                  0  0.003030      name       0.001235    0.532451    3.0   
+278                  0  0.003030    ticket       0.001234    0.536362    3.0   
+279                  1  0.003503    ticket       0.001208    0.535761    2.0   
+280                  1  0.020599     cabin       0.001194    0.706939    5.0   
+281                  1  0.004934      name       0.001192    0.533939    2.0   
+282                  0  0.011190    ticket       0.001190    0.531884   11.0   
+283                  0  0.006763      name       0.001165    0.535125   12.0   
+284                  1  0.014951      name       0.001163    0.527861    2.0   
+285                  0  0.010294      fare       0.001159    0.531600   16.0   
+286                  0  0.005537    ticket       0.001142    0.532766   14.0   
+287                  1  0.003605     cabin       0.001117    0.533118   16.0   
+288                  1  0.002453       age       0.001115    0.533545    1.0   
+289                  1  0.004000    ticket       0.001115    0.535605    1.0   
+290                  1  0.002453      name       0.001114    0.533545    1.0   
+291                  1  0.006460    ticket       0.001111    0.534697    2.0   
+292                  1  0.002453      name       0.001108    0.532245    1.0   
+293                  1  0.005662     cabin       0.001108    0.532422    1.0   
+294                  1  0.004000    ticket       0.001108    0.535605    1.0   
+295                  1  0.002453    ticket       0.001108    0.536154    1.0   
+296                  1  0.002199      name       0.001101    0.533629    2.0   
+297                  0  0.002742    ticket       0.001077    0.536223    7.0   
+298                  0  0.005503      name       0.001072    0.532732   17.0   
+299                  1  0.007401      name       0.001069    0.533127    1.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    208.0  20.59%  77.61%      299      42.11                710  2.00   
+1    173.0  32.13%  64.55%      315      44.37                  3  1.00   
+2    177.0  35.29%  66.04%      333      46.90                227  1.00   
+3     96.0  11.09%  35.82%      145      20.42                124  2.00   
+4    187.0  14.48%  69.78%      251      35.35                  2  1.00   
+5      1.0    8.6%   0.37%       39       5.49                227  2.00   
+6     20.0  23.76%   7.46%      125      17.61                710  2.10   
+7     77.0  14.03%  28.73%      139      19.58                  4  1.00   
+8    108.0  14.48%   40.3%      172      24.23                  3  1.00   
+9     19.0   2.26%   7.09%       29       4.08                710  2.00   
+10     0.0   2.71%    0.0%       12       1.69                710  2.00   
+11     6.0   8.14%   2.24%       42       5.92                710  2.00   
+12     7.0    0.0%   2.61%        7       0.99                710  2.00   
+13    27.0   3.17%  10.07%       41       5.77                710  2.00   
+14     1.0   5.66%   0.37%       26       3.66                710  2.00   
+15     6.0    0.0%   2.24%        6       0.85                227  2.00   
+16    11.0   0.68%    4.1%       14       1.97                710  2.05   
+17    25.0    0.9%   9.33%       29       4.08                710  2.00   
+18     8.0    0.0%   2.99%        8       1.13                710  2.10   
+19    62.0   4.52%  23.13%       82      11.55                710  2.00   
+20    61.0    8.6%  22.76%       99      13.94                710  2.00   
+21     2.0   8.82%   0.75%       41       5.77                710  2.10   
+22    20.0    0.9%   7.46%       24       3.38                710  2.10   
+23    98.0  14.71%  36.57%      163      22.96                227  2.10   
+24     0.0   2.49%    0.0%       11       1.55                  7  1.00   
+25     0.0   4.75%   0.37%       22       3.10                710  2.10   
+26   134.0  22.85%     50%      235      33.10                710  2.00   
+27     0.0   2.04%    0.0%        9       1.27                227  2.00   
+28     0.0   2.04%    0.0%        9       1.27                710  2.05   
+29    14.0    0.9%   5.22%       18       2.54                710  2.00   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    3.0    0.0%   1.12%        3       0.42                227  1.00   
+271    3.0    0.0%   1.12%        3       0.42                227  2.00   
+272    4.0    0.0%   1.49%        4       0.56                 83  2.00   
+273    4.0   0.23%   1.49%        5       0.70                710  2.10   
+274    4.0   0.23%   1.49%        5       0.70                227  2.00   
+275    5.0   0.23%   1.87%        6       0.85                710  2.10   
+276    0.0    0.9%    0.0%        4       0.56                710  2.10   
+277    0.0   0.68%    0.0%        3       0.42                710  1.95   
+278    0.0   0.68%    0.0%        3       0.42                710  2.10   
+279    5.0   0.45%   1.87%        7       0.99                710  2.10   
+280   20.0   1.13%   7.46%       25       3.52                124  2.00   
+281    6.0   0.45%   2.24%        8       1.13                710  2.05   
+282    0.0   2.49%    0.0%       11       1.55                710  2.00   
+283    1.0   2.71%   0.37%       13       1.83                710  2.10   
+284   12.0   0.45%   4.48%       14       1.97                710  1.95   
+285    1.0   3.62%   0.37%       17       2.39                227  2.00   
+286    2.0   3.17%   0.75%       16       2.25                710  2.00   
+287   18.0   3.62%   6.72%       34       4.79                124  2.00   
+288    3.0   0.23%   1.12%        4       0.56                 83  2.00   
+289    4.0   0.23%   1.49%        5       0.70                710  2.10   
+290    3.0   0.23%   1.12%        4       0.56                710  2.00   
+291    7.0   0.45%   2.61%        9       1.27                710  2.10   
+292    3.0   0.23%   1.12%        4       0.56                710  1.95   
+293    5.0   0.23%   1.87%        6       0.85                124  2.00   
+294    4.0   0.23%   1.49%        5       0.70                710  2.10   
+295    3.0   0.23%   1.12%        4       0.56                710  2.10   
+296    4.0   0.45%   1.49%        6       0.85                710  2.00   
+297    1.0   1.58%   0.37%        8       1.13                710  2.10   
+298    3.0   3.85%   1.12%       20       2.82                710  2.00   
+299    6.0   0.23%   2.24%        7       0.99                710  2.05   
+
+     invocation time    Lift 0    Lift 1  
+0                  1  0.488885  1.842959  
+1                  0  0.724126  1.454987  
+2                  0  0.752517  1.408162  
+3                  2  0.542830  1.753989  
+4                  0  0.409583  1.973747  
+5                  1  1.565147  0.067930  
+6                 61  1.349321  0.423881  
+7                  0  0.716495  1.467572  
+8                  0  0.597706  1.663485  
+9                  2  0.553909  1.735718  
+10                 2  1.606335  0.000000  
+11                 4  1.376858  0.378465  
+12                 1  0.000000  2.649254  
+13                 4  0.548505  1.744631  
+14                 4  1.544553  0.101894  
+15                 1  0.000000  2.649254  
+16                 3  0.344215  2.081557  
+17                 2  0.221563  2.283839  
+18                61  0.000000  2.649254  
+19                 2  0.391789  2.003094  
+20                 1  0.616573  1.632368  
+21                61  1.527977  0.129232  
+22                61  0.267722  2.207711  
+23                 1  0.640563  1.592803  
+24                 0  1.606335  0.000000  
+25                 5  1.533320  0.120421  
+26                 1  0.690382  1.510638  
+27                 1  1.606335  0.000000  
+28                 1  1.606335  0.000000  
+29                 4  0.356963  2.060531  
+..               ...       ...       ...  
+270                0  0.000000  2.649254  
+271                1  0.000000  2.649254  
+272                1  0.000000  2.649254  
+273               61  0.321267  2.119403  
+274                1  0.321267  2.119403  
+275               61  0.267722  2.207711  
+276               61  1.606335  0.000000  
+277                4  1.606335  0.000000  
+278               61  1.606335  0.000000  
+279               61  0.458953  1.892324  
+280                3  0.321267  2.119403  
+281                4  0.401584  1.986940  
+282                4  1.606335  0.000000  
+283                5  1.482771  0.203789  
+284                4  0.229476  2.270789  
+285                1  1.511845  0.155838  
+286                2  1.405543  0.331157  
+287                9  0.755922  1.402546  
+288                1  0.401584  1.986940  
+289               61  0.321267  2.119403  
+290                8  0.401584  1.986940  
+291               61  0.356963  2.060531  
+292                4  0.401584  1.986940  
+293                1  0.267722  2.207711  
+294               61  0.321267  2.119403  
+295               61  0.401584  1.986940  
+296                8  0.535445  1.766169  
+297               61  1.405543  0.331157  
+298                4  1.365385  0.397388  
+299                4  0.229476  2.270789  
+
+[300 rows x 18 columns]
+14:18:01 - Building models...
+14:18:01 - Model building completed. Test-set AUC score of best algorithm: 0.5
+                                               
+Correctly Classified Instances     107   59.12%
+Incorrectly Classified Instances   74    40.88%
+Total Number of Instances          181         
+                                               
+Executing learning request when parent revision doesn&apos;t exist
+got an error !! this is ok
+</system-out></testcase><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="58" name="test_titanic_survived" time="80.64601230621338"><system-out>Loading titanic
+Executing learning request
+Saving Train to /tmp/tmpc1bhw9w3/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz before upload
+File /tmp/tmpc1bhw9w3/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz size 20099 bytes. Executed in 0 seconds
+Uploading Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 66.9MB/s]
+You are now running in a Blocking Mode
+LearningJob (156b9cdd-867c-49e2-9c1f-8fa2988f6bdb) position at the queue is 1.
+14:18:43 - Learning to classify survived (revision #1). Evaluating using AUC
+14:18:43 - Training set contains 11 columns
+14:18:44 - Best feature (RIG: 0.0762) of 3 from pclass is: pclass &lt; 3
+14:18:44 - Best feature (RIG: 0.2427) of 1 from gender is: gender != male
+14:18:44 - Best feature (RIG: 0.0162) of 5 from parch is: parch inRange (0.0 to 3)
+14:18:44 - Best feature (RIG: 0.0207) of 7 from sibsp is: sibsp inRange (0.0 to 2)
+14:18:44 - Best feature (RIG: 0.0682) of 49 from fare is: approximatePercentile(inverse(fare)) &lt; 0.6
+14:18:44 - Best feature (RIG: 0.0682) of 75 from fare is: |fare| &gt;= 15.17
+14:18:44 - Best feature (RIG: 0.0682) of 132 from fare is: fare &gt;= 15.17
+14:18:44 - Best feature (RIG: 0.0186) of 36 from age is: ceil(age) inRange (2.5 to 6.5)
+14:18:44 - Best feature (RIG: 0.0682) of 50 from fare is: log1p(fare) &gt;= 2.78
+14:18:44 - Best feature (RIG: 0.2465) of 170 from name is: name.salutation != mr.
+14:18:44 - Best feature (RIG: 0.0186) of 28 from age is: |age| inRange (2.5 to 6.5)
+14:18:44 - Best feature (RIG: 0.0186) of 41 from age is: roundToInt(age) inRange (3 to 6)
+14:18:44 - Best feature (RIG: 0.0263) of 3 from embarked is: embarked != S
+14:18:44 - Best feature (RIG: 0.0186) of 37 from age is: age.toInt inRange (3 to 6)
+14:18:44 - Best feature (RIG: 0.0665) of 54 from cabin is: apply(cabin) != Zipcode(&quot;&quot;)
+14:18:44 - Best feature (RIG: 0.2465) of 182 from name is: name.inferredGenderPrefix != male
+14:18:44 - Best feature (RIG: 0.0665) of 17 from cabin is: cabin.headOption.nonEmpty
+14:18:44 - Best feature (RIG: 0.0422) of 70 from ticket is: numberIn(ticket) &gt;= 336,058
+14:18:44 - Best feature (RIG: 0.0665) of 73 from cabin is: cabin.length != 0
+14:18:44 - Best feature (RIG: 0.0422) of 82 from ticket is: numberInUSFormat(ticket) &gt;= 336,058
+14:18:44 - Best feature (RIG: 0.0392) of 328 from ticket is: numbers(ticket).sum &gt;= 248,739
+14:18:44 - Best feature (RIG: 0.2465) of 217 from name is: name does not contain mr.
+14:18:44 - Best feature (RIG: 0.0392) of 54 from ticket is: numbersUSFormat(ticket).sum &gt;= 248,739
+14:18:45 - Best feature (RIG: 0.2465) of 318 from name is: name does not contain mr
+14:18:45 - Best feature (RIG: 0.0665) of 149 from cabin is: cabin != &quot;&quot;
+14:18:45 - stage end, feature generation took 0.3 seconds to this point
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:19:04 - feature generation on 10 column subsets took 0.3 seconds
+14:19:05 - Enriching training set with discovered features...
+     idx                                            feature  \
+0      0                          name does not contain mr.   
+1      1                                         pclass &lt; 3   
+2      2                                      fare &gt;= 15.17   
+3      3                 numberIn(cabin) inRange (3 to 108)   
+4      4                                     gender != male   
+5      5         FractionalPart(fare) inRange (0.89 to 0.9)   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked == C   
+8      8                                        pclass == 1   
+9      9                     alphanumericRatio(name) &lt; 0.73   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                   punctuationRatio(name) == 0.1111   
+12    12                          numberOfChars(name) == 44   
+13    13                     punctuationRatio(name) &gt;= 0.13   
+14    14      upperCaseRatio(ticket) inRange (0.05 to 0.13)   
+15    15                             roundToInt(fare) == 19   
+16    16                                    name contains )   
+17    17                           numberOfWords(name) == 7   
+18    18     consecutiveCharactersText(ticket) contains 747   
+19    19                           numberOfWords(name) &gt;= 6   
+20    20                         numberOfChars(ticket) == 5   
+21    21     consecutiveCharactersText(ticket) contains 349   
+22    22     consecutiveCharactersText(ticket) contains 174   
+23    23                               sigmoid(fare) == 1.0   
+24    24                                         sibsp &gt;= 5   
+25    25             wordFrequencies(name) for john &gt;= 0.47   
+26    26                          numberOfChars(name) &gt;= 29   
+27    27                      FractionalPart(fare) == 0.125   
+28    28                                ticket contains s.o   
+29    29                      upperCaseRatio(name) == 0.125   
+..   ...                                                ...   
+270  270                                       fare == 23.0   
+271  271                             roundToInt(fare) == 22   
+272  272                                     age.toInt == 3   
+273  273     consecutiveCharactersText(ticket) contains 774   
+274  274                     FractionalPart(fare) == 0.3875   
+275  275     consecutiveCharactersText(ticket) contains 757   
+276  276     consecutiveCharactersText(ticket) contains 088   
+277  277                               name contains gustaf   
+278  278     consecutiveCharactersText(ticket) contains 536   
+279  279    consecutiveCharactersText(ticket) contains 3672   
+280  280  normalizedHistogram(cabin) for 2 inRange (0.26...   
+281  281                 letterUpperCaseRatio(name) == 0.15   
+282  282                   upperCaseRatio(ticket) == 0.1111   
+283  283      wordFrequencies(name) contains (charles, 0.5)   
+284  284                            name contains elizabeth   
+285  285                                 ceil(fare) == 15.0   
+286  286                alphanumericRatio(ticket) == 0.7778   
+287  287               smallSubsets(cabin) contains List(6)   
+288  288                                    age.toInt == 15   
+289  289     consecutiveCharactersText(ticket) contains 136   
+290  290                      seperatorsRatio(name) == 0.16   
+291  291    consecutiveCharactersText(ticket) contains 3309   
+292  292                                name contains kelly   
+293  293                   Histogram(cabin) contains (1, 2)   
+294  294     consecutiveCharactersText(ticket) contains 477   
+295  295     consecutiveCharactersText(ticket) contains 356   
+296  296                    seperatorsRatio(name) == 0.2308   
+297  297     consecutiveCharactersText(ticket) contains 706   
+298  298                        upperCaseRatio(name) == 0.2   
+299  299               letterUpperCaseRatio(name) == 0.1724   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.246524      name       0.244942    0.442831   91.0   
+1                    1  0.076232    pclass       0.069140    0.479130  142.0   
+2                    1  0.068179      fare       0.021909    0.490472  156.0   
+3                    1  0.065055     cabin       0.017687    0.663144   49.0   
+4                    1  0.242668    gender       0.017623    0.421453   64.0   
+5                    0  0.031719      fare       0.017414    0.618313   38.0   
+6                    0  0.036000    ticket       0.012790    0.525380  105.0   
+7                    1  0.023690  embarked       0.010860    0.500711   62.0   
+8                    1  0.062929    pclass       0.010016    0.486789   64.0   
+9                    1  0.010142      name       0.009490    0.534370   10.0   
+10                   0  0.012218    ticket       0.009061    0.533117   12.0   
+11                   0  0.012731      name       0.008958    0.530490   36.0   
+12                   1  0.014615      name       0.008732    0.530033    0.0   
+13                   1  0.014968      name       0.008678    0.533262   14.0   
+14                   0  0.018753    ticket       0.008116    0.618305   25.0   
+15                   1  0.012512      fare       0.007948    0.530670    0.0   
+16                   1  0.010550      name       0.007648    0.531910    3.0   
+17                   1  0.032385      name       0.007378    0.522944    4.0   
+18                   1  0.016723    ticket       0.007198    0.531983    0.0   
+19                   1  0.058777      name       0.007154    0.514032   20.0   
+20                   1  0.028665    ticket       0.007153    0.523836   38.0   
+21                   0  0.027657    ticket       0.007009    0.529434   39.0   
+22                   1  0.023250    ticket       0.006741    0.528680    4.0   
+23                   1  0.046715      fare       0.006594    0.519724   65.0   
+24                   0  0.011190     sibsp       0.006498    0.508555   11.0   
+25                   0  0.014925      name       0.006372    0.620215   21.0   
+26                   1  0.058304      name       0.006257    0.505696  101.0   
+27                   0  0.009139      fare       0.006210    0.532356    9.0   
+28                   0  0.009139    ticket       0.006165    0.533656    9.0   
+29                   1  0.013092      name       0.006050    0.529678    4.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  1  0.006233      fare       0.001312    0.507206    0.0   
+271                  1  0.006233      fare       0.001311    0.532566    0.0   
+272                  1  0.008321       age       0.001310    0.531937    0.0   
+273                  1  0.004000    ticket       0.001270    0.535605    1.0   
+274                  1  0.004000      fare       0.001268    0.532998    1.0   
+275                  1  0.005662    ticket       0.001241    0.535026    1.0   
+276                  0  0.004043    ticket       0.001241    0.536130    4.0   
+277                  0  0.003030      name       0.001235    0.532451    3.0   
+278                  0  0.003030    ticket       0.001234    0.536362    3.0   
+279                  1  0.003503    ticket       0.001208    0.535761    2.0   
+280                  1  0.020599     cabin       0.001194    0.706939    5.0   
+281                  1  0.004934      name       0.001192    0.533939    2.0   
+282                  0  0.011190    ticket       0.001190    0.531884   11.0   
+283                  0  0.006763      name       0.001165    0.535125   12.0   
+284                  1  0.014951      name       0.001163    0.527861    2.0   
+285                  0  0.010294      fare       0.001159    0.531600   16.0   
+286                  0  0.005537    ticket       0.001142    0.532766   14.0   
+287                  1  0.003605     cabin       0.001117    0.533118   16.0   
+288                  1  0.002453       age       0.001115    0.533545    1.0   
+289                  1  0.004000    ticket       0.001115    0.535605    1.0   
+290                  1  0.002453      name       0.001114    0.533545    1.0   
+291                  1  0.006460    ticket       0.001111    0.534697    2.0   
+292                  1  0.002453      name       0.001108    0.532245    1.0   
+293                  1  0.005662     cabin       0.001108    0.532422    1.0   
+294                  1  0.004000    ticket       0.001108    0.535605    1.0   
+295                  1  0.002453    ticket       0.001108    0.536154    1.0   
+296                  1  0.002199      name       0.001101    0.533629    2.0   
+297                  0  0.002742    ticket       0.001077    0.536223    7.0   
+298                  0  0.005503      name       0.001072    0.532732   17.0   
+299                  1  0.007401      name       0.001069    0.533127    1.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    208.0  20.59%  77.61%      299      42.11                710  2.00   
+1    173.0  32.13%  64.55%      315      44.37                  3  1.00   
+2    177.0  35.29%  66.04%      333      46.90                227  1.00   
+3     96.0  11.09%  35.82%      145      20.42                124  2.00   
+4    187.0  14.48%  69.78%      251      35.35                  2  1.00   
+5      1.0    8.6%   0.37%       39       5.49                227  2.00   
+6     20.0  23.76%   7.46%      125      17.61                710  2.10   
+7     77.0  14.03%  28.73%      139      19.58                  4  1.00   
+8    108.0  14.48%   40.3%      172      24.23                  3  1.00   
+9     19.0   2.26%   7.09%       29       4.08                710  2.00   
+10     0.0   2.71%    0.0%       12       1.69                710  2.00   
+11     6.0   8.14%   2.24%       42       5.92                710  2.00   
+12     7.0    0.0%   2.61%        7       0.99                710  2.00   
+13    27.0   3.17%  10.07%       41       5.77                710  2.00   
+14     1.0   5.66%   0.37%       26       3.66                710  2.00   
+15     6.0    0.0%   2.24%        6       0.85                227  2.00   
+16    11.0   0.68%    4.1%       14       1.97                710  2.05   
+17    25.0    0.9%   9.33%       29       4.08                710  2.00   
+18     8.0    0.0%   2.99%        8       1.13                710  2.10   
+19    62.0   4.52%  23.13%       82      11.55                710  2.00   
+20    61.0    8.6%  22.76%       99      13.94                710  2.00   
+21     2.0   8.82%   0.75%       41       5.77                710  2.10   
+22    20.0    0.9%   7.46%       24       3.38                710  2.10   
+23    98.0  14.71%  36.57%      163      22.96                227  2.10   
+24     0.0   2.49%    0.0%       11       1.55                  7  1.00   
+25     0.0   4.75%   0.37%       22       3.10                710  2.10   
+26   134.0  22.85%     50%      235      33.10                710  2.00   
+27     0.0   2.04%    0.0%        9       1.27                227  2.00   
+28     0.0   2.04%    0.0%        9       1.27                710  2.05   
+29    14.0    0.9%   5.22%       18       2.54                710  2.00   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    3.0    0.0%   1.12%        3       0.42                227  1.00   
+271    3.0    0.0%   1.12%        3       0.42                227  2.00   
+272    4.0    0.0%   1.49%        4       0.56                 83  2.00   
+273    4.0   0.23%   1.49%        5       0.70                710  2.10   
+274    4.0   0.23%   1.49%        5       0.70                227  2.00   
+275    5.0   0.23%   1.87%        6       0.85                710  2.10   
+276    0.0    0.9%    0.0%        4       0.56                710  2.10   
+277    0.0   0.68%    0.0%        3       0.42                710  1.95   
+278    0.0   0.68%    0.0%        3       0.42                710  2.10   
+279    5.0   0.45%   1.87%        7       0.99                710  2.10   
+280   20.0   1.13%   7.46%       25       3.52                124  2.00   
+281    6.0   0.45%   2.24%        8       1.13                710  2.05   
+282    0.0   2.49%    0.0%       11       1.55                710  2.00   
+283    1.0   2.71%   0.37%       13       1.83                710  2.10   
+284   12.0   0.45%   4.48%       14       1.97                710  1.95   
+285    1.0   3.62%   0.37%       17       2.39                227  2.00   
+286    2.0   3.17%   0.75%       16       2.25                710  2.00   
+287   18.0   3.62%   6.72%       34       4.79                124  2.00   
+288    3.0   0.23%   1.12%        4       0.56                 83  2.00   
+289    4.0   0.23%   1.49%        5       0.70                710  2.10   
+290    3.0   0.23%   1.12%        4       0.56                710  2.00   
+291    7.0   0.45%   2.61%        9       1.27                710  2.10   
+292    3.0   0.23%   1.12%        4       0.56                710  1.95   
+293    5.0   0.23%   1.87%        6       0.85                124  2.00   
+294    4.0   0.23%   1.49%        5       0.70                710  2.10   
+295    3.0   0.23%   1.12%        4       0.56                710  2.10   
+296    4.0   0.45%   1.49%        6       0.85                710  2.00   
+297    1.0   1.58%   0.37%        8       1.13                710  2.10   
+298    3.0   3.85%   1.12%       20       2.82                710  2.00   
+299    6.0   0.23%   2.24%        7       0.99                710  2.05   
+
+     invocation time    Lift 0    Lift 1  
+0                  2  0.488885  1.842959  
+1                  0  0.724126  1.454987  
+2                  0  0.752517  1.408162  
+3                  2  0.542830  1.753989  
+4                  0  0.409583  1.973747  
+5                  0  1.565147  0.067930  
+6                  4  1.349321  0.423881  
+7                  0  0.716495  1.467572  
+8                  0  0.597706  1.663485  
+9                  1  0.553909  1.735718  
+10                 1  1.606335  0.000000  
+11                 3  1.376858  0.378465  
+12                 0  0.000000  2.649254  
+13                 3  0.548505  1.744631  
+14                 1  1.544553  0.101894  
+15                 0  0.000000  2.649254  
+16                 3  0.344215  2.081557  
+17                 2  0.221563  2.283839  
+18                 4  0.000000  2.649254  
+19                 2  0.391789  2.003094  
+20                 0  0.616573  1.632368  
+21                 4  1.527977  0.129232  
+22                 4  0.267722  2.207711  
+23                 1  0.640563  1.592803  
+24                 0  1.606335  0.000000  
+25                 8  1.533320  0.120421  
+26                 0  0.690382  1.510638  
+27                 0  1.606335  0.000000  
+28                 1  1.606335  0.000000  
+29                 1  0.356963  2.060531  
+..               ...       ...       ...  
+270                0  0.000000  2.649254  
+271                0  0.000000  2.649254  
+272                1  0.000000  2.649254  
+273                4  0.321267  2.119403  
+274                0  0.321267  2.119403  
+275                4  0.267722  2.207711  
+276                4  1.606335  0.000000  
+277                4  1.606335  0.000000  
+278                4  1.606335  0.000000  
+279                4  0.458953  1.892324  
+280                3  0.321267  2.119403  
+281                2  0.401584  1.986940  
+282                1  1.606335  0.000000  
+283                8  1.482771  0.203789  
+284                4  0.229476  2.270789  
+285                0  1.511845  0.155838  
+286                1  1.405543  0.331157  
+287                8  0.755922  1.402546  
+288                1  0.401584  1.986940  
+289                4  0.321267  2.119403  
+290                4  0.401584  1.986940  
+291                4  0.356963  2.060531  
+292                4  0.401584  1.986940  
+293                1  0.267722  2.207711  
+294                4  0.321267  2.119403  
+295                4  0.401584  1.986940  
+296                4  0.535445  1.766169  
+297                4  1.405543  0.331157  
+298                1  1.365385  0.397388  
+299                2  0.229476  2.270789  
+
+[300 rows x 18 columns]
+14:19:05 - Enriched training set contains 302 features
+14:19:17 - Building models...
+14:19:24 - Model building completed. Test-set AUC score of best algorithm: 0.862
+                                               
+Correctly Classified Instances     145   80.11%
+Incorrectly Classified Instances   36    19.89%
+Total Number of Instances          181         
+                                               
+Model evaluation summary:                                                
+Correctly Classified Instances     145   80.11%
+Incorrectly Classified Instances   36    19.89%
+Total Number of Instances          181         
+                                               
+</system-out></testcase><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="71" name="test_titanic_survived_with_test_dataset" time="211.4736828804016"><system-out>Loading titanic
+Executing learning request
+Saving Train to /tmp/tmp6fbku4r1/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz before upload
+File /tmp/tmp6fbku4r1/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz size 20099 bytes. Executed in 0 seconds
+Uploading Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 61.9MB/s]
+Saving Test to /tmp/tmppp8xnquk/Test-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz before upload
+File /tmp/tmppp8xnquk/Test-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz size 20098 bytes. Executed in 0 seconds
+Uploading Test-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 65.9MB/s]
+You are now running in a Blocking Mode
+LearningJob (1384697c-fda4-4c97-ae0b-15764d20ae41) position at the queue is 1.
+14:20:17 - Learning to classify survived (revision #1). Evaluating using AUC
+14:20:17 - Training set contains 11 columns
+14:20:18 - Best feature (RIG: 0.0789) of 3 from pclass is: pclass &lt; 3
+14:20:18 - Best feature (RIG: 0.2266) of 1 from gender is: gender != male
+14:20:18 - Best feature (RIG: 0.0201) of 5 from parch is: parch inRange (0.0 to 3)
+14:20:18 - Best feature (RIG: 0.0233) of 8 from sibsp is: sibsp inRange (0.0 to 2)
+14:20:18 - Best feature (RIG: 0.0711) of 52 from fare is: approximatePercentile(inverse(fare)) &gt;= 0.72
+14:20:18 - Best feature (RIG: 0.0174) of 23 from age is: |age| &lt; 6.5
+14:20:18 - Best feature (RIG: 0.0701) of 76 from fare is: floor(fare) &lt; 10.5
+14:20:18 - Best feature (RIG: 0.0174) of 40 from age is: age &lt; 6.5
+14:20:18 - Best feature (RIG: 0.0174) of 33 from age is: log(age) &lt; 1.87
+14:20:18 - Best feature (RIG: 0.0711) of 53 from fare is: log1p(fare) &lt; 2.44
+14:20:18 - Best feature (RIG: 0.0207) of 2 from embarked is: embarked == C
+14:20:18 - Best feature (RIG: 0.0174) of 34 from age is: ceil(age) &lt; 6.5
+14:20:18 - Best feature (RIG: 0.0711) of 133 from fare is: fare &lt; 10.48
+14:20:18 - Best feature (RIG: 0.2355) of 163 from name is: name.salutation != mr.
+14:20:18 - Best feature (RIG: 0.074) of 48 from cabin is: apply(cabin) != Zipcode(&quot;&quot;)
+14:20:18 - Best feature (RIG: 0.074) of 15 from cabin is: cabin.headOption.nonEmpty
+14:20:18 - Best feature (RIG: 0.074) of 67 from cabin is: cabin.length != 0
+14:20:18 - Best feature (RIG: 0.05) of 70 from ticket is: numberIn(ticket) &gt;= 312,991.5
+14:20:18 - Best feature (RIG: 0.074) of 131 from cabin is: cabin != &quot;&quot;
+14:20:18 - Best feature (RIG: 0.0473) of 343 from ticket is: numbers(ticket).sum &gt;= 312,991.5
+14:20:18 - Best feature (RIG: 0.2355) of 201 from name is: name.inferredGenderPrefix != male
+14:20:18 - Best feature (RIG: 0.05) of 82 from ticket is: numberInUSFormat(ticket) &gt;= 312,991.5
+14:20:18 - Best feature (RIG: 0.0473) of 55 from ticket is: numbersUSFormat(ticket).sum &gt;= 312,991.5
+14:20:18 - Best feature (RIG: 0.2355) of 349 from name is: name does not contain mr
+14:20:18 - Best feature (RIG: 0.233) of 238 from name is: name does not contain mr
+14:20:18 - stage end, feature generation took 0.3 seconds to this point
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+Test:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:20:46 - feature generation on 10 column subsets took 0.3 seconds
+14:20:47 - Enriching training set with discovered features...
+14:20:47 - Enriched training set contains 302 features
+     idx                                            feature  \
+0      0                           name does not contain mr   
+1      1                                         pclass &lt; 3   
+2      2                                        cabin != &quot;&quot;   
+3      3         FractionalPart(fare) inRange (0.89 to 0.9)   
+4      4                                       fare &lt; 10.48   
+5      5                                     gender != male   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked != S   
+8      8                          numberOfChars(name) &gt;= 32   
+9      9                          numberOfChars(ticket) &lt; 6   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                           numberOfWords(name) &gt;= 6   
+12    12                               sigmoid(fare) == 1.0   
+13    13  stemmedWordsWithoutCommonTerms(name) does not ...   
+14    14                     punctuationRatio(name) &gt;= 0.13   
+15    15             wordFrequencies(name) for john &gt;= 0.47   
+16    16                         numberOfChars(ticket) == 5   
+17    17                                  ticket contains o   
+18    18                   upperCaseRatio(ticket) == 0.1111   
+19    19     consecutiveCharactersText(ticket) contains 230   
+20    20                         FractionalPart(age) == 0.5   
+21    21                          numberOfChars(name) == 41   
+22    22     consecutiveCharactersText(ticket) contains 349   
+23    23                        prefixes(cabin) contains E1   
+24    24    consecutiveCharactersText(ticket) contains 1747   
+25    25                      FractionalPart(fare) == 0.125   
+26    26                             roundToInt(fare) == 19   
+27    27                           sibsp inRange (0.0 to 2)   
+28    28  numericPairs(ticket) for (pc) inRange (17,395....   
+29    29      consecutiveCharactersText(ticket) contains 77   
+..   ...                                                ...   
+270  270                           name contains mr. joseph   
+271  271      consecutiveCharactersText(ticket) contains  2   
+272  272                            name contains elizabeth   
+273  273                   punctuationRatio(name) == 0.1081   
+274  274                          numberOfChars(name) == 48   
+275  275            slidingSubsets(name) contains (mrs, de)   
+276  276                               name contains (edith   
+277  277               letterUpperCaseRatio(name) == 0.1842   
+278  278        slidingSubsets(name) contains (mrs, albert)   
+279  279      skipgrams(name) contains List(mrs, *, joseph)   
+280  280           wordFrequencies(name) contains (l, 0.41)   
+281  281      consecutiveCharactersText(ticket) contains 64   
+282  282     wordFrequencies(name) contains (william, 0.45)   
+283  283                                       fare == 11.5   
+284  284                                 name contains hans   
+285  285                               name contains andrew   
+286  286                 punctuationRatio(ticket) == 0.0625   
+287  287                      name.firstWord == Gustafsson,   
+288  288                               name contains daniel   
+289  289              slidingSubsets(name) contains (mr, o)   
+290  290                           name contains mr. arthur   
+291  291                          name contains mr. patrick   
+292  292          slidingSubsets(name) contains (mr, frank)   
+293  293           skipgrams(name) contains List(mr, *, jr)   
+294  294       skipgrams(name) contains List(mr, *, edward)   
+295  295          wordFrequencies(name) contains (mr, 0.41)   
+296  296     consecutiveCharactersText(ticket) contains 246   
+297  297     consecutiveCharactersText(ticket) contains 323   
+298  298     consecutiveCharactersText(ticket) contains 233   
+299  299    consecutiveCharactersText(ticket) contains 4746   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.235544      name       0.234020    0.448070  113.0   
+1                    1  0.078894    pclass       0.070850    0.480494  177.0   
+2                    1  0.073989     cabin       0.021327    0.484315   68.0   
+3                    0  0.031919      fare       0.018637    0.620212   51.0   
+4                    0  0.071112      fare       0.015249    0.493442  272.0   
+5                    1  0.226562    gender       0.014104    0.428681   81.0   
+6                    0  0.033863    ticket       0.010499    0.527602  133.0   
+7                    1  0.017907  embarked       0.009282    0.504411  122.0   
+8                    1  0.064523      name       0.009000    0.505748   65.0   
+9                    1  0.016128    ticket       0.008435    0.535346  116.0   
+10                   0  0.011543    ticket       0.008396    0.535342   14.0   
+11                   1  0.063235      name       0.008019    0.514048   23.0   
+12                   1  0.047566      fare       0.007684    0.521030   74.0   
+13                   1  0.082063      name       0.007329    0.505568   86.0   
+14                   1  0.011118      name       0.007196    0.535283   15.0   
+15                   0  0.015986      name       0.006865    0.621766   25.0   
+16                   1  0.029219    ticket       0.006791    0.525315   50.0   
+17                   0  0.008387    ticket       0.006149    0.533833   16.0   
+18                   0  0.010711    ticket       0.006134    0.533689   13.0   
+19                   1  0.009970    ticket       0.005787    0.535334    1.0   
+20                   0  0.009121       age       0.005764    0.588341   17.0   
+21                   1  0.013009      name       0.005719    0.532254    0.0   
+22                   0  0.028267    ticket       0.005566    0.530811   51.0   
+23                   1  0.013009     cabin       0.005565    0.532254    0.0   
+24                   1  0.013009    ticket       0.005565    0.534857    0.0   
+25                   0  0.008221      fare       0.005461    0.534268   10.0   
+26                   1  0.008519      fare       0.005263    0.533209    1.0   
+27                   1  0.023300     sibsp       0.005173    0.580771  112.0   
+28                   1  0.017388    ticket       0.005164    0.710635    3.0   
+29                   1  0.008626    ticket       0.005111    0.535577   22.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  0  0.004918      name       0.001235    0.536340    6.0   
+271                  0  0.005154    ticket       0.001228    0.537052   45.0   
+272                  1  0.012899      name       0.001221    0.530328    2.0   
+273                  1  0.007095      name       0.001195    0.533684    1.0   
+274                  1  0.004855      name       0.001195    0.534711    0.0   
+275                  1  0.004855      name       0.001195    0.536017    0.0   
+276                  1  0.004855      name       0.001187    0.534711    0.0   
+277                  1  0.004855      name       0.001187    0.536017    0.0   
+278                  1  0.004855      name       0.001187    0.536017    0.0   
+279                  1  0.004855      name       0.001187    0.536279    0.0   
+280                  1  0.004855      name       0.001187    0.537326    0.0   
+281                  0  0.003129    ticket       0.001187    0.537728   33.0   
+282                  0  0.002264      name       0.001149    0.538098    7.0   
+283                  0  0.003274      fare       0.001147    0.509918    4.0   
+284                  0  0.003274      name       0.001146    0.534109    4.0   
+285                  0  0.003274      name       0.001146    0.534109    4.0   
+286                  0  0.003274    ticket       0.001146    0.535413    4.0   
+287                  0  0.003274      name       0.001146    0.535413    4.0   
+288                  0  0.003274      name       0.001146    0.535413    4.0   
+289                  0  0.003274      name       0.001146    0.536721    4.0   
+290                  0  0.003274      name       0.001146    0.536721    4.0   
+291                  0  0.003274      name       0.001146    0.536721    4.0   
+292                  0  0.003274      name       0.001146    0.536721    4.0   
+293                  0  0.003274      name       0.001146    0.536983    4.0   
+294                  0  0.003274      name       0.001146    0.536983    4.0   
+295                  0  0.003274      name       0.001146    0.538032    4.0   
+296                  0  0.003274    ticket       0.001146    0.538032    4.0   
+297                  0  0.003274    ticket       0.001146    0.538032    4.0   
+298                  0  0.003274    ticket       0.001146    0.538032    4.0   
+299                  0  0.003274    ticket       0.001146    0.538032    4.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    261.0  20.58%  76.32%      374      41.98                891  2.00   
+1    223.0  32.24%   65.2%      400      44.89                  3  1.00   
+2    136.0  12.39%  39.77%      204      22.90                148  1.00   
+3      2.0   9.29%   0.58%       53       5.95                248  2.00   
+4     67.0  49.54%  19.59%      339      38.05                248  1.00   
+5    233.0  14.75%  68.13%      314      35.24                  2  1.00   
+6     28.0  24.23%   8.19%      161      18.07                891  2.10   
+7    125.0  22.22%  36.55%      247      27.72                  4  1.00   
+8    126.0  11.84%  36.84%      191      21.44                891  2.00   
+9    118.0  21.13%   34.5%      234      26.26                891  2.00   
+10     0.0   2.55%    0.0%       14       1.57                891  2.00   
+11    80.0   4.19%  23.39%      103      11.56                891  2.00   
+12   120.0  13.48%  35.09%      194      21.77                248  2.10   
+13   158.0  15.66%   46.2%      244      27.38                891  2.00   
+14    28.0   2.73%   8.19%       43       4.83                891  2.00   
+15     0.0   4.74%   0.29%       26       3.03                891  2.10   
+16    81.0   9.11%  23.68%      131      14.70                891  2.00   
+17     1.0   2.91%   0.29%       17       1.91                891  2.00   
+18     0.0   2.37%    0.0%       13       1.46                891  2.00   
+19     9.0   0.18%   2.63%       10       1.12                891  2.10   
+20     1.0    3.1%   0.29%       18       2.02                 89  2.00   
+21     8.0    0.0%   2.34%        8       0.90                891  2.00   
+22     3.0   9.29%   0.88%       54       6.06                891  2.10   
+23     8.0    0.0%   2.34%        8       0.90                148  2.00   
+24     8.0    0.0%   2.34%        8       0.90                891  2.10   
+25     0.0   1.82%    0.0%       10       1.12                248  2.00   
+26     8.0   0.18%   2.34%        9       1.01                248  2.00   
+27   125.0   20.4%  36.55%      237      26.60                  7  1.00   
+28    18.0   0.55%   5.26%       21       2.36                891  2.00   
+29    32.0   4.01%   9.36%       54       6.06                891  2.10   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    0.0   1.09%    0.0%        6       0.67                891  2.05   
+271   14.0    8.2%   4.09%       59       6.62                891  2.10   
+272   13.0   0.36%    3.8%       15       1.68                891  1.95   
+273    7.0   0.18%   2.05%        8       0.90                891  2.00   
+274    3.0    0.0%   0.88%        3       0.34                891  2.00   
+275    3.0    0.0%   0.88%        3       0.34                891  2.05   
+276    3.0    0.0%   0.88%        3       0.34                891  2.00   
+277    3.0    0.0%   0.88%        3       0.34                891  2.05   
+278    3.0    0.0%   0.88%        3       0.34                891  2.05   
+279    3.0    0.0%   0.88%        3       0.34                891  2.06   
+280    3.0    0.0%   0.88%        3       0.34                891  2.10   
+281   11.0   6.01%   3.22%       44       4.94                891  2.10   
+282    1.0   1.28%   0.29%        8       0.90                891  2.10   
+283    0.0   0.73%    0.0%        4       0.45                248  1.00   
+284    0.0   0.73%    0.0%        4       0.45                891  1.95   
+285    0.0   0.73%    0.0%        4       0.45                891  1.95   
+286    0.0   0.73%    0.0%        4       0.45                891  2.00   
+287    0.0   0.73%    0.0%        4       0.45                891  2.00   
+288    0.0   0.73%    0.0%        4       0.45                891  2.00   
+289    0.0   0.73%    0.0%        4       0.45                891  2.05   
+290    0.0   0.73%    0.0%        4       0.45                891  2.05   
+291    0.0   0.73%    0.0%        4       0.45                891  2.05   
+292    0.0   0.73%    0.0%        4       0.45                891  2.05   
+293    0.0   0.73%    0.0%        4       0.45                891  2.06   
+294    0.0   0.73%    0.0%        4       0.45                891  2.06   
+295    0.0   0.73%    0.0%        4       0.45                891  2.10   
+296    0.0   0.73%    0.0%        4       0.45                891  2.10   
+297    0.0   0.73%    0.0%        4       0.45                891  2.10   
+298    0.0   0.73%    0.0%        4       0.45                891  2.10   
+299    0.0   0.73%    0.0%        4       0.45                891  2.10   
+
+     invocation time    Lift 0    Lift 1  
+0                  2  0.490357  1.818111  
+1                  0  0.718156  1.452434  
+2                  0  0.540984  1.736842  
+3                  0  1.561707  0.098312  
+4                  0  1.302191  0.514905  
+5                  0  0.418659  1.933205  
+6                  3  1.340699  0.453089  
+7                  0  0.801619  1.318453  
+8                  1  0.552313  1.718655  
+9                  1  0.804540  1.313765  
+10                 1  1.622951  0.000000  
+11                 2  0.362406  2.023505  
+12                 0  0.619064  1.611503  
+13                 3  0.572024  1.687015  
+14                 2  0.566146  1.696450  
+15                 6  1.562842  0.096491  
+16                 1  0.619447  1.610888  
+17                 1  1.527483  0.153251  
+18                 2  1.622951  0.000000  
+19                 3  0.162295  2.344737  
+20                 1  1.532787  0.144737  
+21                 1  0.000000  2.605263  
+22                 3  1.532787  0.144737  
+23                 1  0.000000  2.605263  
+24                 3  0.000000  2.605263  
+25                 0  1.622951  0.000000  
+26                 0  0.180328  2.315789  
+27                 0  0.766964  1.374084  
+28                 7  0.231850  2.233083  
+29                 3  0.661202  1.543860  
+..               ...       ...       ...  
+270                3  1.622951  0.000000  
+271                3  1.237844  0.618198  
+272                2  0.216393  2.257895  
+273                2  0.202869  2.279605  
+274                1  0.000000  2.605263  
+275               21  0.000000  2.605263  
+276                2  0.000000  2.605263  
+277                1  0.000000  2.605263  
+278               21  0.000000  2.605263  
+279                2  0.000000  2.605263  
+280                6  0.000000  2.605263  
+281                3  1.217213  0.651316  
+282                6  1.420082  0.325658  
+283                0  1.622951  0.000000  
+284                2  1.622951  0.000000  
+285                2  1.622951  0.000000  
+286                1  1.622951  0.000000  
+287                1  1.622951  0.000000  
+288                2  1.622951  0.000000  
+289               21  1.622951  0.000000  
+290                3  1.622951  0.000000  
+291                3  1.622951  0.000000  
+292               21  1.622951  0.000000  
+293                2  1.622951  0.000000  
+294                2  1.622951  0.000000  
+295                6  1.622951  0.000000  
+296                3  1.622951  0.000000  
+297                3  1.622951  0.000000  
+298                3  1.622951  0.000000  
+299                3  1.622951  0.000000  
+
+[300 rows x 18 columns]
+14:21:01 - Building models...
+14:21:09 - Model building completed. Test-set AUC score of best algorithm: 0.969
+                                               
+Correctly Classified Instances     812   91.13%
+Incorrectly Classified Instances   79    8.87% 
+Total Number of Instances          891         
+                                               
+Model evaluation summary:                                                
+Correctly Classified Instances     812   91.13%
+Incorrectly Classified Instances   79    8.87% 
+Total Number of Instances          891         
+                                               
+Saving Train to /tmp/tmpdhb70em_/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz before upload
+File /tmp/tmpdhb70em_/Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz size 20099 bytes. Executed in 0 seconds
+Uploading Train-2cd56db6fbc0eab2393ebfd398e641dd.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 69.2MB/s]
+Saving Test to /tmp/tmp5b9pj6_2/Test-7884ccb14de7bdaad3f413851481c144.tsv.gz before upload
+File /tmp/tmp5b9pj6_2/Test-7884ccb14de7bdaad3f413851481c144.tsv.gz size 20098 bytes. Executed in 0 seconds
+Uploading Test-7884ccb14de7bdaad3f413851481c144.tsv.gz
+  0%|          | 0.00/20.1k [00:00&lt;?, ?B/s]100%|██████████| 20.1k/20.1k [00:00&lt;00:00, 72.3MB/s]
+You are now running in a Blocking Mode
+LearningJob (1c144feb-a5c5-4dcb-8b86-11af96b2188c) position at the queue is 1.
+14:22:01 - Learning to classify survived (revision #1). Evaluating using AUC
+14:22:01 - Training set contains 11 columns
+14:22:03 - Best feature (RIG: 0.0201) of 5 from parch is: parch inRange (0.0 to 3)
+14:22:03 - Best feature (RIG: 0.2266) of 1 from gender is: gender != male
+14:22:03 - Best feature (RIG: 0.0789) of 3 from pclass is: pclass &lt; 3
+14:22:03 - Best feature (RIG: 0.0233) of 8 from sibsp is: sibsp inRange (0.0 to 2)
+14:22:03 - Best feature (RIG: 0.0711) of 52 from fare is: approximatePercentile(inverse(fare)) &gt;= 0.72
+14:22:03 - Best feature (RIG: 0.0174) of 23 from age is: |age| &lt; 6.5
+14:22:03 - Best feature (RIG: 0.0711) of 133 from fare is: fare &lt; 10.48
+14:22:03 - Best feature (RIG: 0.0174) of 34 from age is: ceil(age) &lt; 6.5
+14:22:03 - Best feature (RIG: 0.0711) of 53 from fare is: log1p(fare) &lt; 2.44
+14:22:03 - Best feature (RIG: 0.0174) of 40 from age is: age &lt; 6.5
+14:22:03 - Best feature (RIG: 0.0207) of 2 from embarked is: embarked == C
+14:22:03 - Best feature (RIG: 0.0174) of 33 from age is: log(age) &lt; 1.87
+14:22:03 - Best feature (RIG: 0.0701) of 76 from fare is: floor(fare) &lt; 10.5
+14:22:03 - Best feature (RIG: 0.2355) of 163 from name is: name.salutation != mr.
+14:22:03 - Best feature (RIG: 0.074) of 15 from cabin is: cabin.headOption.nonEmpty
+14:22:03 - Best feature (RIG: 0.074) of 48 from cabin is: apply(cabin) != Zipcode(&quot;&quot;)
+14:22:03 - Best feature (RIG: 0.074) of 67 from cabin is: cabin.length != 0
+14:22:03 - Best feature (RIG: 0.05) of 70 from ticket is: numberIn(ticket) &gt;= 312,991.5
+14:22:03 - Best feature (RIG: 0.074) of 131 from cabin is: cabin != &quot;&quot;
+14:22:03 - Best feature (RIG: 0.05) of 82 from ticket is: numberInUSFormat(ticket) &gt;= 312,991.5
+14:22:03 - Best feature (RIG: 0.0473) of 343 from ticket is: numbers(ticket).sum &gt;= 312,991.5
+14:22:03 - Best feature (RIG: 0.2355) of 201 from name is: name.inferredGenderPrefix != male
+14:22:03 - Best feature (RIG: 0.233) of 238 from name is: name does not contain mr
+14:22:03 - Best feature (RIG: 0.0473) of 55 from ticket is: numbersUSFormat(ticket).sum &gt;= 312,991.5
+14:22:03 - Best feature (RIG: 0.2355) of 349 from name is: name does not contain mr
+14:22:03 - stage end, feature generation took 0.3 seconds to this point
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+Test:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:22:31 - feature generation on 10 column subsets took 0.3 seconds
+14:22:32 - Enriching training set with discovered features...
+14:22:32 - Enriched training set contains 302 features
+     idx                                            feature  \
+0      0                           name does not contain mr   
+1      1                                         pclass &lt; 3   
+2      2                                        cabin != &quot;&quot;   
+3      3         FractionalPart(fare) inRange (0.89 to 0.9)   
+4      4                                       fare &lt; 10.48   
+5      5                                     gender != male   
+6      6      consecutiveCharactersText(ticket) contains 34   
+7      7                                      embarked != S   
+8      8                          numberOfChars(name) &gt;= 32   
+9      9                          numberOfChars(ticket) &lt; 6   
+10    10                   alphanumericRatio(ticket) &lt; 0.63   
+11    11                           numberOfWords(name) &gt;= 6   
+12    12                               sigmoid(fare) == 1.0   
+13    13  stemmedWordsWithoutCommonTerms(name) does not ...   
+14    14                     punctuationRatio(name) &gt;= 0.13   
+15    15             wordFrequencies(name) for john &gt;= 0.47   
+16    16                         numberOfChars(ticket) == 5   
+17    17                                  ticket contains o   
+18    18                   upperCaseRatio(ticket) == 0.1111   
+19    19     consecutiveCharactersText(ticket) contains 230   
+20    20                         FractionalPart(age) == 0.5   
+21    21                          numberOfChars(name) == 41   
+22    22     consecutiveCharactersText(ticket) contains 349   
+23    23                        prefixes(cabin) contains E1   
+24    24    consecutiveCharactersText(ticket) contains 1747   
+25    25                      FractionalPart(fare) == 0.125   
+26    26                             roundToInt(fare) == 19   
+27    27                           sibsp inRange (0.0 to 2)   
+28    28  numericPairs(ticket) for (pc) inRange (17,395....   
+29    29      consecutiveCharactersText(ticket) contains 77   
+..   ...                                                ...   
+270  270                           name contains mr. joseph   
+271  271      consecutiveCharactersText(ticket) contains  2   
+272  272                            name contains elizabeth   
+273  273                   punctuationRatio(name) == 0.1081   
+274  274                          numberOfChars(name) == 48   
+275  275            slidingSubsets(name) contains (mrs, de)   
+276  276                               name contains (edith   
+277  277               letterUpperCaseRatio(name) == 0.1842   
+278  278        slidingSubsets(name) contains (mrs, albert)   
+279  279      skipgrams(name) contains List(mrs, *, joseph)   
+280  280           wordFrequencies(name) contains (l, 0.41)   
+281  281      consecutiveCharactersText(ticket) contains 64   
+282  282     wordFrequencies(name) contains (william, 0.45)   
+283  283                                       fare == 11.5   
+284  284                                 name contains hans   
+285  285                               name contains andrew   
+286  286                 punctuationRatio(ticket) == 0.0625   
+287  287                      name.firstWord == Gustafsson,   
+288  288                               name contains daniel   
+289  289              slidingSubsets(name) contains (mr, o)   
+290  290                           name contains mr. arthur   
+291  291                          name contains mr. patrick   
+292  292          slidingSubsets(name) contains (mr, frank)   
+293  293           skipgrams(name) contains List(mr, *, jr)   
+294  294       skipgrams(name) contains List(mr, *, edward)   
+295  295          wordFrequencies(name) contains (mr, 0.41)   
+296  296     consecutiveCharactersText(ticket) contains 246   
+297  297     consecutiveCharactersText(ticket) contains 323   
+298  298     consecutiveCharactersText(ticket) contains 233   
+299  299    consecutiveCharactersText(ticket) contains 4746   
+
+     Dominant survived       RIG    fields  marginal gain  lin. score      0  \
+0                    1  0.235544      name       0.234020    0.448070  113.0   
+1                    1  0.078894    pclass       0.070850    0.480494  177.0   
+2                    1  0.073989     cabin       0.021327    0.484315   68.0   
+3                    0  0.031919      fare       0.018637    0.620212   51.0   
+4                    0  0.071112      fare       0.015249    0.493442  272.0   
+5                    1  0.226562    gender       0.014104    0.428681   81.0   
+6                    0  0.033863    ticket       0.010499    0.527602  133.0   
+7                    1  0.017907  embarked       0.009282    0.504411  122.0   
+8                    1  0.064523      name       0.009000    0.505748   65.0   
+9                    1  0.016128    ticket       0.008435    0.535346  116.0   
+10                   0  0.011543    ticket       0.008396    0.535342   14.0   
+11                   1  0.063235      name       0.008019    0.514048   23.0   
+12                   1  0.047566      fare       0.007684    0.521030   74.0   
+13                   1  0.082063      name       0.007329    0.505568   86.0   
+14                   1  0.011118      name       0.007196    0.535283   15.0   
+15                   0  0.015986      name       0.006865    0.621766   25.0   
+16                   1  0.029219    ticket       0.006791    0.525315   50.0   
+17                   0  0.008387    ticket       0.006149    0.533833   16.0   
+18                   0  0.010711    ticket       0.006134    0.533689   13.0   
+19                   1  0.009970    ticket       0.005787    0.535334    1.0   
+20                   0  0.009121       age       0.005764    0.588341   17.0   
+21                   1  0.013009      name       0.005719    0.532254    0.0   
+22                   0  0.028267    ticket       0.005566    0.530811   51.0   
+23                   1  0.013009     cabin       0.005565    0.532254    0.0   
+24                   1  0.013009    ticket       0.005565    0.534857    0.0   
+25                   0  0.008221      fare       0.005461    0.534268   10.0   
+26                   1  0.008519      fare       0.005263    0.533209    1.0   
+27                   1  0.023300     sibsp       0.005173    0.580771  112.0   
+28                   1  0.017388    ticket       0.005164    0.710635    3.0   
+29                   1  0.008626    ticket       0.005111    0.535577   22.0   
+..                 ...       ...       ...            ...         ...    ...   
+270                  0  0.004918      name       0.001235    0.536340    6.0   
+271                  0  0.005154    ticket       0.001228    0.537052   45.0   
+272                  1  0.012899      name       0.001221    0.530328    2.0   
+273                  1  0.007095      name       0.001195    0.533684    1.0   
+274                  1  0.004855      name       0.001195    0.534711    0.0   
+275                  1  0.004855      name       0.001195    0.536017    0.0   
+276                  1  0.004855      name       0.001187    0.534711    0.0   
+277                  1  0.004855      name       0.001187    0.536017    0.0   
+278                  1  0.004855      name       0.001187    0.536017    0.0   
+279                  1  0.004855      name       0.001187    0.536279    0.0   
+280                  1  0.004855      name       0.001187    0.537326    0.0   
+281                  0  0.003129    ticket       0.001187    0.537728   33.0   
+282                  0  0.002264      name       0.001149    0.538098    7.0   
+283                  0  0.003274      fare       0.001147    0.509918    4.0   
+284                  0  0.003274      name       0.001146    0.534109    4.0   
+285                  0  0.003274      name       0.001146    0.534109    4.0   
+286                  0  0.003274    ticket       0.001146    0.535413    4.0   
+287                  0  0.003274      name       0.001146    0.535413    4.0   
+288                  0  0.003274      name       0.001146    0.535413    4.0   
+289                  0  0.003274      name       0.001146    0.536721    4.0   
+290                  0  0.003274      name       0.001146    0.536721    4.0   
+291                  0  0.003274      name       0.001146    0.536721    4.0   
+292                  0  0.003274      name       0.001146    0.536721    4.0   
+293                  0  0.003274      name       0.001146    0.536983    4.0   
+294                  0  0.003274      name       0.001146    0.536983    4.0   
+295                  0  0.003274      name       0.001146    0.538032    4.0   
+296                  0  0.003274    ticket       0.001146    0.538032    4.0   
+297                  0  0.003274    ticket       0.001146    0.538032    4.0   
+298                  0  0.003274    ticket       0.001146    0.538032    4.0   
+299                  0  0.003274    ticket       0.001146    0.538032    4.0   
+
+         1     0.1     1.1  support  % support  input cardinality  cost  \
+0    261.0  20.58%  76.32%      374      41.98                891  2.00   
+1    223.0  32.24%   65.2%      400      44.89                  3  1.00   
+2    136.0  12.39%  39.77%      204      22.90                148  1.00   
+3      2.0   9.29%   0.58%       53       5.95                248  2.00   
+4     67.0  49.54%  19.59%      339      38.05                248  1.00   
+5    233.0  14.75%  68.13%      314      35.24                  2  1.00   
+6     28.0  24.23%   8.19%      161      18.07                891  2.10   
+7    125.0  22.22%  36.55%      247      27.72                  4  1.00   
+8    126.0  11.84%  36.84%      191      21.44                891  2.00   
+9    118.0  21.13%   34.5%      234      26.26                891  2.00   
+10     0.0   2.55%    0.0%       14       1.57                891  2.00   
+11    80.0   4.19%  23.39%      103      11.56                891  2.00   
+12   120.0  13.48%  35.09%      194      21.77                248  2.10   
+13   158.0  15.66%   46.2%      244      27.38                891  2.00   
+14    28.0   2.73%   8.19%       43       4.83                891  2.00   
+15     0.0   4.74%   0.29%       26       3.03                891  2.10   
+16    81.0   9.11%  23.68%      131      14.70                891  2.00   
+17     1.0   2.91%   0.29%       17       1.91                891  2.00   
+18     0.0   2.37%    0.0%       13       1.46                891  2.00   
+19     9.0   0.18%   2.63%       10       1.12                891  2.10   
+20     1.0    3.1%   0.29%       18       2.02                 89  2.00   
+21     8.0    0.0%   2.34%        8       0.90                891  2.00   
+22     3.0   9.29%   0.88%       54       6.06                891  2.10   
+23     8.0    0.0%   2.34%        8       0.90                148  2.00   
+24     8.0    0.0%   2.34%        8       0.90                891  2.10   
+25     0.0   1.82%    0.0%       10       1.12                248  2.00   
+26     8.0   0.18%   2.34%        9       1.01                248  2.00   
+27   125.0   20.4%  36.55%      237      26.60                  7  1.00   
+28    18.0   0.55%   5.26%       21       2.36                891  2.00   
+29    32.0   4.01%   9.36%       54       6.06                891  2.10   
+..     ...     ...     ...      ...        ...                ...   ...   
+270    0.0   1.09%    0.0%        6       0.67                891  2.05   
+271   14.0    8.2%   4.09%       59       6.62                891  2.10   
+272   13.0   0.36%    3.8%       15       1.68                891  1.95   
+273    7.0   0.18%   2.05%        8       0.90                891  2.00   
+274    3.0    0.0%   0.88%        3       0.34                891  2.00   
+275    3.0    0.0%   0.88%        3       0.34                891  2.05   
+276    3.0    0.0%   0.88%        3       0.34                891  2.00   
+277    3.0    0.0%   0.88%        3       0.34                891  2.05   
+278    3.0    0.0%   0.88%        3       0.34                891  2.05   
+279    3.0    0.0%   0.88%        3       0.34                891  2.06   
+280    3.0    0.0%   0.88%        3       0.34                891  2.10   
+281   11.0   6.01%   3.22%       44       4.94                891  2.10   
+282    1.0   1.28%   0.29%        8       0.90                891  2.10   
+283    0.0   0.73%    0.0%        4       0.45                248  1.00   
+284    0.0   0.73%    0.0%        4       0.45                891  1.95   
+285    0.0   0.73%    0.0%        4       0.45                891  1.95   
+286    0.0   0.73%    0.0%        4       0.45                891  2.00   
+287    0.0   0.73%    0.0%        4       0.45                891  2.00   
+288    0.0   0.73%    0.0%        4       0.45                891  2.00   
+289    0.0   0.73%    0.0%        4       0.45                891  2.05   
+290    0.0   0.73%    0.0%        4       0.45                891  2.05   
+291    0.0   0.73%    0.0%        4       0.45                891  2.05   
+292    0.0   0.73%    0.0%        4       0.45                891  2.05   
+293    0.0   0.73%    0.0%        4       0.45                891  2.06   
+294    0.0   0.73%    0.0%        4       0.45                891  2.06   
+295    0.0   0.73%    0.0%        4       0.45                891  2.10   
+296    0.0   0.73%    0.0%        4       0.45                891  2.10   
+297    0.0   0.73%    0.0%        4       0.45                891  2.10   
+298    0.0   0.73%    0.0%        4       0.45                891  2.10   
+299    0.0   0.73%    0.0%        4       0.45                891  2.10   
+
+     invocation time    Lift 0    Lift 1  
+0                  1  0.490357  1.818111  
+1                  0  0.718156  1.452434  
+2                  0  0.540984  1.736842  
+3                  0  1.561707  0.098312  
+4                  0  1.302191  0.514905  
+5                  0  0.418659  1.933205  
+6                  5  1.340699  0.453089  
+7                  0  0.801619  1.318453  
+8                  1  0.552313  1.718655  
+9                  1  0.804540  1.313765  
+10                 1  1.622951  0.000000  
+11                 2  0.362406  2.023505  
+12                 1  0.619064  1.611503  
+13                 4  0.572024  1.687015  
+14                 2  0.566146  1.696450  
+15                 8  1.562842  0.096491  
+16                 1  0.619447  1.610888  
+17                 1  1.527483  0.153251  
+18                 1  1.622951  0.000000  
+19                 5  0.162295  2.344737  
+20                 1  1.532787  0.144737  
+21                 1  0.000000  2.605263  
+22                 5  1.532787  0.144737  
+23                 1  0.000000  2.605263  
+24                 5  0.000000  2.605263  
+25                 0  1.622951  0.000000  
+26                 0  0.180328  2.315789  
+27                 0  0.766964  1.374084  
+28                 9  0.231850  2.233083  
+29                 5  0.661202  1.543860  
+..               ...       ...       ...  
+270                2  1.622951  0.000000  
+271                5  1.237844  0.618198  
+272                4  0.216393  2.257895  
+273                2  0.202869  2.279605  
+274                1  0.000000  2.605263  
+275               35  0.000000  2.605263  
+276                2  0.000000  2.605263  
+277                2  0.000000  2.605263  
+278               35  0.000000  2.605263  
+279                1  0.000000  2.605263  
+280                8  0.000000  2.605263  
+281                5  1.217213  0.651316  
+282                8  1.420082  0.325658  
+283                0  1.622951  0.000000  
+284                4  1.622951  0.000000  
+285                4  1.622951  0.000000  
+286                1  1.622951  0.000000  
+287                1  1.622951  0.000000  
+288                2  1.622951  0.000000  
+289               35  1.622951  0.000000  
+290                2  1.622951  0.000000  
+291                2  1.622951  0.000000  
+292               35  1.622951  0.000000  
+293                1  1.622951  0.000000  
+294                1  1.622951  0.000000  
+295                8  1.622951  0.000000  
+296                5  1.622951  0.000000  
+297                5  1.622951  0.000000  
+298                5  1.622951  0.000000  
+299                5  1.622951  0.000000  
+
+[300 rows x 18 columns]
+14:22:46 - Building models...
+14:22:53 - Model building completed. Test-set AUC score of best algorithm: 0.031
+                                               
+Correctly Classified Instances     79    8.87% 
+Incorrectly Classified Instances   812   91.13%
+Total Number of Instances          891         
+                                               
+Model evaluation summary:                                                
+Correctly Classified Instances     79    8.87% 
+Incorrectly Classified Instances   812   91.13%
+Total Number of Instances          891         
+                                               
+</system-out></testcase><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="100" name="test_titanic_age" time="75.54548811912537"><system-out>Loading titanic
+Executing learning request
+Saving Train to /tmp/tmpzvbstii_/Train-ebf6221d009e51079c3c800fa438e959.tsv.gz before upload
+File /tmp/tmpzvbstii_/Train-ebf6221d009e51079c3c800fa438e959.tsv.gz size 16671 bytes. Executed in 0 seconds
+Uploading Train-ebf6221d009e51079c3c800fa438e959.tsv.gz
+  0%|          | 0.00/16.7k [00:00&lt;?, ?B/s]100%|██████████| 16.7k/16.7k [00:00&lt;00:00, 56.3MB/s]
+You are now running in a Blocking Mode
+LearningJob (824acc8f-3157-4e54-80bc-a5aa1fe09a18) position at the queue is 1.
+14:23:31 - Learning to predict (regression) age (revision #1). Evaluating using RMSE
+14:23:31 - Training set contains 12 columns
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:23:33 - Best feature (RIG: 0.0357) of 3 from pclass is: pclass &lt; 2
+14:23:33 - Best feature (RIG: 0.0458) of 6 from parch is: parch inRange (0.0 to 2)
+14:23:33 - Best feature (RIG: 0.0047) of 1 from survived is: survived == 1
+14:23:33 - Best feature (RIG: 0.0352) of 7 from sibsp is: sibsp &gt;= 4
+14:23:33 - Best feature (RIG: 0.003) of 1 from gender is: gender != male
+14:23:33 - Best feature (RIG: 0.0256) of 95 from fare is: floor(fare) &lt; 13.5
+14:23:33 - Best feature (RIG: 0.029) of 60 from fare is: approximatePercentile(|inverse(fare) - 0.11|) &lt; 0.32
+14:23:33 - Best feature (RIG: 0.003) of 3 from embarked is: embarked == Q
+14:23:33 - Best feature (RIG: 0.029) of 61 from fare is: sigmoid(fare) inRange (0.9987 to 1)
+14:23:33 - Best feature (RIG: 0.0297) of 21 from cabin is: cabin.indices.sum inRange (2 to 8)
+14:23:33 - Best feature (RIG: 0.0245) of 58 from cabin is: cabin.indices contains 2
+14:23:33 - Best feature (RIG: 0.0271) of 175 from fare is: fare &lt; 13.21
+14:23:33 - Best feature (RIG: 0.0542) of 205 from name is: name.salutation == master.
+14:23:33 - Best feature (RIG: 0.0297) of 89 from cabin is: cabin.length inRange (3 to 4)
+14:23:33 - Best feature (RIG: 0.0147) of 89 from ticket is: numberIn(ticket) &gt;= 248,716.5
+14:23:33 - Best feature (RIG: 0.0147) of 101 from ticket is: numberInUSFormat(ticket) &gt;= 248,716.5
+14:23:33 - Best feature (RIG: 0.0146) of 439 from ticket is: numbers(ticket).sum &gt;= 248,716.5
+14:23:33 - Best feature (RIG: 0.0261) of 183 from cabin is: numberIn(cabin) &gt;= 6.5
+14:23:33 - Best feature (RIG: 0.0542) of 225 from name is: wordFrequencies(name) contains master
+14:23:33 - Best feature (RIG: 0.0146) of 59 from ticket is: numbersUSFormat(ticket).sum &gt;= 248,716.5
+14:23:33 - Best feature (RIG: 0.0542) of 383 from name is: name contains master
+14:23:33 - Best feature (RIG: 0.0542) of 289 from name is: name contains master
+14:23:33 - stage end, feature generation took 0.2 seconds to this point
+14:23:47 - feature generation on 10 column subsets took 0.2 seconds
+14:23:47 - Enriching training set with discovered features...
+14:23:48 - Enriched training set contains 303 features
+     idx                                            feature Dominant age  \
+0      0                               name contains master    0.42 - 18   
+1      1                                        pclass == 3    0.42 - 18   
+2      2  stemmedWordsWithoutCommonTerms(name) does not ...    0.42 - 18   
+3      3                sigmoid(fare) inRange (0.9987 to 1)      18 - 24   
+4      4                                         parch != 0    0.42 - 18   
+5      5                                         sibsp &gt;= 4    0.42 - 18   
+6      6                                         parch == 2    0.42 - 18   
+7      7                      cabin.length inRange (3 to 4)      51 - 80   
+8      8                                 name contains miss    0.42 - 18   
+9      9                                         pclass &lt; 2      51 - 80   
+10    10      consecutiveCharactersText(ticket) contains 68      24 - 30   
+11    11                           parch inRange (0.0 to 2)    0.42 - 18   
+12    12         sentimentDistribution(name) for 0.0 &gt;= 5.5      37 - 51   
+13    13      consecutiveCharactersText(ticket) contains 59      37 - 51   
+14    14      consecutiveCharactersText(ticket) contains 75      37 - 51   
+15    15         FractionalPart(fare) inRange (0.9 to 0.91)    0.42 - 18   
+16    16                   punctuationRatio(name) == 0.0909      30 - 37   
+17    17                   textSentimentScore(name) &gt;= 0.17    0.42 - 18   
+18    18  numericPairsUSFormat(ticket) for (c.a.) &gt;= 31,...      30 - 37   
+19    19     consecutiveCharactersText(ticket) contains 135      51 - 80   
+20    20                              cabin.lastOption == 7      51 - 80   
+21    21                             cabin.toSeq contains 1      37 - 51   
+22    22      consecutiveCharactersText(ticket) contains 26    0.42 - 18   
+23    23                   Histogram(cabin) contains (0, 1)      51 - 80   
+24    24                                         sibsp == 1      37 - 51   
+25    25                                 ceil(fare) == 12.0    0.42 - 18   
+26    26      consecutiveCharactersText(ticket) contains A/      18 - 24   
+27    27                     upperCaseRatio(ticket) == 0.25      37 - 51   
+28    28                                         sibsp != 0    0.42 - 18   
+29    29                                  name contains mrs      37 - 51   
+..   ...                                                ...          ...   
+270  270      consecutiveCharactersText(ticket) contains 92      24 - 30   
+271  271                      numberIn(ticket) &gt;= 248,716.5    0.42 - 18   
+272  272      consecutiveCharactersText(ticket) contains 28      18 - 24   
+273  273                                  ticket contains 5      18 - 24   
+274  274      consecutiveCharactersText(ticket) contains 43      37 - 51   
+275  275     seperatorsRatio(ticket) inRange (0.13 to 0.15)    0.42 - 18   
+276  276                                name contains james      37 - 51   
+277  277                             roundToInt(fare) == 30      51 - 80   
+278  278            smallSubsets(cabin) contains List(3, 0)      51 - 80   
+279  279            smallSubsets(cabin) contains List(0, D)      51 - 80   
+280  280                                name contains jacob      37 - 51   
+281  281       wordFrequencies(name) contains (samuel, 0.5)      37 - 51   
+282  282    consecutiveCharactersText(ticket) contains 1350      51 - 80   
+283  283                                         sibsp == 2    0.42 - 18   
+284  284                         name contains mrs. william      24 - 30   
+285  285                             roundToInt(fare) == 23      51 - 80   
+286  286                        mostCommonValue(cabin) == D      30 - 37   
+287  287     consecutiveCharactersText(ticket) contains 920      24 - 30   
+288  288                 stemmedWords(name) contains andrew      51 - 80   
+289  289            smallSubsets(cabin) contains List(C, 9)      37 - 51   
+290  290                                 ceil(fare) == 32.0    0.42 - 18   
+291  291                               name contains thayer      37 - 51   
+292  292                               name contains louise      18 - 24   
+293  293    consecutiveCharactersText(ticket) contains 1135      51 - 80   
+294  294     consecutiveCharactersText(ticket) contains 207      30 - 37   
+295  295    consecutiveCharactersText(ticket) contains  310      18 - 24   
+296  296       normalizedNgrams(name) contains (mr, sidnei)      18 - 24   
+297  297      consecutiveCharactersText(ticket) contains 62      37 - 51   
+298  298         slidingSubsets(name) contains (mr, thomas)      51 - 80   
+299  299        wordFrequencies(name) contains (james, 0.5)      51 - 80   
+
+          RIG  fields  marginal gain  lin. score  Pearson corr.  0.42 - 18  \
+0    0.054238    name       0.053681   14.755060      -0.408156       30.0   
+1    0.034288  pclass       0.031959   14.614899      -0.320824       71.0   
+2    0.052789    name       0.026169   15.016222      -0.375538       73.0   
+3    0.029038    fare       0.026005   18.839177       0.030064       37.0   
+4    0.043914   parch       0.019527   14.894667      -0.261256       66.0   
+5    0.035211   sibsp       0.015884   14.771127      -0.289217       20.0   
+6    0.027200   parch       0.014737   14.794130      -0.284237       29.0   
+7    0.029725   cabin       0.014658   18.005041      -0.280125        8.0   
+8    0.023949    name       0.014265   15.636364      -0.253103       43.0   
+9    0.035653  pclass       0.012565   14.275134      -0.379675       12.0   
+10   0.011392  ticket       0.010579   16.273728      -0.030594        0.0   
+11   0.045789   parch       0.010231   17.340405       0.240077       65.0   
+12   0.013815    name       0.009711   18.616130       0.121882        6.0   
+13   0.010090  ticket       0.009618   16.234032       0.076184        2.0   
+14   0.010718  ticket       0.009250   16.142724       0.130216        4.0   
+15   0.015824    fare       0.009077   18.745727       0.033032       10.0   
+16   0.008882    name       0.008468   16.178745      -0.053681        3.0   
+17   0.040501    name       0.008431   15.566410      -0.277365       30.0   
+18   0.009751  ticket       0.008101   18.784405      -0.042974        5.0   
+19   0.009230  ticket       0.008059   16.008211       0.182403        0.0   
+20   0.011610   cabin       0.008048   15.978565       0.165540        0.0   
+21   0.014818   cabin       0.008013   15.967690       0.169491        2.0   
+22   0.010728  ticket       0.007966   16.100633      -0.148580       20.0   
+23   0.010579   cabin       0.007643   16.028290       0.146085        2.0   
+24   0.009742   sibsp       0.007582   15.423951       0.029303       31.0   
+25   0.008980    fare       0.007568   16.085834      -0.119587        6.0   
+26   0.009358  ticket       0.007394   16.264800      -0.045077        2.0   
+27   0.009654  ticket       0.007047   16.010768       0.153230        4.0   
+28   0.018405   sibsp       0.007043   15.285371      -0.136865       60.0   
+29   0.015613    name       0.007012   15.912635       0.188184        5.0   
+..        ...     ...            ...         ...            ...        ...   
+270  0.005736  ticket       0.002990   16.255051      -0.056814        7.0   
+271  0.014739  ticket       0.002986   17.730467      -0.121507       48.0   
+272  0.004437  ticket       0.002984   16.279381       0.015550        1.0   
+273  0.006664  ticket       0.002983   16.159656      -0.019179        1.0   
+274  0.003768  ticket       0.002981   16.248111       0.063866        0.0   
+275  0.006969  ticket       0.002980   18.752563      -0.019038        7.0   
+276  0.007009    name       0.002975   16.157177       0.074420        0.0   
+277  0.003850    fare       0.002962   16.156917       0.074635        0.0   
+278  0.006592   cabin       0.002956   16.106133       0.108682        0.0   
+279  0.006592   cabin       0.002956   16.131920       0.092979        0.0   
+280  0.003276    name       0.002950   16.155248       0.030218        1.0   
+281  0.003276    name       0.002950   16.273914       0.030218        1.0   
+282  0.005488  ticket       0.002947   16.167908       0.117841        0.0   
+283  0.003417   sibsp       0.002938   15.384630      -0.077113        6.0   
+284  0.004723    name       0.002923   16.223821       0.046882        0.0   
+285  0.003309    fare       0.002919   16.197406      -0.024084        2.0   
+286  0.005156   cabin       0.002910   16.131305       0.093384        0.0   
+287  0.005362  ticket       0.002902   16.240186      -0.071064        2.0   
+288  0.003367    name       0.002902   16.188090       0.041586        2.0   
+289  0.005459   cabin       0.002902   16.170742       0.062191        0.0   
+290  0.009750    fare       0.002900   16.098771      -0.112761        6.0   
+291  0.004694    name       0.002893   16.154561       0.031592        1.0   
+292  0.003106    name       0.002884   16.159652      -0.019192        0.0   
+293  0.005058  ticket       0.002881   16.197855       0.101144        0.0   
+294  0.003286  ticket       0.002875   16.265892      -0.043564        1.0   
+295  0.004634  ticket       0.002875   16.274979      -0.027970        1.0   
+296  0.003106    name       0.002867   16.249596      -0.001075        0.0   
+297  0.003095  ticket       0.002867   16.280470      -0.010390        2.0   
+298  0.003638    name       0.002865   16.203488       0.068537        0.0   
+299  0.003638    name       0.002865   16.257129       0.054525        0.0   
+
+     18 - 24     ...       % support  input cardinality  cost  \
+0        0.0     ...            5.24                572  1.95   
+1       71.0     ...           48.78                  3  1.00   
+2       31.0     ...           28.32                572  2.00   
+3       76.0     ...           44.06                203  2.10   
+4       17.0     ...           25.87                  7  1.00   
+5        0.0     ...            3.50                  6  1.00   
+6       10.0     ...            9.27                  7  1.00   
+7       12.0     ...           19.58                117  2.00   
+8       30.0     ...           20.45                572  1.95   
+9       20.0     ...           27.80                  3  1.00   
+10       2.0     ...            2.27                572  2.10   
+11      15.0     ...           23.78                  7  1.00   
+12       8.0     ...           13.81                572  2.00   
+13       1.0     ...            2.45                572  2.10   
+14      11.0     ...            8.57                572  2.10   
+15       0.0     ...            2.45                203  2.00   
+16       7.0     ...            4.20                572  2.00   
+17       4.0     ...            6.99                572  2.00   
+18       0.0     ...            2.10                572  2.05   
+19       3.0     ...            3.50                572  2.10   
+20       4.0     ...            2.97                117  2.00   
+21       0.0     ...            4.90                117  2.00   
+22       8.0     ...            8.92                572  2.10   
+23       3.0     ...            3.67                117  2.00   
+24      13.0     ...           26.40                  6  1.00   
+25       1.0     ...            1.22                203  2.00   
+26       9.0     ...            2.80                572  2.10   
+27       9.0     ...            9.27                572  2.00   
+28      22.0     ...           34.44                  6  1.00   
+29       8.0     ...           15.21                572  2.00   
+..       ...     ...             ...                ...   ...   
+270      9.0     ...            8.57                572  2.10   
+271     36.0     ...           31.47                572  2.00   
+272      9.0     ...            5.59                572  2.10   
+273      8.0     ...            2.62                572  1.95   
+274      3.0     ...            2.45                572  2.10   
+275      3.0     ...            2.27                572  2.00   
+276      0.0     ...            0.70                572  2.00   
+277      1.0     ...            1.22                203  2.00   
+278      1.0     ...            0.70                117  2.00   
+279      1.0     ...            0.70                117  2.00   
+280      0.0     ...            0.52                572  1.95   
+281      0.0     ...            0.52                572  2.10   
+282      2.0     ...            1.75                572  2.10   
+283      6.0     ...            3.15                  6  1.00   
+284      0.0     ...            1.57                572  2.05   
+285      0.0     ...            0.70                203  2.00   
+286      3.0     ...            2.97                117  2.00   
+287      4.0     ...            2.10                572  2.10   
+288      0.0     ...            0.70                572  2.00   
+289      1.0     ...            1.22                117  2.00   
+290      0.0     ...            1.57                203  2.00   
+291      0.0     ...            0.70                572  1.95   
+292      2.0     ...            0.52                572  1.95   
+293      1.0     ...            1.22                572  2.10   
+294      0.0     ...            0.87                572  2.10   
+295      7.0     ...            3.32                572  2.10   
+296      2.0     ...            0.52                572  2.06   
+297      1.0     ...            1.22                572  2.10   
+298      1.0     ...            1.05                572  2.05   
+299      1.0     ...            1.05                572  2.10   
+
+     invocation time Lift 0.42 - 18  Lift 18 - 24  Lift 24 - 30 Lift 30 - 37  \
+0                  4       5.447619  0.000000e+00  0.000000e+00     0.000000   
+1                  0       1.386312  1.311376e+00  1.132480e+00     0.738065   
+2                  2       2.454791  9.860972e-01  6.725456e-01     0.600247   
+3                  0       0.799849  1.554126e+00  1.275435e+00     0.930635   
+4                  0       2.429344  5.919162e-01  4.416988e-01     0.695676   
+5                  0       5.447619  0.000000e+00  0.000000e+00     0.000000   
+6                  0       2.980773  9.722930e-01  5.139263e-01     0.863396   
+7                  1       0.389116  5.521236e-01  4.377551e-01     1.276786   
+8                  4       2.002116  1.321321e+00  8.380952e-01     0.733333   
+9                  0       0.411141  6.481954e-01  6.167116e-01     1.115220   
+10                 3       0.000000  7.927928e-01  3.771429e+00     0.880000   
+11                 0       2.603641  5.683625e-01  4.806723e-01     0.757059   
+12                 5       0.413743  5.218383e-01  8.274864e-01     1.303291   
+13                 3       0.778231  3.680824e-01  0.000000e+00     0.817143   
+14                 3       0.444704  1.156830e+00  2.223518e-01     1.050612   
+15                 1       3.891156  0.000000e+00  0.000000e+00     0.000000   
+16                 3       0.680952  1.503003e+00  1.361905e+00     1.906667   
+17                 8       4.085714  5.153153e-01  2.723810e-01     0.000000   
+18                13       2.269841 -1.220512e-14 -6.451277e-15     2.860000   
+19                 3       0.000000  7.729730e-01  5.447619e-01     0.572000   
+20                 1       0.000000  1.212507e+00  3.204482e-01     0.672941   
+21                 0       0.389116  0.000000e+00  1.945578e-01     1.838571   
+22                 3       2.136321  8.083377e-01  9.613445e-01     0.897255   
+23                 1       0.518821  7.361647e-01  0.000000e+00     1.361905   
+24                 0       1.118385  4.436489e-01  1.010155e+00     1.212185   
+25                 1       4.669388  7.361647e-01  0.000000e+00     0.000000   
+26                 3       0.680952  2.898649e+00  3.404762e-01     0.000000   
+27                 1       0.411141  8.750637e-01  4.111411e-01     1.295094   
+28                 0       1.659173  5.754790e-01  8.295867e-01     1.016244   
+29                 3       0.313082  4.738532e-01  1.001861e+00     1.249195   
+..               ...            ...           ...           ...          ...   
+270                3       0.778231  9.464975e-01  1.667638e+00     1.400816   
+271                3       1.452698  1.030631e+00  1.271111e+00     0.826222   
+272                3       0.170238  1.449324e+00  1.021429e+00     1.430000   
+273                1       0.363175  2.748348e+00  7.263492e-01     0.000000   
+274                3       0.000000  1.104247e+00  1.167347e+00     0.817143   
+275                1       2.933333  1.189189e+00  8.380952e-01     0.000000   
+276                3       0.000000  0.000000e+00  0.000000e+00     0.000000   
+277                1       0.000000  7.361647e-01  1.556463e+00     1.634286   
+278               11       0.000000  1.288288e+00  0.000000e+00     0.000000   
+279               11       0.000000  1.288288e+00  0.000000e+00     0.000000   
+280                4       1.815873  0.000000e+00  0.000000e+00     0.000000   
+281                5       1.815873  0.000000e+00  0.000000e+00     0.000000   
+282                3       0.000000  1.030631e+00  1.089524e+00     0.000000   
+283                0       1.815873  1.717718e+00  3.026455e-01     0.635556   
+284                2       0.000000  0.000000e+00  2.421164e+00     1.271111   
+285                1       2.723810  0.000000e+00  1.361905e+00     0.000000   
+286                4       0.000000  9.093800e-01  6.408964e-01     2.018824   
+287                3       0.907937  1.717718e+00  2.269841e+00     0.476667   
+288                3       2.723810  0.000000e+00  0.000000e+00     0.000000   
+289               11       0.000000  7.361647e-01  0.000000e+00     1.634286   
+290                1       3.631746  0.000000e+00  0.000000e+00     0.000000   
+291                4       1.361905  0.000000e+00  0.000000e+00     0.000000   
+292                4       0.000000  3.435435e+00  0.000000e+00     0.000000   
+293                3       0.000000  7.361647e-01  1.556463e+00     0.000000   
+294                3       1.089524  0.000000e+00  2.179048e+00     2.288000   
+295                3       0.286717  1.898530e+00  8.601504e-01     1.505263   
+296                5       0.000000  3.435435e+00  0.000000e+00     0.000000   
+297                3       1.556463  7.361647e-01  0.000000e+00     0.817143   
+298               35       0.000000  8.588589e-01  9.079365e-01     1.906667   
+299                5       0.000000  8.588589e-01  9.079365e-01     1.906667   
+
+    Lift 37 - 51 Lift 51 - 80  
+0       0.000000     0.000000  
+1       0.745520     0.275986  
+2       0.427984     0.611111  
+3       0.619048     0.523810  
+4       0.975976     0.743243  
+5       0.000000     0.000000  
+6       0.109015     0.000000  
+7       1.753968     2.357143  
+8       0.345679     0.376068  
+9       1.635220     2.283019  
+10      0.000000     0.000000  
+11      0.764706     0.647059  
+12      2.047820     0.974684  
+13      3.714286     0.000000  
+14      2.122449     1.122449  
+15      1.650794     0.000000  
+16      0.000000     0.000000  
+17      0.000000     1.100000  
+18      0.481481     0.000000  
+19      2.022222     3.300000  
+20      0.679739     5.176471  
+21      2.269841     1.964286  
+22      0.679739     0.000000  
+23      0.825397     4.190476  
+24      1.300957     0.947020  
+25      0.000000     0.000000  
+26      1.444444     0.000000  
+27      2.071279     1.037736  
+28      1.055838     0.781726  
+29      1.859515     1.390805  
+..           ...          ...  
+270     0.589569     0.224490  
+271     0.706173     0.366667  
+272     1.083333     0.687500  
+273     1.155556     0.733333  
+274     2.063492     0.785714  
+275     0.444444     0.000000  
+276     5.777778     0.000000  
+277     0.000000     3.142857  
+278     0.000000     8.250000  
+279     0.000000     8.250000  
+280     3.851852     0.000000  
+281     3.851852     0.000000  
+282     1.733333     3.300000  
+283     0.641975     0.611111  
+284     1.283951     1.222222  
+285     0.000000     2.750000  
+286     1.019608     1.941176  
+287     0.000000     0.000000  
+288     1.444444     2.750000  
+289     3.301587     0.000000  
+290     1.925926     0.000000  
+291     4.333333     0.000000  
+292     1.925926     0.000000  
+293     0.825397     4.714286  
+294     0.000000     0.000000  
+295     0.912281     0.000000  
+296     1.925926     0.000000  
+297     2.476190     0.000000  
+298     0.000000     3.666667  
+299     0.000000     3.666667  
+
+[300 rows x 31 columns]
+14:23:58 - Building models...
+14:24:08 - Model building completed. Test-set RMSE score of best algorithm: 10.145
+                                                 
+Correlation coefficient             0.682017     
+R2                                  0.465148     
+Mean absolute error                 8.073963     
+Root mean squared error             10.145295    
+Relative absolute error             72.30510816 %
+Root relative squared error         73.41707644 %
+Root relative prior squared error   13.81871223  
+Actuals mean                        27.61091549  
+Estimations mean                    29.44047351  
+Actuals std                         13.57064603  
+Estimations std                     10.29465347  
+Total Number of Instances           142          
+                                                 
+Model evaluation summary:                                                  
+Correlation coefficient             0.682017     
+R2                                  0.465148     
+Mean absolute error                 8.073963     
+Root mean squared error             10.145295    
+Relative absolute error             72.30510816 %
+Root relative squared error         73.41707644 %
+Root relative prior squared error   13.81871223  
+Actuals mean                        27.61091549  
+Estimations mean                    29.44047351  
+Actuals std                         13.57064603  
+Estimations std                     10.29465347  
+Total Number of Instances           142          
+                                                 
+</system-out></testcase><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="116" name="test_tweets_sentiment" time="25.860674381256104"><system-out>Loading tweets sentiment
+Executing learning request
+Saving Train Data to /tmp/tmpf7fpd2au/Train-Data-de316219f5e6715b4573e4e3b8dd1be3.tsv.gz before upload
+File /tmp/tmpf7fpd2au/Train-Data-de316219f5e6715b4573e4e3b8dd1be3.tsv.gz size 9097 bytes. Executed in 0 seconds
+Uploading Train-Data-de316219f5e6715b4573e4e3b8dd1be3.tsv.gz
+  0%|          | 0.00/9.10k [00:00&lt;?, ?B/s]100%|██████████| 9.10k/9.10k [00:00&lt;00:00, 33.1MB/s]
+You are now running in a Blocking Mode
+LearningJob (f003fd9e-a16a-48fa-a24c-f10b3984aff0) position at the queue is 1.
+14:24:23 - Learning to classify sentiment (revision #1). Evaluating using AUC
+14:24:23 - Training set contains 2 columns
+14:24:23 - Best feature (RIG: 0.2802) of 313 from tweet is: average(extractKeys(sentimentDistribution(tweet))) &gt;= 0.2
+14:24:23 - Best feature (RIG: 0.2772) of 403 from tweet is: textSentimentScore(tweet) &gt;= 0.0607
+14:24:23 - Best feature (RIG: 0.2802) of 321 from tweet is: extractKeys(sentimentDistribution(tweet)).sum &gt;= 0.4
+14:24:23 - Best feature (RIG: 0.0664) of 1000 from tweet is: tweet contains great
+14:24:23 - stage end, feature generation took 0.4 seconds to this point
+Inputs schema:
+Train Data:
+ ------------------ 
+| column    | type |
+|------------------|
+| sentiment | Int  |
+| tweet     | Text |
+ ------------------ 
+
+14:24:28 - feature generation on 1 column subsets took 0.4 seconds
+14:24:28 - Enriching training set with discovered features...
+14:24:29 - Enriched training set contains 100 features
+14:24:31 - Building models...
+    idx                                            feature  \
+0     0  average(extractKeys(sentimentDistribution(twee...   
+1     1  extractKeys(sentimentDistribution(tweet)).sum ...   
+2     2      consecutiveCharactersText(tweet) contains ant   
+3     3         slidingSubsets(tweet) contains (best, the)   
+4     4      consecutiveCharactersText(tweet) contains hit   
+5     5          wordFrequencies(tweet) for player &gt;= 0.34   
+6     6                  stemmedWords(tweet) contains fuck   
+7     7       consecutiveCharactersText(tweet) contains go   
+8     8      consecutiveCharactersText(tweet) contains tic   
+9     9      consecutiveCharactersText(tweet) contains sti   
+10   10            wordFrequencies(tweet) for them &gt;= 0.29   
+11   11             slidingSubsets(tweet) contains (a, of)   
+12   12                           tweet contains fantastic   
+13   13                               tweet contains great   
+14   14      consecutiveCharactersText(tweet) contains a g   
+15   15     consecutiveCharactersText(tweet) contains stri   
+16   16       consecutiveCharactersText(tweet) contains us   
+17   17                                 tweet contains you   
+18   18       consecutiveCharactersText(tweet) contains ju   
+19   19               wordFrequencies(tweet) for t &gt;= 0.28   
+20   20                             tweet contains he is a   
+21   21        numberOfChars(tweet) notInRange (13 to 114)   
+22   22      sentimentDistribution(tweet) contains (-1, 1)   
+23   23      consecutiveCharactersText(tweet) contains  hi   
+24   24      consecutiveCharactersText(tweet) contains  th   
+25   25                                tweet contains back   
+26   26      consecutiveCharactersText(tweet) contains poo   
+27   27             wordFrequencies(tweet) for the &gt;= 0.47   
+28   28       consecutiveCharactersText(tweet) contains ff   
+29   29                                 tweet contains bad   
+..  ...                                                ...   
+70   70      consecutiveCharactersText(tweet) contains  ag   
+71   71  wordFrequencies(tweet) for in inRange (0.24 to...   
+72   72      sentimentDistribution(tweet) contains (-1, 2)   
+73   73     consecutiveCharactersText(tweet) contains efen   
+74   74                  stemmedWords(tweet) contains love   
+75   75     consecutiveCharactersText(tweet) contains  stu   
+76   76       consecutiveCharactersText(tweet) contains  F   
+77   77             wordFrequencies(tweet) for our &gt;= 0.47   
+78   78           wordFrequencies(tweet) for class &gt;= 0.41   
+79   79                          tweet contains negativity   
+80   80     consecutiveCharactersText(tweet) contains m hi   
+81   81     consecutiveCharactersText(tweet) contains y go   
+82   82       consecutiveCharactersText(tweet) contains rr   
+83   83                textSentimentScore(tweet) &gt;= 0.0607   
+84   84          numberOfWords(tweet) notInRange (3 to 15)   
+85   85     consecutiveCharactersText(tweet) contains d li   
+86   86       consecutiveCharactersText(tweet) contains he   
+87   87                            tweet contains absolute   
+88   88                                 tweet contains ref   
+89   89                                 tweet contains why   
+90   90     consecutiveCharactersText(tweet) contains cked   
+91   91       consecutiveCharactersText(tweet) contains gg   
+92   92     consecutiveCharactersText(tweet) contains fere   
+93   93     consecutiveCharactersText(tweet) contains d it   
+94   94         wordFrequencies(tweet) contains (of, 0.45)   
+95   95      consecutiveCharactersText(tweet) contains y d   
+96   96      consecutiveCharactersText(tweet) contains low   
+97   97                  stemmedWords(tweet) contains lack   
+98   98     consecutiveCharactersText(tweet) contains e in   
+99   99      consecutiveCharactersText(tweet) contains  vi   
+
+    Dominant sentiment       RIG fields  marginal gain  lin. score     -1  \
+0                    1  0.280188  tweet       0.278418    0.422955   12.0   
+1                   -1  0.222837  tweet       0.098733    0.475774  121.0   
+2                    1  0.031942  tweet       0.031702    0.542448    7.0   
+3                    1  0.032398  tweet       0.027825    0.543397    0.0   
+4                   -1  0.037350  tweet       0.025515    0.543424   19.0   
+5                    1  0.022866  tweet       0.020690    0.632618    3.0   
+6                   -1  0.022532  tweet       0.020220    0.544018   16.0   
+7                    1  0.037226  tweet       0.018643    0.540370   10.0   
+8                    1  0.021166  tweet       0.017434    0.546545    3.0   
+9                    1  0.021166  tweet       0.017228    0.546545    3.0   
+10                   1  0.018039  tweet       0.016587    0.637860    0.0   
+11                  -1  0.017480  tweet       0.015081    0.546642   16.0   
+12                   1  0.040738  tweet       0.014386    0.538355    0.0   
+13                   1  0.066374  tweet       0.013995    0.530857    0.0   
+14                   1  0.036555  tweet       0.013674    0.543523    0.0   
+15                   1  0.020072  tweet       0.012453    0.548255    0.0   
+16                  -1  0.017268  tweet       0.012394    0.547510   35.0   
+17                  -1  0.017438  tweet       0.012213    0.545062    9.0   
+18                  -1  0.015370  tweet       0.012183    0.548881   12.0   
+19                  -1  0.013633  tweet       0.011697    0.636602   11.0   
+20                   1  0.014304  tweet       0.011574    0.547822    1.0   
+21                  -1  0.019571  tweet       0.011235    0.633037   22.0   
+22                  -1  0.143303  tweet       0.010846    0.498903  112.0   
+23                   1  0.017550  tweet       0.010459    0.547339   14.0   
+24                   1  0.019791  tweet       0.010299    0.546312   58.0   
+25                   1  0.016011  tweet       0.010058    0.545402    0.0   
+26                  -1  0.025333  tweet       0.010029    0.546843   13.0   
+27                   1  0.020814  tweet       0.009786    0.634502    4.0   
+28                  -1  0.015266  tweet       0.009770    0.548569   17.0   
+29                  -1  0.027836  tweet       0.009616    0.540700   22.0   
+..                 ...       ...    ...            ...         ...    ...   
+70                   1  0.009070  tweet       0.006172    0.550823    1.0   
+71                   1  0.011974  tweet       0.006151    0.741224    0.0   
+72                  -1  0.045479  tweet       0.006129    0.538452   23.0   
+73                   1  0.026208  tweet       0.006091    0.546503    0.0   
+74                   1  0.007960  tweet       0.006055    0.548995    0.0   
+75                  -1  0.011576  tweet       0.005922    0.550703    6.0   
+76                  -1  0.011576  tweet       0.005922    0.550703    6.0   
+77                   1  0.009964  tweet       0.005917    0.639423    0.0   
+78                   1  0.009964  tweet       0.005917    0.639082    0.0   
+79                  -1  0.007696  tweet       0.005819    0.547759    4.0   
+80                   1  0.011974  tweet       0.005775    0.550550    0.0   
+81                   1  0.022111  tweet       0.005629    0.547674    0.0   
+82                  -1  0.022567  tweet       0.005464    0.546346   19.0   
+83                   1  0.277164  tweet       0.005257    0.438547   13.0   
+84                  -1  0.015340  tweet       0.005203    0.632593   44.0   
+85                   1  0.007960  tweet       0.004995    0.551680    0.0   
+86                   1  0.012991  tweet       0.004958    0.548919   65.0   
+87                  -1  0.009633  tweet       0.004903    0.547225    5.0   
+88                  -1  0.009633  tweet       0.004903    0.547225    5.0   
+89                  -1  0.009633  tweet       0.004903    0.547225    5.0   
+90                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+91                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+92                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+93                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+94                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+95                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+96                  -1  0.009633  tweet       0.004902    0.551244    5.0   
+97                  -1  0.013524  tweet       0.004894    0.547482    7.0   
+98                  -1  0.013524  tweet       0.004893    0.550160    7.0   
+99                   1  0.018039  tweet       0.004887    0.548833    0.0   
+
+        1                     -1.1     1.1  support  % support  \
+0   150.0                    4.62%  59.06%      162      31.52   
+1     6.0                   46.54%   2.36%      127      24.71   
+2    35.0                    2.69%  13.78%       42       8.17   
+3    16.0                     0.0%    6.3%       16       3.11   
+4     0.0                    7.31%    0.0%       19       3.70   
+5    20.0                    1.15%   8.27%       24       4.67   
+6     1.0                    6.15%   0.39%       17       3.31   
+7    44.0                    3.85%  17.32%       54      10.51   
+8    20.0                    1.15%   7.87%       23       4.47   
+9    20.0                    1.15%   7.87%       23       4.47   
+10    9.0  2.1862853408003084E-14%   3.54%        9       1.75   
+11    2.0                    6.15%   0.79%       18       3.50   
+12   20.0                     0.0%   7.87%       20       3.89   
+13   32.0                     0.0%   12.6%       32       6.23   
+14   18.0                     0.0%   7.09%       18       3.50   
+15   10.0                     0.0%   3.94%       10       1.95   
+16   12.0                   13.46%   4.72%       47       9.14   
+17    0.0                    3.46%    0.0%        9       1.75   
+18    1.0                    4.62%   0.39%       13       2.53   
+19    0.0                    4.23%   0.39%       11       2.33   
+20   11.0                    0.38%   4.33%       12       2.33   
+21    4.0                    8.46%   1.57%       26       5.06   
+22   16.0                   43.08%    6.3%      128      24.90   
+23   37.0                    5.38%  14.57%       51       9.92   
+24   95.0                   22.31%   37.4%      153      29.77   
+25    8.0                     0.0%   3.15%        8       1.56   
+26    0.0                       5%    0.0%       13       2.53   
+27   22.0                    1.54%   8.66%       26       5.06   
+28    3.0                    6.54%   1.18%       20       3.89   
+29    2.0                    8.46%   0.79%       24       4.67   
+..    ...                      ...     ...      ...        ...   
+70    8.0                    0.38%   3.15%        9       1.75   
+71    6.0                     0.0%   2.36%        6       1.17   
+72    0.0                    8.85%    0.0%       23       4.47   
+73   13.0                     0.0%   5.12%       13       2.53   
+74    4.0                     0.0%   1.57%        4       0.78   
+75    0.0                    2.31%    0.0%        6       1.17   
+76    0.0                    2.31%    0.0%        6       1.17   
+77    5.0                     0.0%   1.97%        5       0.97   
+78    4.0                     0.0%   1.97%        5       0.97   
+79    0.0                    1.54%    0.0%        4       0.78   
+80    6.0                     0.0%   2.36%        6       1.17   
+81   11.0                     0.0%   4.33%       11       2.14   
+82    2.0                    7.31%   0.79%       21       4.09   
+83  151.0                       5%  59.45%      164      31.91   
+84   19.0                   16.92%   7.48%       63      12.26   
+85    4.0                     0.0%   1.57%        4       0.78   
+86   95.0                      25%   37.4%      160      31.13   
+87    0.0                    1.92%    0.0%        5       0.97   
+88    0.0                    1.92%    0.0%        5       0.97   
+89    0.0                    1.92%    0.0%        5       0.97   
+90    0.0                    1.92%    0.0%        5       0.97   
+91    0.0                    1.92%    0.0%        5       0.97   
+92    0.0                    1.92%    0.0%        5       0.97   
+93    0.0                    1.92%    0.0%        5       0.97   
+94    0.0                    1.92%    0.0%        5       0.97   
+95    0.0                    1.92%    0.0%        5       0.97   
+96    0.0                    1.92%    0.0%        5       0.97   
+97    0.0                    2.69%    0.0%        7       1.36   
+98    0.0                    2.69%    0.0%        7       1.36   
+99    9.0                     0.0%   3.54%        9       1.75   
+
+    input cardinality  cost  invocation time       Lift -1    Lift 1  
+0                 514  2.10               12  1.464387e-01  1.873724  
+1                 514  2.10                9  1.883525e+00  0.095604  
+2                 514  2.10                3  3.294872e-01  1.686352  
+3                 514  2.05               65  0.000000e+00  2.023622  
+4                 514  2.10                3  1.976923e+00  0.000000  
+5                 514  2.10                7  2.471154e-01  1.770669  
+6                 514  2.00                5  1.860633e+00  0.119037  
+7                 514  2.10                3  3.660969e-01  1.648877  
+8                 514  2.10                3  2.578595e-01  1.759671  
+9                 514  2.10                3  2.578595e-01  1.759671  
+10                514  2.10                7  1.248612e-14  2.023622  
+11                514  2.05               65  1.757265e+00  0.224847  
+12                514  1.95                2  0.000000e+00  2.023622  
+13                514  1.95                2  0.000000e+00  2.023622  
+14                514  2.10                3  0.000000e+00  2.023622  
+15                514  2.10                3  0.000000e+00  2.023622  
+16                514  2.10                3  1.472177e+00  0.516669  
+17                514  1.95                2  1.976923e+00  0.000000  
+18                514  2.10                3  1.824852e+00  0.155663  
+19                514  2.10                7  1.812179e+00  0.168635  
+20                514  2.05                2  1.647436e-01  1.854987  
+21                514  2.00                1  1.672781e+00  0.311326  
+22                514  2.00                9  1.729808e+00  0.252953  
+23                514  2.10                3  5.426848e-01  1.468118  
+24                514  2.10                3  7.494218e-01  1.256497  
+25                514  1.95                2  0.000000e+00  2.023622  
+26                514  2.10                3  1.976923e+00  0.000000  
+27                514  2.10                7  3.041420e-01  1.712296  
+28                514  2.10                3  1.680385e+00  0.303543  
+29                514  1.95                2  1.812179e+00  0.168635  
+..                ...   ...              ...           ...       ...  
+70                514  2.10                3  2.196581e-01  1.798775  
+71                514  2.10                7  0.000000e+00  2.023622  
+72                514  2.00                9  1.976923e+00  0.000000  
+73                514  2.10                3  0.000000e+00  2.023622  
+74                514  2.00                5  0.000000e+00  2.023622  
+75                514  2.10                3  1.976923e+00  0.000000  
+76                514  2.10                3  1.976923e+00  0.000000  
+77                514  2.10                7  0.000000e+00  2.023622  
+78                514  2.10                7  0.000000e+00  2.023622  
+79                514  1.95                2  1.976923e+00  0.000000  
+80                514  2.10                3  0.000000e+00  2.023622  
+81                514  2.10                3  0.000000e+00  2.023622  
+82                514  2.10                3  1.788645e+00  0.192726  
+83                514  2.00                8  1.567073e-01  1.863213  
+84                514  2.00                1  1.380708e+00  0.610299  
+85                514  2.10                3  0.000000e+00  2.023622  
+86                514  2.10                3  8.031250e-01  1.201526  
+87                514  1.95                2  1.976923e+00  0.000000  
+88                514  1.95                2  1.976923e+00  0.000000  
+89                514  1.95                2  1.976923e+00  0.000000  
+90                514  2.10                3  1.976923e+00  0.000000  
+91                514  2.10                3  1.976923e+00  0.000000  
+92                514  2.10                3  1.976923e+00  0.000000  
+93                514  2.10                3  1.976923e+00  0.000000  
+94                514  2.10                7  1.976923e+00  0.000000  
+95                514  2.10                3  1.976923e+00  0.000000  
+96                514  2.10                3  1.976923e+00  0.000000  
+97                514  2.00                5  1.976923e+00  0.000000  
+98                514  2.10                3  1.976923e+00  0.000000  
+99                514  2.10                3  0.000000e+00  2.023622  
+
+[100 rows x 18 columns]
+14:24:37 - Model building completed. Test-set AUC score of best algorithm: 0.889
+                                               
+Correctly Classified Instances     95    80.51%
+Incorrectly Classified Instances   23    19.49%
+Total Number of Instances          118         
+                                               
+Model evaluation summary:                                                
+Correctly Classified Instances     95    80.51%
+Incorrectly Classified Instances   23    19.49%
+Total Number of Instances          118         
+                                               
+</system-out></testcase><testcase classname="tests.test_learning_basic.TestLearningBasic" file="tests/test_learning_basic.py" line="131" name="test_titanic_age_regression_number_of_bins" time="75.74404573440552"><system-out>Loading titanic
+Executing learning request
+Saving Train to /tmp/tmppj_xwk7g/Train-ebf6221d009e51079c3c800fa438e959.tsv.gz before upload
+File /tmp/tmppj_xwk7g/Train-ebf6221d009e51079c3c800fa438e959.tsv.gz size 16671 bytes. Executed in 0 seconds
+Uploading Train-ebf6221d009e51079c3c800fa438e959.tsv.gz
+  0%|          | 0.00/16.7k [00:00&lt;?, ?B/s]100%|██████████| 16.7k/16.7k [00:00&lt;00:00, 55.9MB/s]
+You are now running in a Blocking Mode
+LearningJob (1108f6e9-f804-4a7e-b755-00832c0112f2) position at the queue is 1.
+14:25:16 - Learning to predict (regression) age (revision #1). Evaluating using RMSE
+14:25:16 - Training set contains 12 columns
+14:25:17 - Best feature (RIG: 0.0063) of 1 from survived is: survived == 1
+14:25:17 - Best feature (RIG: 0.0017) of 1 from gender is: gender != male
+14:25:17 - Best feature (RIG: 0.033) of 3 from pclass is: pclass &lt; 2
+14:25:17 - Best feature (RIG: 0.031) of 7 from sibsp is: sibsp &gt;= 4
+14:25:17 - Best feature (RIG: 0.0513) of 6 from parch is: parch inRange (0.0 to 2)
+14:25:17 - Best feature (RIG: 0.032) of 60 from fare is: approximatePercentile(log(fare)) &lt; 0.29
+14:25:17 - Best feature (RIG: 0.0042) of 3 from embarked is: embarked == Q
+14:25:17 - Best feature (RIG: 0.0343) of 98 from fare is: |fare| notInRange (13.21 to 254.95)
+14:25:17 - Best feature (RIG: 0.0343) of 63 from fare is: sqrt(fare) notInRange (3.63 to 15.97)
+14:25:17 - Best feature (RIG: 0.0284) of 21 from cabin is: cabin.indices.sum inRange (2 to 8)
+14:25:17 - Best feature (RIG: 0.0236) of 60 from cabin is: cabin.indices contains 2
+14:25:17 - Best feature (RIG: 0.0343) of 180 from fare is: fare notInRange (13.21 to 254.95)
+14:25:17 - Best feature (RIG: 0.0284) of 89 from cabin is: cabin.length inRange (3 to 4)
+14:25:17 - Best feature (RIG: 0.0612) of 215 from name is: name.salutation == master.
+14:25:17 - Best feature (RIG: 0.015) of 86 from ticket is: numberIn(ticket) &gt;= 248,716.5
+14:25:17 - Best feature (RIG: 0.015) of 104 from ticket is: numberInUSFormat(ticket) &gt;= 248,716.5
+14:25:17 - Best feature (RIG: 0.0143) of 59 from ticket is: numbersUSFormat(ticket).sum &gt;= 248,716.5
+14:25:17 - Best feature (RIG: 0.0241) of 179 from cabin is: numberIn(cabin) &gt;= 6.5
+14:25:17 - Best feature (RIG: 0.0612) of 227 from name is: wordFrequencies(name) contains master
+14:25:17 - Best feature (RIG: 0.0143) of 455 from ticket is: numbers(ticket).sum &gt;= 248,716.5
+14:25:17 - Best feature (RIG: 0.0612) of 400 from name is: name contains master
+14:25:17 - Best feature (RIG: 0.0612) of 293 from name is: name contains master
+14:25:17 - stage end, feature generation took 0.2 seconds to this point
+Inputs schema:
+Train:
+ ----------------------- 
+| column   | type       |
+|-----------------------|
+| name     | PersonName |
+| fare     | Double     |
+| parch    | Int        |
+| age      | Double     |
+| ticket   | Text       |
+| cabin    | String     |
+| pclass   | Int        |
+| sibsp    | Int        |
+| embarked | String     |
+| survived | Int        |
+| gender   | String     |
+ ----------------------- 
+
+14:25:31 - feature generation on 10 column subsets took 0.2 seconds
+14:25:32 - Enriching training set with discovered features...
+14:25:32 - Enriched training set contains 303 features
+     idx                                            feature Dominant age  \
+0      0                               name contains master    0.42 - 15   
+1      1                                        pclass == 3      19 - 23   
+2      2  stemmedWordsWithoutCommonTerms(name) does not ...    0.42 - 15   
+3      3                  fare notInRange (13.21 to 254.95)      19 - 23   
+4      4                                         parch != 0    0.42 - 15   
+5      5                                 name contains miss    0.42 - 15   
+6      6                      cabin.length inRange (3 to 4)      50 - 80   
+7      7                      numberIn(ticket) &gt;= 248,716.5    0.42 - 15   
+8      8                                         sibsp &gt;= 4    0.42 - 15   
+9      9                                         pclass &lt; 2      50 - 80   
+10    10                                         parch == 2    0.42 - 15   
+11    11                           numberOfWords(name) &gt;= 6      41 - 50   
+12    12          numberOfChars(name) notInRange (24 to 40)      30 - 35   
+13    13                   Histogram(cabin) contains (0, 1)      50 - 80   
+14    14      consecutiveCharactersText(ticket) contains 17      41 - 50   
+15    15  numericPairsUSFormat(ticket) for (c.a.) &gt;= 31,...    0.42 - 15   
+16    16               smallSubsets(cabin) contains List(7)      50 - 80   
+17    17                                         sibsp != 0    0.42 - 15   
+18    18      consecutiveCharactersText(ticket) contains 13      50 - 80   
+19    19                           parch inRange (0.0 to 2)    0.42 - 15   
+20    20  wordFrequencies(name) for miss inRange (0.14 t...    0.42 - 15   
+21    21                       FractionalPart(fare) == 0.55      50 - 80   
+22    22      consecutiveCharactersText(ticket) contains 75      41 - 50   
+23    23                                   fare.toInt == 31    0.42 - 15   
+24    24      consecutiveCharactersText(ticket) contains 16      26 - 30   
+25    25      consecutiveCharactersText(ticket) contains 68      23 - 26   
+26    26      consecutiveCharactersText(ticket) contains A/      19 - 23   
+27    27                                  name contains mrs      41 - 50   
+28    28                              cabin.lastOption == 7      50 - 80   
+29    29                     upperCaseRatio(ticket) == 0.25      41 - 50   
+..   ...                                                ...          ...   
+270  270                     upperCaseRatio(name) == 0.1364      23 - 26   
+271  271     consecutiveCharactersText(ticket) contains 488      23 - 26   
+272  272                                floor(fare) == 39.0    0.42 - 15   
+273  273            smallSubsets(cabin) contains List(B, 8)      35 - 41   
+274  274     consecutiveCharactersText(ticket) contains 826    0.42 - 15   
+275  275               smallSubsets(cabin) contains List(3)      41 - 50   
+276  276                   Histogram(cabin) contains (B, 1)      50 - 80   
+277  277            wordFrequencies(name) for peter &gt;= 0.43      50 - 80   
+278  278                                 name contains nils      19 - 23   
+279  279                          name contains miss. alice      23 - 26   
+280  280                       FractionalPart(fare) == 0.25      19 - 23   
+281  281                                floor(fare) == 18.0    0.42 - 15   
+282  282      consecutiveCharactersText(ticket) contains 55      35 - 41   
+283  283                               name contains sidney      23 - 26   
+284  284                        numberOfChars(ticket) == 11      50 - 80   
+285  285     consecutiveCharactersText(ticket) contains 291    0.42 - 15   
+286  286                              cabin.lastOption == 2      35 - 41   
+287  287                  seperatorsRatio(ticket) == 0.1429    0.42 - 15   
+288  288                             roundToInt(fare) == 26      41 - 50   
+289  289           sentimentDistribution(name) contains 1.0    0.42 - 15   
+290  290     consecutiveCharactersText(ticket) contains TON      30 - 35   
+291  291            smallSubsets(cabin) contains List(C, 5)      35 - 41   
+292  292                                   name contains de      15 - 19   
+293  293                                name contains edith      19 - 23   
+294  294      normalizedHistogram(cabin) contains (6, 0.14)    0.42 - 15   
+295  295                              name contains larsson      26 - 30   
+296  296            smallSubsets(cabin) contains List(C, 9)      35 - 41   
+297  297                                name contains jacob      41 - 50   
+298  298       wordFrequencies(name) contains (samuel, 0.5)      41 - 50   
+299  299     consecutiveCharactersText(ticket) contains 509      50 - 80   
+
+          RIG  fields  marginal gain  lin. score  Pearson corr.  0.42 - 15  \
+0    0.061164    name       0.060537   14.755060      -0.408156       30.0   
+1    0.031052  pclass       0.029227   14.614899      -0.320824       41.0   
+2    0.057075    name       0.027288   15.016222      -0.375538       55.0   
+3    0.034348    fare       0.027272   17.750755      -0.111840       12.0   
+4    0.049850   parch       0.022254   14.894667      -0.261256       51.0   
+5    0.018735    name       0.018523   15.636364      -0.253103       25.0   
+6    0.028428   cabin       0.017449   18.005041      -0.280125        1.0   
+7    0.014975  ticket       0.013596   17.730467      -0.121507       29.0   
+8    0.031002   sibsp       0.012594   14.771127      -0.289217       17.0   
+9    0.032960  pclass       0.012296   14.275134      -0.379675        3.0   
+10   0.027193   parch       0.011285   14.794130      -0.284237       23.0   
+11   0.013831    name       0.011106   16.170277       0.062650        2.0   
+12   0.014693    name       0.010153   18.613134       0.123175       11.0   
+13   0.012468   cabin       0.009524   16.028290       0.146085        0.0   
+14   0.012701  ticket       0.009341   16.073885       0.159130        0.0   
+15   0.011255  ticket       0.009067   18.784405      -0.042974        5.0   
+16   0.010327   cabin       0.008902   16.066102       0.129298        0.0   
+17   0.021504   sibsp       0.008014   15.285371      -0.136865       44.0   
+18   0.008883  ticket       0.008010   16.086044       0.154426        4.0   
+19   0.051267   parch       0.007997   17.340405       0.240077       51.0   
+20   0.022191    name       0.007903   20.965688       0.276859       21.0   
+21   0.010513    fare       0.007809   15.869192       0.201675        0.0   
+22   0.010051  ticket       0.007767   16.142724       0.130216        0.0   
+23   0.011994    fare       0.007699   16.130531      -0.093892        6.0   
+24   0.007986  ticket       0.007630   16.280689      -0.009002        1.0   
+25   0.008251  ticket       0.007606   16.273728      -0.030594        0.0   
+26   0.009682  ticket       0.007574   16.264800      -0.045077        0.0   
+27   0.015386    name       0.007384   15.912635       0.188184        1.0   
+28   0.010369   cabin       0.007322   15.978565       0.165540        0.0   
+29   0.010217  ticket       0.007322   16.010768       0.153230        0.0   
+..        ...     ...            ...         ...            ...        ...   
+270  0.004017    name       0.003541   16.200717      -0.013094        1.0   
+271  0.003779  ticket       0.003507   16.277170      -0.022656        0.0   
+272  0.006189    fare       0.003505   16.175445      -0.057344        4.0   
+273  0.005271   cabin       0.003501   16.163243       0.069221        1.0   
+274  0.007310  ticket       0.003488   16.163446      -0.120128        4.0   
+275  0.007525   cabin       0.003485   15.962936       0.171188        0.0   
+276  0.006348   cabin       0.003479   16.092239       0.116258        0.0   
+277  0.004159    name       0.003443   18.823140       0.051031        0.0   
+278  0.004713    name       0.003442   16.157368      -0.025511        0.0   
+279  0.003844    name       0.003432   16.232281      -0.034015        0.0   
+280  0.003879    fare       0.003428   16.201834       0.005786        1.0   
+281  0.004711    fare       0.003423   16.120411      -0.100295        2.0   
+282  0.004067  ticket       0.003418   16.262558       0.048031        0.0   
+283  0.003890    name       0.003415   16.147927      -0.042642        1.0   
+284  0.004883  ticket       0.003414   16.066802       0.128966        0.0   
+285  0.005865  ticket       0.003413   16.202038      -0.098584        4.0   
+286  0.003765   cabin       0.003412   16.192770       0.033942        1.0   
+287  0.006081  ticket       0.003407   16.103803      -0.109990        4.0   
+288  0.006257    fare       0.003403   16.167356       0.065459        3.0   
+289  0.043812    name       0.003403   15.577722      -0.282999       30.0   
+290  0.006534  ticket       0.003398   16.272961      -0.032096        0.0   
+291  0.004727   cabin       0.003397   16.186403       0.044016        0.0   
+292  0.003653    name       0.003397   16.149831      -0.039787        0.0   
+293  0.003729    name       0.003396   16.162628       0.000185        0.0   
+294  0.006045   cabin       0.003396   16.175243      -0.057561        3.0   
+295  0.003694    name       0.003394   16.161445       0.012101        0.0   
+296  0.004720   cabin       0.003393   16.170742       0.062191        0.0   
+297  0.003719    name       0.003382   16.155248       0.030218        0.0   
+298  0.003719    name       0.003382   16.273914       0.030218        0.0   
+299  0.004287  ticket       0.003382   16.278055       0.020115        0.0   
+
+     15 - 19      ...       invocation time  Lift 0.42 - 15  Lift 15 - 19  \
+0        0.0      ...                     3    9.694915e+00      0.000000   
+1       44.0      ...                     0    1.424701e+00      1.288684   
+2       22.0      ...                     4    3.291484e+00      1.109700   
+3       44.0      ...                     0    4.245948e-01      1.312200   
+4       17.0      ...                     0    3.340815e+00      0.938610   
+5       23.0      ...                     3    2.071563e+00      1.606349   
+6       11.0      ...                     0    8.656174e-02      0.802551   
+7       31.0      ...                     1    1.561959e+00      1.407302   
+8        3.0      ...                     0    8.240678e+00      1.225714   
+9       14.0      ...                     0    1.829229e-01      0.719497   
+10       8.0      ...                     0    4.207227e+00      1.233423   
+11       9.0      ...                     2    2.423729e-01      0.919286   
+12      29.0      ...                     0    3.836118e-01      0.852415   
+13       3.0      ...                     1    0.000000e+00      1.167347   
+14       9.0      ...                     4    0.000000e+00      1.035815   
+15       0.0      ...                    13    4.039548e+00      0.000000   
+16       4.0      ...                    11    0.000000e+00      1.634286   
+17      21.0      ...                     0    2.165362e+00      0.871066   
+18       4.0      ...                     4    5.702891e-01      0.480672   
+19      16.0      ...                     0    3.635593e+00      0.961345   
+20      16.0      ...                     5    2.827684e+00      1.815873   
+21       0.0      ...                     1    0.000000e+00      0.000000   
+22       6.0      ...                     4    0.000000e+00      1.000583   
+23       0.0      ...                     0    5.288136e+00      0.000000   
+24       0.0      ...                     4    8.813559e-01      0.000000   
+25       0.0      ...                     4    0.000000e+00      0.000000   
+26       3.0      ...                     4    0.000000e+00      1.532143   
+27       6.0      ...                     3    1.114358e-01      0.563547   
+28       2.0      ...                     1    0.000000e+00      0.961345   
+29       4.0      ...                     1    0.000000e+00      0.616712   
+..       ...      ...                   ...             ...           ...   
+270      0.0      ...                     1    9.694915e-01      0.000000   
+271      1.0      ...                     4    0.000000e+00      2.042857   
+272      2.0      ...                     0    3.877966e+00      1.634286   
+273      1.0      ...                    11    8.079096e-01      0.680952   
+274      0.0      ...                     4    5.539952e+00      0.000000   
+275      2.0      ...                    11    0.000000e+00      0.441699   
+276      5.0      ...                     1    0.000000e+00      1.317972   
+277      0.0      ...                     5    1.148109e-14      0.000000   
+278      0.0      ...                     3    0.000000e+00      0.000000   
+279      0.0      ...                     3    0.000000e+00      0.000000   
+280      1.0      ...                     1    6.059322e-01      0.510714   
+281      2.0      ...                     0    2.769976e+00      2.334694   
+282      1.0      ...                     4    0.000000e+00      0.628571   
+283      0.0      ...                     3    2.423729e+00      0.000000   
+284      0.0      ...                     1    0.000000e+00      0.000000   
+285      1.0      ...                     4    4.308851e+00      0.907937   
+286      1.0      ...                     1    8.079096e-01      0.680952   
+287      2.0      ...                     1    3.877966e+00      1.634286   
+288      3.0      ...                     0    8.554337e-01      0.721008   
+289      1.0      ...                    12    6.610169e+00      0.185714   
+290      2.0      ...                     4    0.000000e+00      0.710559   
+291      1.0      ...                    11    0.000000e+00      1.361905   
+292      2.0      ...                     3    0.000000e+00      4.085714   
+293      1.0      ...                     3    0.000000e+00      2.042857   
+294      0.0      ...                     1    3.635593e+00      0.000000   
+295      0.0      ...                     3    0.000000e+00      0.000000   
+296      0.0      ...                    11    0.000000e+00      0.000000   
+297      1.0      ...                     3    0.000000e+00      2.723810   
+298      1.0      ...                     5    0.000000e+00      2.723810   
+299      2.0      ...                     4    0.000000e+00      1.815873   
+
+     Lift 19 - 23  Lift 23 - 26  Lift 26 - 30  Lift 30 - 35 Lift 35 - 41  \
+0    0.000000e+00  0.000000e+00  0.000000e+00      0.000000     0.000000   
+1    1.505600e+00  1.230108e+00  9.647902e-01      0.814455     0.751732   
+2    1.158565e+00  6.473251e-01  7.788671e-01      0.628784     0.529630   
+3    1.728786e+00  1.252555e+00  1.105195e+00      1.086691     0.730657   
+4    4.831081e-01  7.729730e-01  3.978537e-01      0.476490     1.223874   
+5    1.527778e+00  8.148148e-01  9.346405e-01      0.736682     0.570370   
+6    2.393973e-01  5.107143e-01  6.008403e-01      1.189335     1.617262   
+7    8.440972e-01  1.271111e+00  1.168301e+00      0.914155     0.900370   
+8    0.000000e+00  0.000000e+00  0.000000e+00      0.000000     0.000000   
+9    5.058962e-01  5.396226e-01  7.935627e-01      0.985612     1.438994   
+10   8.431604e-01  1.079245e+00  3.174251e-01      0.443525     1.079245   
+11   1.117188e-01  5.958333e-01  1.051471e+00      1.371233     1.787500   
+12   9.001799e-01  1.131655e+00  1.149810e+00      1.296541     1.234532   
+13   0.000000e+00  9.079365e-01  0.000000e+00      1.865623     0.000000   
+14   7.552817e-01  9.399061e-01  4.739022e-01      0.772526     1.745540   
+15   0.000000e+00 -1.128973e-14 -9.961531e-15      3.264840     1.588889   
+16   0.000000e+00  4.766667e-01  8.411765e-01      1.175342     0.000000   
+17   5.444162e-01  8.710660e-01  7.258883e-01      0.914818     1.113029   
+18   1.182904e+00  4.205882e-01  8.659170e-01      1.037067     1.121569   
+19   5.257353e-01  7.009804e-01  4.329585e-01      0.518533     1.051471   
+20   1.613715e+00  9.268519e-01  4.673203e-01      0.326484     0.662037   
+21   0.000000e+00  0.000000e+00  6.008403e-01      1.119374     0.680952   
+22   1.094388e+00  5.836735e-01  3.433373e-01      0.799553     1.945578   
+23   0.000000e+00  0.000000e+00  7.647059e-01      0.000000     3.466667   
+24   0.000000e+00  8.666667e-01  4.588235e+00      0.000000     1.733333   
+25   1.375000e+00  3.666667e+00  2.588235e+00      0.602740     0.733333   
+26   3.910156e+00  1.191667e+00  0.000000e+00      0.000000     1.191667   
+27   2.054598e-01  7.670498e-01  1.256930e+00      1.350968     1.643678   
+28   5.257353e-01  5.607843e-01  4.948097e-01      0.921837     0.000000   
+29   6.745283e-01  8.993711e-01  6.348502e-01      1.034893     1.798742   
+..            ...           ...           ...           ...          ...   
+270  8.937500e-01  2.860000e+00  1.682353e+00      1.567123     0.000000   
+271  0.000000e+00  4.766667e+00  0.000000e+00      0.000000     2.383333   
+272  0.000000e+00  0.000000e+00  0.000000e+00      0.000000     1.906667   
+273  0.000000e+00  1.588889e+00  0.000000e+00      0.000000     2.383333   
+274  0.000000e+00  2.723810e+00  1.201681e+00      0.000000     0.000000   
+275  4.831081e-01  1.030631e+00  6.820350e-01      1.058867     1.545946   
+276  2.883065e-01  1.230108e+00  8.140417e-01      1.011047     0.922581   
+277  1.058413e-14  0.000000e+00  1.401961e+00      2.611872     1.588889   
+278  4.468750e+00  0.000000e+00  4.205882e+00      0.000000     0.000000   
+279  2.979167e+00  6.355556e+00  0.000000e+00      0.000000     0.000000   
+280  2.792969e+00  5.958333e-01  5.257353e-01      1.469178     0.000000   
+281  0.000000e+00  2.723810e+00  0.000000e+00      1.119374     0.000000   
+282  1.375000e+00  7.333333e-01  0.000000e+00      1.205479     2.933333   
+283  0.000000e+00  4.766667e+00  0.000000e+00      0.000000     0.000000   
+284  0.000000e+00  0.000000e+00  0.000000e+00      0.000000     1.906667   
+285  0.000000e+00  2.118519e+00  0.000000e+00      0.870624     0.000000   
+286  7.447917e-01  0.000000e+00  2.102941e+00      0.000000     2.383333   
+287  8.937500e-01  1.906667e+00  0.000000e+00      0.000000     0.000000   
+288  0.000000e+00  5.607843e-01  7.422145e-01      1.382756     1.682353   
+289  4.062500e-01  4.333333e-01  1.911765e-01      0.356164     0.000000   
+290  1.942935e+00  1.657971e+00  1.097187e+00      2.044074     0.828986   
+291  0.000000e+00  0.000000e+00  1.401961e+00      0.000000     4.766667   
+292  0.000000e+00  2.383333e+00  0.000000e+00      0.000000     2.383333   
+293  4.468750e+00  0.000000e+00  0.000000e+00      0.000000     0.000000   
+294  0.000000e+00  2.383333e+00  0.000000e+00      0.000000     2.383333   
+295  0.000000e+00  0.000000e+00  5.607843e+00      0.000000     3.177778   
+296  0.000000e+00  1.361905e+00  0.000000e+00      2.238748     2.723810   
+297  0.000000e+00  0.000000e+00  0.000000e+00      0.000000     0.000000   
+298  0.000000e+00  0.000000e+00  0.000000e+00      0.000000     0.000000   
+299  1.986111e+00  0.000000e+00  1.869281e+00      0.870624     0.000000   
+
+     Lift 41 - 50  Lift 50 - 80  
+0    0.000000e+00  0.000000e+00  
+1    6.613481e-01  2.928827e-01  
+2    3.986460e-01  5.674603e-01  
+3    6.397457e-01  5.591762e-01  
+4    8.727114e-01  7.591699e-01  
+5    3.154122e-01  3.492063e-01  
+6    1.729839e+00  2.371173e+00  
+7    4.612903e-01  3.972222e-01  
+8    0.000000e+00  0.000000e+00  
+9    1.682694e+00  2.312668e+00  
+10   0.000000e+00  0.000000e+00  
+11   1.845161e+00  1.021429e+00  
+12   9.624043e-01  1.028777e+00  
+13   1.317972e+00  3.891156e+00  
+14   1.949114e+00  1.438632e+00  
+15  -1.092555e-14  6.048072e-15  
+16   9.225806e-01  4.085714e+00  
+17   1.123956e+00  7.777375e-01  
+18   9.497154e-01  2.553571e+00  
+19   7.462049e-01  6.759454e-01  
+20   1.281362e-01  2.837302e-01  
+21   1.976959e+00  5.107143e+00  
+22   2.071099e+00  1.250729e+00  
+23   0.000000e+00  0.000000e+00  
+24   8.387097e-01  0.000000e+00  
+25   0.000000e+00  0.000000e+00  
+26   1.153226e+00  0.000000e+00  
+27   1.696700e+00  1.408867e+00  
+28   5.426945e-01  5.407563e+00  
+29   2.262934e+00  1.156334e+00  
+..            ...           ...  
+270  0.000000e+00  1.021429e+00  
+271  0.000000e+00  0.000000e+00  
+272  9.225806e-01  1.021429e+00  
+273  2.306452e+00  1.702381e+00  
+274  0.000000e+00  0.000000e+00  
+275  1.994769e+00  1.932432e+00  
+276  8.928200e-01  2.635945e+00  
+277 -2.185110e-14  3.404762e+00  
+278  0.000000e+00  0.000000e+00  
+279  0.000000e+00  0.000000e+00  
+280  1.153226e+00  1.276786e+00  
+281  0.000000e+00  0.000000e+00  
+282  1.419355e+00  7.857143e-01  
+283  2.306452e+00  0.000000e+00  
+284  3.690323e+00  4.085714e+00  
+285  0.000000e+00  1.134921e+00  
+286  1.537634e+00  8.511905e-01  
+287  9.225806e-01  0.000000e+00  
+288  2.170778e+00  9.012605e-01  
+289  2.096774e-01  1.160714e+00  
+290  4.011220e-01  0.000000e+00  
+291  0.000000e+00  1.702381e+00  
+292  0.000000e+00  0.000000e+00  
+293  0.000000e+00  2.553571e+00  
+294  1.153226e+00  0.000000e+00  
+295  0.000000e+00  0.000000e+00  
+296  2.635945e+00  0.000000e+00  
+297  6.150538e+00  0.000000e+00  
+298  6.150538e+00  0.000000e+00  
+299  0.000000e+00  2.269841e+00  
+
+[300 rows x 40 columns]
+14:25:42 - Building models...
+14:25:53 - Model building completed. Test-set RMSE score of best algorithm: 10.257
+                                                 
+Correlation coefficient             0.672725     
+R2                                  0.452559     
+Mean absolute error                 8.218655     
+Root mean squared error             10.256799    
+Relative absolute error             73.60087751 %
+Root relative squared error         74.22398667 %
+Root relative prior squared error   13.81871223  
+Actuals mean                        27.61091549  
+Estimations mean                    29.37712086  
+Actuals std                         13.57064603  
+Estimations std                     10.25373325  
+Total Number of Instances           142          
+                                                 
+Model evaluation summary:                                                  
+Correlation coefficient             0.672725     
+R2                                  0.452559     
+Mean absolute error                 8.218655     
+Root mean squared error             10.256799    
+Relative absolute error             73.60087751 %
+Root relative squared error         74.22398667 %
+Root relative prior squared error   13.81871223  
+Actuals mean                        27.61091549  
+Estimations mean                    29.37712086  
+Actuals std                         13.57064603  
+Estimations std                     10.25373325  
+Total Number of Instances           142          
+                                                 
+logout
+</system-out></testcase></testsuite>

@@ -1,0 +1,10 @@
+<testsuites errors="0" failures="0" tests="6">
+  <testsuite errors="0" failures="0" name="Smoke tests" tests="6">
+    <testcase name="smoke.test.titanic.uncompressed" time="43.75"/>
+    <testcase name="smoke.test.titanicAge" time="18.85"/>
+    <testcase name="smoke.test.titanicSurvived" time="18.82"/>
+    <testcase name="smoke.test.algorithmNames" time="0.06"/>
+    <testcase name="smoke.test.enrichWithContext" time="30.15"/>
+    <testcase name="smoke.test.predictWithContext" time="14.65"/>
+  </testsuite>
+</testsuites>

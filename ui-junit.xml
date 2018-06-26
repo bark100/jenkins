@@ -1,0 +1,862 @@
+<testsuites name="jest tests">
+  <testsuite name="Dataset Management" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="0.595" tests="8">
+    <testcase classname="Dataset Management Starts empty" name="Dataset Management Starts empty" time="0.005">
+    </testcase>
+    <testcase classname="Dataset Management Contains a single dataset one addition" name="Dataset Management Contains a single dataset one addition" time="0.002">
+    </testcase>
+    <testcase classname="Dataset Management Contains two datasets after two additions" name="Dataset Management Contains two datasets after two additions" time="0.001">
+    </testcase>
+    <testcase classname="Dataset Management Contains the same datasets that were set" name="Dataset Management Contains the same datasets that were set" time="0.001">
+    </testcase>
+    <testcase classname="Dataset Management Contains a single dataset after removing one" name="Dataset Management Contains a single dataset after removing one" time="0.001">
+    </testcase>
+    <testcase classname="Dataset Management Contains the correct element after replacing" name="Dataset Management Contains the correct element after replacing" time="0">
+    </testcase>
+    <testcase classname="Dataset Management Datasets cannot be changed from outside of the manager" name="Dataset Management Datasets cannot be changed from outside of the manager" time="0.001">
+    </testcase>
+    <testcase classname="Dataset Management Dataset collection assigned to the manager cannot change the manager&apos;s datasets" name="Dataset Management Dataset collection assigned to the manager cannot change the manager&apos;s datasets" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select List String Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="1.901" tests="2">
+    <testcase classname="Select List String Component Form Field it should exist" name="Select List String Component Form Field it should exist" time="0.045">
+    </testcase>
+    <testcase classname="Select List String Component Form Field should set the view from model" name="Select List String Component Form Field should set the view from model" time="0.236">
+    </testcase>
+  </testsuite>
+  <testsuite name="Boolean Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.004" tests="4">
+    <testcase classname="Boolean Form Field it should exist" name="Boolean Form Field it should exist" time="0.118">
+    </testcase>
+    <testcase classname="Boolean Form Field should set the passed default" name="Boolean Form Field should set the passed default" time="0.099">
+    </testcase>
+    <testcase classname="Boolean Form Field it should update the model from view" name="Boolean Form Field it should update the model from view" time="0.032">
+    </testcase>
+    <testcase classname="Boolean Form Field it should update the view from model" name="Boolean Form Field it should update the view from model" time="0.027">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Value List Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.342" tests="3">
+    <testcase classname="Select Value List Component Form Field it should exist" name="Select Value List Component Form Field it should exist" time="0.066">
+    </testcase>
+    <testcase classname="Select Value List Component Form Field should set the passed default" name="Select Value List Component Form Field should set the passed default" time="0.278">
+    </testcase>
+    <testcase classname="Select Value List Component Form Field should set the view from model" name="Select Value List Component Form Field should set the view from model" time="0.114">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Column Params Multiple Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.145" tests="3">
+    <testcase classname="Select Column Params Multiple Component Form Field it should exist" name="Select Column Params Multiple Component Form Field it should exist" time="0.046">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should reflect initial data" name="Select Column Params Multiple Component Form Field should reflect initial data" time="0.245">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should set the view from model" name="Select Column Params Multiple Component Form Field should set the view from model" time="0.127">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Context Indexing Modes Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.218" tests="2">
+    <testcase classname="Select Context Indexing Modes Component Form Field it should exist" name="Select Context Indexing Modes Component Form Field it should exist" time="0.084">
+    </testcase>
+    <testcase classname="Select Context Indexing Modes Component Form Field should set the view from model" name="Select Context Indexing Modes Component Form Field should set the view from model" time="0.242">
+    </testcase>
+  </testsuite>
+  <testsuite name="WS - Web Socket" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.231" tests="1">
+    <testcase classname="WS - Web Socket Should be defined" name="WS - Web Socket Should be defined" time="0.025">
+    </testcase>
+  </testsuite>
+  <testsuite name="StarredFilterComponent" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.708" tests="4">
+    <testcase classname="StarredFilterComponent StarredFilterComponent should be defined" name="StarredFilterComponent StarredFilterComponent should be defined" time="0.122">
+    </testcase>
+    <testcase classname="StarredFilterComponent it should start with &quot;empty star&quot; when there is no filter passed in" name="StarredFilterComponent it should start with &quot;empty star&quot; when there is no filter passed in" time="0.128">
+    </testcase>
+    <testcase classname="StarredFilterComponent it should start opened when there is a filter passed in" name="StarredFilterComponent it should start opened when there is a filter passed in" time="0.032">
+    </testcase>
+    <testcase classname="StarredFilterComponent it should call parent function when input changes" name="StarredFilterComponent it should call parent function when input changes" time="0.04">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:47" time="1.857" tests="5">
+    <testcase classname=" can set primitive value on global scope" name=" can set primitive value on global scope" time="0.083">
+    </testcase>
+    <testcase classname=" can set object value on global scope" name=" can set object value on global scope" time="0.007">
+    </testcase>
+    <testcase classname=" can get primitive value on global scope" name=" can get primitive value on global scope" time="0.015">
+    </testcase>
+    <testcase classname=" can get object value on global scope" name=" can get object value on global scope" time="0.004">
+    </testcase>
+    <testcase classname=" getting object value is immutable" name=" getting object value is immutable" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Boolean Optional Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.901" tests="3">
+    <testcase classname="Boolean Optional Form Field it should exist" name="Boolean Optional Form Field it should exist" time="0.042">
+    </testcase>
+    <testcase classname="Boolean Optional Form Field should choose 1st option when new" name="Boolean Optional Form Field should choose 1st option when new" time="0.059">
+    </testcase>
+    <testcase classname="Boolean Optional Form Field it should update the view from model" name="Boolean Optional Form Field it should update the view from model" time="0.055">
+    </testcase>
+  </testsuite>
+  <testsuite name="QuickSearchFilterComponent" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.417" tests="4">
+    <testcase classname="QuickSearchFilterComponent QuickSearchFilterComponent should be defined" name="QuickSearchFilterComponent QuickSearchFilterComponent should be defined" time="0.067">
+    </testcase>
+    <testcase classname="QuickSearchFilterComponent it should start collapsed when there is no filter passed in" name="QuickSearchFilterComponent it should start collapsed when there is no filter passed in" time="0.065">
+    </testcase>
+    <testcase classname="QuickSearchFilterComponent it should start opened when there is a filter passed in" name="QuickSearchFilterComponent it should start opened when there is a filter passed in" time="0.031">
+    </testcase>
+    <testcase classname="QuickSearchFilterComponent it should call parent function when input changes" name="QuickSearchFilterComponent it should call parent function when input changes" time="0.03">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Column Params Multiple Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.339" tests="3">
+    <testcase classname="Select Column Params Multiple Component Form Field it should exist" name="Select Column Params Multiple Component Form Field it should exist" time="0.268">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should reflect initial data" name="Select Column Params Multiple Component Form Field should reflect initial data" time="0.493">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should set the view from model" name="Select Column Params Multiple Component Form Field should set the view from model" time="0.138">
+    </testcase>
+  </testsuite>
+  <testsuite name="SeqColumnSet Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.468" tests="5">
+    <testcase classname="SeqColumnSet Component Form Field it should exist" name="SeqColumnSet Component Form Field it should exist" time="0.042">
+    </testcase>
+    <testcase classname="SeqColumnSet Component Form Field should render empty list when nothing selected" name="SeqColumnSet Component Form Field should render empty list when nothing selected" time="0.195">
+    </testcase>
+    <testcase classname="SeqColumnSet Component Form Field should render selected from model" name="SeqColumnSet Component Form Field should render selected from model" time="0.144">
+    </testcase>
+    <testcase classname="SeqColumnSet Component Form Field should render 2 selected from model" name="SeqColumnSet Component Form Field should render 2 selected from model" time="0.099">
+    </testcase>
+    <testcase classname="SeqColumnSet Component Form Field should remove columns when target columns changes" name="SeqColumnSet Component Form Field should remove columns when target columns changes" time="0.118">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Column Params Single Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="2.757" tests="3">
+    <testcase classname="Select Column Params Single Component Form Field it should exist" name="Select Column Params Single Component Form Field it should exist" time="0.048">
+    </testcase>
+    <testcase classname="Select Column Params Single Component Form Field should reflect initial data" name="Select Column Params Single Component Form Field should reflect initial data" time="0.22">
+    </testcase>
+    <testcase classname="Select Column Params Single Component Form Field should set the view from model" name="Select Column Params Single Component Form Field should set the view from model" time="0.091">
+    </testcase>
+  </testsuite>
+  <testsuite name="Revision Tree Renderers" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:47" time="2.903" tests="22">
+    <testcase classname="Revision Tree Renderers textWithTooltipRenderer it should render an empty text if null is passed in" name="Revision Tree Renderers textWithTooltipRenderer it should render an empty text if null is passed in" time="0.006">
+    </testcase>
+    <testcase classname="Revision Tree Renderers textWithTooltipRenderer it should render the text passed in" name="Revision Tree Renderers textWithTooltipRenderer it should render the text passed in" time="0.006">
+    </testcase>
+    <testcase classname="Revision Tree Renderers textWithTooltipRenderer it should have a bs-tooltip" name="Revision Tree Renderers textWithTooltipRenderer it should have a bs-tooltip" time="0.005">
+    </testcase>
+    <testcase classname="Revision Tree Renderers dateTimeRenderer it should render an empty text if null is passed in" name="Revision Tree Renderers dateTimeRenderer it should render an empty text if null is passed in" time="0.001">
+    </testcase>
+    <testcase classname="Revision Tree Renderers dateTimeRenderer it should render same day" name="Revision Tree Renderers dateTimeRenderer it should render same day" time="0.005">
+    </testcase>
+    <testcase classname="Revision Tree Renderers dateTimeRenderer it should render rest" name="Revision Tree Renderers dateTimeRenderer it should render rest" time="0.002">
+    </testcase>
+    <testcase classname="Revision Tree Renderers revisionRenderer it should render the text passed in" name="Revision Tree Renderers revisionRenderer it should render the text passed in" time="0.003">
+    </testcase>
+    <testcase classname="Revision Tree Renderers revisionRenderer it should have a correct class name" name="Revision Tree Renderers revisionRenderer it should have a correct class name" time="0.002">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should render the score" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should render the score" time="0.007">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;higher&quot; class name when improvement is positive" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;higher&quot; class name when improvement is positive" time="0.011">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;lower&quot; class name when improvement is positive" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;lower&quot; class name when improvement is positive" time="0.002">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;&quot; class name when improvement is 0" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;&quot; class name when improvement is 0" time="0.004">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;up&quot; improvement sign when isChampion is false and improvement is &gt; 0" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;up&quot; improvement sign when isChampion is false and improvement is &gt; 0" time="0.006">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;down&quot; improvement sign when isChampion is false and improvement is &gt; 0" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have &quot;down&quot; improvement sign when isChampion is false and improvement is &gt; 0" time="0.009">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRendererSuccessfulLearning it should have icon when isChampion is true" name="Revision Tree Renderers summaryRendererSuccessfulLearning it should have icon when isChampion is true" time="0.003">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRenderer it should render the text passed in" name="Revision Tree Renderers summaryRenderer it should render the text passed in" time="0.002">
+    </testcase>
+    <testcase classname="Revision Tree Renderers summaryRenderer it should have a correct class name" name="Revision Tree Renderers summaryRenderer it should have a correct class name" time="0.002">
+    </testcase>
+    <testcase classname="Revision Tree Renderers scoreWrapperRenderer it should return an empty string when there is no value" name="Revision Tree Renderers scoreWrapperRenderer it should return an empty string when there is no value" time="0.001">
+    </testcase>
+    <testcase classname="Revision Tree Renderers scoreWrapperRenderer it should render the score" name="Revision Tree Renderers scoreWrapperRenderer it should render the score" time="0.003">
+    </testcase>
+    <testcase classname="Revision Tree Renderers scoreWrapperRenderer it should render the empty string when score is not a number" name="Revision Tree Renderers scoreWrapperRenderer it should render the empty string when score is not a number" time="0.013">
+    </testcase>
+    <testcase classname="Revision Tree Renderers scoreWrapperRenderer it should render the score in lawngreen color" name="Revision Tree Renderers scoreWrapperRenderer it should render the score in lawngreen color" time="0.004">
+    </testcase>
+    <testcase classname="Revision Tree Renderers scoreWrapperRenderer it should render the metric in #00B0E8 color" name="Revision Tree Renderers scoreWrapperRenderer it should render the metric in #00B0E8 color" time="0.064">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select List Numeric Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.491" tests="2">
+    <testcase classname="Select List Numeric Component Form Field it should exist" name="Select List Numeric Component Form Field it should exist" time="0.098">
+    </testcase>
+    <testcase classname="Select List Numeric Component Form Field should set the view from model" name="Select List Numeric Component Form Field should set the view from model" time="0.2">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Algorithms Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.729" tests="3">
+    <testcase classname="Select Algorithms Component Form Field it should exist" name="Select Algorithms Component Form Field it should exist" time="0.05">
+    </testcase>
+    <testcase classname="Select Algorithms Component Form Field should set the passed default" name="Select Algorithms Component Form Field should set the passed default" time="0.339">
+    </testcase>
+    <testcase classname="Select Algorithms Component Form Field should set the view from model" name="Select Algorithms Component Form Field should set the view from model" time="0.156">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Evaluator Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:48" time="2.179" tests="2">
+    <testcase classname="Select Evaluator Component Form Field it should exist" name="Select Evaluator Component Form Field it should exist" time="0.045">
+    </testcase>
+    <testcase classname="Select Evaluator Component Form Field should set the view from model" name="Select Evaluator Component Form Field should set the view from model" time="0.228">
+    </testcase>
+  </testsuite>
+  <testsuite name="Util" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.938" tests="7">
+    <testcase classname="Util should be defined" name="Util should be defined" time="0.004">
+    </testcase>
+    <testcase classname="Util normalizePosition no change" name="Util normalizePosition no change" time="0.002">
+    </testcase>
+    <testcase classname="Util normalizePosition only x" name="Util normalizePosition only x" time="0.001">
+    </testcase>
+    <testcase classname="Util normalizePosition only y" name="Util normalizePosition only y" time="0.001">
+    </testcase>
+    <testcase classname="Util normalizePosition both x and y" name="Util normalizePosition both x and y" time="0">
+    </testcase>
+    <testcase classname="Util nodeDefinitionsToJson should return JSON with &quot;jsonClass&quot; and &quot;default&quot;" name="Util nodeDefinitionsToJson should return JSON with &quot;jsonClass&quot; and &quot;default&quot;" time="0.003">
+    </testcase>
+    <testcase classname="Util nodeDefinitionsToJson should return JSON with &quot;jsonClass&quot; and &quot;default&quot; also for nested &quot;internal&quot;" name="Util nodeDefinitionsToJson should return JSON with &quot;jsonClass&quot; and &quot;default&quot; also for nested &quot;internal&quot;" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Values Map Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.736" tests="3">
+    <testcase classname="Select Values Map Component Form Field it should exist" name="Select Values Map Component Form Field it should exist" time="0.052">
+    </testcase>
+    <testcase classname="Select Values Map Component Form Field should set the passed default" name="Select Values Map Component Form Field should set the passed default" time="0.245">
+    </testcase>
+    <testcase classname="Select Values Map Component Form Field should set the view from model" name="Select Values Map Component Form Field should set the view from model" time="0.074">
+    </testcase>
+  </testsuite>
+  <testsuite name="LearnMode Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:47" time="3.285" tests="4">
+    <testcase classname="LearnMode Form Field it should exist" name="LearnMode Form Field it should exist" time="0.047">
+    </testcase>
+    <testcase classname="LearnMode Form Field it should update the view from model Model" name="LearnMode Form Field it should update the view from model Model" time="0.1">
+    </testcase>
+    <testcase classname="LearnMode Form Field it should update the view from model OptimizeModel" name="LearnMode Form Field it should update the view from model OptimizeModel" time="0.055">
+    </testcase>
+    <testcase classname="LearnMode Form Field it should update the view from model Insight" name="LearnMode Form Field it should update the view from model Insight" time="0.047">
+    </testcase>
+  </testsuite>
+  <testsuite name="Type Util" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:45" time="4.615" tests="80">
+    <testcase classname="Type Util should be defined" name="Type Util should be defined" time="0.005">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should return int as is" name="Type Util unwrapValue should return int as is" time="0.002">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should return string as is" name="Type Util unwrapValue should return string as is" time="0.001">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should return float up to 5 digits as is" name="Type Util unwrapValue should return float up to 5 digits as is" time="0.001">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should return array of primitives as is" name="Type Util unwrapValue should return array of primitives as is" time="0.002">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle objects with 1 key" name="Type Util unwrapValue should handle objects with 1 key" time="0.001">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle objects with more than 1 key" name="Type Util unwrapValue should handle objects with more than 1 key" time="0.002">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle objects with special key &quot;text&quot;" name="Type Util unwrapValue should handle objects with special key &quot;text&quot;" time="0.001">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle objects with special key &quot;raw&quot;" name="Type Util unwrapValue should handle objects with special key &quot;raw&quot;" time="0.001">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle objects with latitude and longitude" name="Type Util unwrapValue should handle objects with latitude and longitude" time="0">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle null" name="Type Util unwrapValue should handle null" time="0.002">
+    </testcase>
+    <testcase classname="Type Util unwrapValue should handle nested objects" name="Type Util unwrapValue should handle nested objects" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getNodeDefinitionProp gets the prop for an array of props" name="Type Util getNodeDefinitionProp gets the prop for an array of props" time="0">
+    </testcase>
+    <testcase classname="Type Util getNodeDefinitionProp gets the prop for an object props" name="Type Util getNodeDefinitionProp gets the prop for an object props" time="0.002">
+    </testcase>
+    <testcase classname="Type Util getNodeDefinitionProp returns undefined when propm name is not present" name="Type Util getNodeDefinitionProp returns undefined when propm name is not present" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getInputDisplayName should get display name by fullName" name="Type Util getInputDisplayName should get display name by fullName" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getInputDisplayName should get undefined if not found" name="Type Util getInputDisplayName should get undefined if not found" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName should be defined" name="Type Util getSimpleClassName should be defined" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName should handle empty class name" name="Type Util getSimpleClassName should handle empty class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName should handle simple class name" name="Type Util getSimpleClassName should handle simple class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName should handle 2-step class name" name="Type Util getSimpleClassName should handle 2-step class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName should handle n-step class name" name="Type Util getSimpleClassName should handle n-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 defaults only" name="Type Util getSimpleClassName2 defaults only" time="0.002">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle empty class name" name="Type Util getSimpleClassName2 should handle empty class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle simple class name" name="Type Util getSimpleClassName2 should handle simple class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle 2-step class name" name="Type Util getSimpleClassName2 should handle 2-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle n-step class name" name="Type Util getSimpleClassName2 should handle n-step class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle generic class name" name="Type Util getSimpleClassName2 should handle generic class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle nested generic class name" name="Type Util getSimpleClassName2 should handle nested generic class name" time="0">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle generic class name and abbreviate it" name="Type Util getSimpleClassName2 should handle generic class name and abbreviate it" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getSimpleClassName2 should handle nested generic class name and abbreviate it" name="Type Util getSimpleClassName2 should handle nested generic class name and abbreviate it" time="0">
+    </testcase>
+    <testcase classname="Type Util getFullClassName should return correct class name" name="Type Util getFullClassName should return correct class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util getFullClassName should return passed in class name if not found in &quot;classNames&quot;" name="Type Util getFullClassName should return passed in class name if not found in &quot;classNames&quot;" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should be defined" name="Type Util removeClassNamespace should be defined" time="0.001">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle empty class name" name="Type Util removeClassNamespace should handle empty class name" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle simple class name" name="Type Util removeClassNamespace should handle simple class name" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle 2-step class name" name="Type Util removeClassNamespace should handle 2-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle n-step class name" name="Type Util removeClassNamespace should handle n-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle n-step class name" name="Type Util removeClassNamespace should handle n-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util removeClassNamespace should handle default com.sparkbeyond.runtime.feature.types class name" name="Type Util removeClassNamespace should handle default com.sparkbeyond.runtime.feature.types class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util stripScala should be defined" name="Type Util stripScala should be defined" time="0">
+    </testcase>
+    <testcase classname="Type Util stripScala should handle empty class name" name="Type Util stripScala should handle empty class name" time="0.014">
+    </testcase>
+    <testcase classname="Type Util stripScala should handle simple class name" name="Type Util stripScala should handle simple class name" time="0">
+    </testcase>
+    <testcase classname="Type Util stripScala should handle 2-step class name" name="Type Util stripScala should handle 2-step class name" time="0.001">
+    </testcase>
+    <testcase classname="Type Util stripScala should handle n-step class name" name="Type Util stripScala should handle n-step class name" time="0">
+    </testcase>
+    <testcase classname="Type Util stripScala should handle n-step class name globally" name="Type Util stripScala should handle n-step class name globally" time="0">
+    </testcase>
+    <testcase classname="Type Util cleanArray should clean nullable values out of an array" name="Type Util cleanArray should clean nullable values out of an array" time="0.002">
+    </testcase>
+    <testcase classname="Type Util cleanArray should handle nested &quot;value&quot;s" name="Type Util cleanArray should handle nested &quot;value&quot;s" time="0.006">
+    </testcase>
+    <testcase classname="Type Util cleanArray should handle nested &quot;columns&quot;s" name="Type Util cleanArray should handle nested &quot;columns&quot;s" time="0">
+    </testcase>
+    <testcase classname="Type Util cleanArray should handle nested &quot;hints&quot;s" name="Type Util cleanArray should handle nested &quot;hints&quot;s" time="0">
+    </testcase>
+    <testcase classname="Type Util isDate should recognize date" name="Type Util isDate should recognize date" time="0.012">
+    </testcase>
+    <testcase classname="Type Util genUUID should generate UUID" name="Type Util genUUID should generate UUID" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should be defined" name="Type Util upgradePipeline upgrade class names should be defined" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert first level" name="Type Util upgradePipeline upgrade class names should correctly convert first level" time="0.002">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert second level" name="Type Util upgradePipeline upgrade class names should correctly convert second level" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert n level" name="Type Util upgradePipeline upgrade class names should correctly convert n level" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert array" name="Type Util upgradePipeline upgrade class names should correctly convert array" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert array with object deeper" name="Type Util upgradePipeline upgrade class names should correctly convert array with object deeper" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert generics" name="Type Util upgradePipeline upgrade class names should correctly convert generics" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert nested generics" name="Type Util upgradePipeline upgrade class names should correctly convert nested generics" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade class names should correctly convert real pipeline" name="Type Util upgradePipeline upgrade class names should correctly convert real pipeline" time="0.022">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; upgradeMaxDepthToMaxComplexity should be defined" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; upgradeMaxDepthToMaxComplexity should be defined" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return the same pipeline when the JSON is not in the correct format" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return the same pipeline when the JSON is not in the correct format" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return the same pipeline if there is no Learn Node" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return the same pipeline if there is no Learn Node" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return upgraded pipeline if there is Learn Node" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return upgraded pipeline if there is Learn Node" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return upgraded pipeline if there is Learn Node and customColumnSubsets" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return upgraded pipeline if there is Learn Node and customColumnSubsets" time="0.005">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return same pipeline if there is Learn Node but the pipeline is already upgraded" name="Type Util upgradePipeline upgrade &quot;maxDepth&quot; to &quot;maxComplexity&quot; should return same pipeline if there is Learn Node but the pipeline is already upgraded" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure upgradeEvaluationMethod should be defined" name="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure upgradeEvaluationMethod should be defined" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure and preserve previous value" name="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure and preserve previous value" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure with defaults if previous was not present" name="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure with defaults if previous was not present" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should not change the structure if &quot;evaluationMethod&quot; is present " name="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should not change the structure if &quot;evaluationMethod&quot; is present " time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure and preserve previous value" name="Type Util upgradePipeline upgrade &quot;Learning.modelBuildingSettings.evaluationMethod&quot; to new structure should add new structure and preserve previous value" time="0.001">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; upgradeEvaluationMethod should be defined" name="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; upgradeEvaluationMethod should be defined" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; should set default &quot;learningObjective&quot; for older pipeline" name="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; should set default &quot;learningObjective&quot; for older pipeline" time="0">
+    </testcase>
+    <testcase classname="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; should not reset &quot;learningObjective&quot; for newer pipeline" name="Type Util upgradePipeline upgrade &quot;Learning.problemDefinition.learningObjective&quot; should not reset &quot;learningObjective&quot; for newer pipeline" time="0">
+    </testcase>
+    <testcase classname="Type Util adoptNotification should add &quot;type=error&quot; if no &quot;type&quot; property exists" name="Type Util adoptNotification should add &quot;type=error&quot; if no &quot;type&quot; property exists" time="0.001">
+    </testcase>
+    <testcase classname="Type Util adoptNotification should add &quot;message&quot; if &quot;statusText&quot; property exists" name="Type Util adoptNotification should add &quot;message&quot; if &quot;statusText&quot; property exists" time="0">
+    </testcase>
+    <testcase classname="Type Util adoptNotification should preserve &quot;message&quot; if &quot;message&quot; property exists" name="Type Util adoptNotification should preserve &quot;message&quot; if &quot;message&quot; property exists" time="0">
+    </testcase>
+    <testcase classname="Type Util adoptNotification should add &quot;message&quot; if &quot;statusText&quot; property exists" name="Type Util adoptNotification should add &quot;message&quot; if &quot;statusText&quot; property exists" time="0">
+    </testcase>
+    <testcase classname="Type Util adoptNotification should add current date if &quot;timestamp&quot; does not exist" name="Type Util adoptNotification should add current date if &quot;timestamp&quot; does not exist" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Utility functions" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.785" tests="91">
+    <testcase classname="Utility functions constructUrl with all the defaults" name="Utility functions constructUrl with all the defaults" time="0.006">
+    </testcase>
+    <testcase classname="Utility functions constructUrl with given prefix" name="Utility functions constructUrl with given prefix" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions constructUrl with given version" name="Utility functions constructUrl with given version" time="0.002">
+    </testcase>
+    <testcase classname="Utility functions deprecatedUrl" name="Utility functions deprecatedUrl" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions analyticsUrl" name="Utility functions analyticsUrl" time="0">
+    </testcase>
+    <testcase classname="Utility functions constructRouteParams several route params" name="Utility functions constructRouteParams several route params" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions constructRouteParams no route params" name="Utility functions constructRouteParams no route params" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions constructRouteParams 1 route params" name="Utility functions constructRouteParams 1 route params" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions constructRouteParams route params should be encoded" name="Utility functions constructRouteParams route params should be encoded" time="0">
+    </testcase>
+    <testcase classname="Utility functions constructQueryStringParams several query string params" name="Utility functions constructQueryStringParams several query string params" time="0.001">
+    </testcase>
+    <testcase classname="Utility functions constructQueryStringParams no query string params" name="Utility functions constructQueryStringParams no query string params" time="0.002">
+    </testcase>
+    <testcase classname="Utility functions constructQueryStringParams 1 query string params" name="Utility functions constructQueryStringParams 1 query string params" time="0">
+    </testcase>
+    <testcase classname="Utility functions constructQueryStringParams query string params should be encoded" name="Utility functions constructQueryStringParams query string params should be encoded" time="0.002">
+    </testcase>
+    <testcase classname="All the route functions projects" name="All the route functions projects" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions createProject" name="All the route functions createProject" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions cloneProject" name="All the route functions cloneProject" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions getProject" name="All the route functions getProject" time="0">
+    </testcase>
+    <testcase classname="All the route functions updateProject" name="All the route functions updateProject" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions deleteProject" name="All the route functions deleteProject" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions projectGroupNames" name="All the route functions projectGroupNames" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions projectUserEmails" name="All the route functions projectUserEmails" time="0">
+    </testcase>
+    <testcase classname="All the route functions getEveryonePermission" name="All the route functions getEveryonePermission" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions grantEveryonePermission" name="All the route functions grantEveryonePermission" time="0">
+    </testcase>
+    <testcase classname="All the route functions revokeEveryonePermission" name="All the route functions revokeEveryonePermission" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions updateRevision" name="All the route functions updateRevision" time="0">
+    </testcase>
+    <testcase classname="All the route functions getPermission" name="All the route functions getPermission" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions grantPermission" name="All the route functions grantPermission" time="0">
+    </testcase>
+    <testcase classname="All the route functions grantGroupPermissionOnProject" name="All the route functions grantGroupPermissionOnProject" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions revokeGroupPermissionOnProject" name="All the route functions revokeGroupPermissionOnProject" time="0">
+    </testcase>
+    <testcase classname="All the route functions revokePermission" name="All the route functions revokePermission" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions users" name="All the route functions users" time="0">
+    </testcase>
+    <testcase classname="All the route functions usersList" name="All the route functions usersList" time="0">
+    </testcase>
+    <testcase classname="All the route functions user" name="All the route functions user" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions addUser" name="All the route functions addUser" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions updateUser" name="All the route functions updateUser" time="0">
+    </testcase>
+    <testcase classname="All the route functions deleteUser" name="All the route functions deleteUser" time="0">
+    </testcase>
+    <testcase classname="All the route functions resetUserPassword" name="All the route functions resetUserPassword" time="0">
+    </testcase>
+    <testcase classname="All the route functions setUserPassword" name="All the route functions setUserPassword" time="0">
+    </testcase>
+    <testcase classname="All the route functions userProjects" name="All the route functions userProjects" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions groups" name="All the route functions groups" time="0">
+    </testcase>
+    <testcase classname="All the route functions groupNames" name="All the route functions groupNames" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions group" name="All the route functions group" time="0">
+    </testcase>
+    <testcase classname="All the route functions deleteGroup" name="All the route functions deleteGroup" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions createGroup" name="All the route functions createGroup" time="0">
+    </testcase>
+    <testcase classname="All the route functions userGroups" name="All the route functions userGroups" time="0">
+    </testcase>
+    <testcase classname="All the route functions addUserToGroup" name="All the route functions addUserToGroup" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions removeUserFromGroup" name="All the route functions removeUserFromGroup" time="0">
+    </testcase>
+    <testcase classname="All the route functions connections" name="All the route functions connections" time="0">
+    </testcase>
+    <testcase classname="All the route functions addConnection" name="All the route functions addConnection" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions updateConnection" name="All the route functions updateConnection" time="0">
+    </testcase>
+    <testcase classname="All the route functions deleteConnection" name="All the route functions deleteConnection" time="0">
+    </testcase>
+    <testcase classname="All the route functions testConnection" name="All the route functions testConnection" time="0">
+    </testcase>
+    <testcase classname="All the route functions connectionGroupNames" name="All the route functions connectionGroupNames" time="0">
+    </testcase>
+    <testcase classname="All the route functions connectionUserEmails" name="All the route functions connectionUserEmails" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions connectionNamesOfUser" name="All the route functions connectionNamesOfUser" time="0">
+    </testcase>
+    <testcase classname="All the route functions connectionsEncrypted" name="All the route functions connectionsEncrypted" time="0">
+    </testcase>
+    <testcase classname="All the route functions revision" name="All the route functions revision" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions reports" name="All the route functions reports" time="0">
+    </testcase>
+    <testcase classname="All the route functions jsonFile" name="All the route functions jsonFile" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions jsonFile not .json" name="All the route functions jsonFile not .json" time="0">
+    </testcase>
+    <testcase classname="All the route functions isMigrated" name="All the route functions isMigrated" time="0">
+    </testcase>
+    <testcase classname="All the route functions learn" name="All the route functions learn" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions dataFrameStatus" name="All the route functions dataFrameStatus" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions dataFrameStatus no revision" name="All the route functions dataFrameStatus no revision" time="0">
+    </testcase>
+    <testcase classname="All the route functions learningJobState" name="All the route functions learningJobState" time="0">
+    </testcase>
+    <testcase classname="All the route functions getTask" name="All the route functions getTask" time="0.004">
+    </testcase>
+    <testcase classname="All the route functions getTaskByCoords" name="All the route functions getTaskByCoords" time="0">
+    </testcase>
+    <testcase classname="All the route functions revisionScores" name="All the route functions revisionScores" time="0">
+    </testcase>
+    <testcase classname="All the route functions getJobStatus" name="All the route functions getJobStatus" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions revisions" name="All the route functions revisions" time="0">
+    </testcase>
+    <testcase classname="All the route functions revisionIds" name="All the route functions revisionIds" time="0">
+    </testcase>
+    <testcase classname="All the route functions revisionsDiff" name="All the route functions revisionsDiff" time="0">
+    </testcase>
+    <testcase classname="All the route functions jobs" name="All the route functions jobs" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureSamples" name="All the route functions featureSamples" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureSamples default isPos" name="All the route functions featureSamples default isPos" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureSamples default offset, isPos" name="All the route functions featureSamples default offset, isPos" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureSamplesExportToCsv" name="All the route functions featureSamplesExportToCsv" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions featureSamplesExportToCsv default isPos" name="All the route functions featureSamplesExportToCsv default isPos" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureSamplesExportToCsv default offest, isPos" name="All the route functions featureSamplesExportToCsv default offest, isPos" time="0">
+    </testcase>
+    <testcase classname="All the route functions featureVisualizations" name="All the route functions featureVisualizations" time="0">
+    </testcase>
+    <testcase classname="All the route functions functionsMetadata" name="All the route functions functionsMetadata" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions deleteRevision" name="All the route functions deleteRevision" time="0">
+    </testcase>
+    <testcase classname="All the route functions downloadRevision" name="All the route functions downloadRevision" time="0">
+    </testcase>
+    <testcase classname="All the route functions downloadRevisions" name="All the route functions downloadRevisions" time="0">
+    </testcase>
+    <testcase classname="All the route functions duplicateRevision" name="All the route functions duplicateRevision" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions currentCanvas" name="All the route functions currentCanvas" time="0">
+    </testcase>
+    <testcase classname="All the route functions updateRevisionCanvas" name="All the route functions updateRevisionCanvas" time="0">
+    </testcase>
+    <testcase classname="All the route functions createRevision" name="All the route functions createRevision" time="0">
+    </testcase>
+    <testcase classname="All the route functions createNextRevision" name="All the route functions createNextRevision" time="0.001">
+    </testcase>
+    <testcase classname="All the route functions undo" name="All the route functions undo" time="0">
+    </testcase>
+    <testcase classname="All the route functions publish" name="All the route functions publish" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Slider Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="3.686" tests="8">
+    <testcase classname="Slider Form Field it should exist" name="Slider Form Field it should exist" time="0.054">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;ratio&quot; (Double)" name="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;ratio&quot; (Double)" time="0.192">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double)" name="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double)" time="0.054">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;ratio&quot; (Double)" name="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;ratio&quot; (Double)" time="0.033">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double)" name="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double)" time="0.037">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double) 0.01" name="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Double) 0.01" time="0.059">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Int)" name="Slider Form Field should render the correct defaults &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Int)" time="0.058">
+    </testcase>
+    <testcase classname="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Int)" name="Slider Form Field should render the correct &quot;min&quot;, &quot;max&quot; for &quot;range&quot; (Int)" time="0.036">
+    </testcase>
+  </testsuite>
+  <testsuite name="Map Features Types Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.61" tests="3">
+    <testcase classname="Map Features Types Form Field it should exist" name="Map Features Types Form Field it should exist" time="0.344">
+    </testcase>
+    <testcase classname="Map Features Types Form Field it should update the view from model" name="Map Features Types Form Field it should update the view from model" time="0.059">
+    </testcase>
+    <testcase classname="Map Features Types Form Field it should have 2 first header &quot;column&quot;, &quot;type&quot;" name="Map Features Types Form Field it should have 2 first header &quot;column&quot;, &quot;type&quot;" time="0.046">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select List String Option Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.589" tests="4">
+    <testcase classname="Select List String Option Component Form Field it should exist" name="Select List String Option Component Form Field it should exist" time="0.042">
+    </testcase>
+    <testcase classname="Select List String Option Component Form Field it should preset checkbox as unchecked when the value is null" name="Select List String Option Component Form Field it should preset checkbox as unchecked when the value is null" time="0.179">
+    </testcase>
+    <testcase classname="Select List String Option Component Form Field it should preset checkbox as unchecked when the value is undefined" name="Select List String Option Component Form Field it should preset checkbox as unchecked when the value is undefined" time="0.071">
+    </testcase>
+    <testcase classname="Select List String Option Component Form Field should set the view from model" name="Select List String Option Component Form Field should set the view from model" time="0.083">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select List Numeric Option Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.102" tests="4">
+    <testcase classname="Select List Numeric Option Component Form Field it should exist" name="Select List Numeric Option Component Form Field it should exist" time="0.045">
+    </testcase>
+    <testcase classname="Select List Numeric Option Component Form Field it should preset checkbox as unchecked when the value is null" name="Select List Numeric Option Component Form Field it should preset checkbox as unchecked when the value is null" time="0.239">
+    </testcase>
+    <testcase classname="Select List Numeric Option Component Form Field it should preset checkbox as unchecked when the value is undefined" name="Select List Numeric Option Component Form Field it should preset checkbox as unchecked when the value is undefined" time="0.087">
+    </testcase>
+    <testcase classname="Select List Numeric Option Component Form Field should set the view from model" name="Select List Numeric Option Component Form Field should set the view from model" time="0.091">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Column Params Multiple Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:47" time="3.771" tests="5">
+    <testcase classname="Select Column Params Multiple Component Form Field it should exist" name="Select Column Params Multiple Component Form Field it should exist" time="0.094">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field it should preset checkbox as unchecked when the value is null" name="Select Column Params Multiple Component Form Field it should preset checkbox as unchecked when the value is null" time="0.136">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field it should preset checkbox as unchecked when the value is undefined" name="Select Column Params Multiple Component Form Field it should preset checkbox as unchecked when the value is undefined" time="0.082">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should reflect initial data" name="Select Column Params Multiple Component Form Field should reflect initial data" time="0.059">
+    </testcase>
+    <testcase classname="Select Column Params Multiple Component Form Field should set the view from model" name="Select Column Params Multiple Component Form Field should set the view from model" time="0.083">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.733" tests="1">
+    <testcase classname=" fetches the data from the correct url and opens a modal" name=" fetches the data from the correct url and opens a modal" time="0.094">
+    </testcase>
+  </testsuite>
+  <testsuite name="Select Expression Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.689" tests="3">
+    <testcase classname="Select Expression Component Form Field it should exist" name="Select Expression Component Form Field it should exist" time="0.051">
+    </testcase>
+    <testcase classname="Select Expression Component Form Field should set the passed default" name="Select Expression Component Form Field should set the passed default" time="0.194">
+    </testcase>
+    <testcase classname="Select Expression Component Form Field should set the view from model" name="Select Expression Component Form Field should set the view from model" time="0.075">
+    </testcase>
+  </testsuite>
+  <testsuite name="FeaturesService" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.409" tests="2">
+    <testcase classname="FeaturesService loadSimilarFeatures with invalid rank" name="FeaturesService loadSimilarFeatures with invalid rank" time="0.044">
+    </testcase>
+    <testcase classname="FeaturesService loadSimilarFeatures with valid rank" name="FeaturesService loadSimilarFeatures with valid rank" time="0.038">
+    </testcase>
+  </testsuite>
+  <testsuite name="ListComposableTrainer Component Form Field" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:46" time="4.71" tests="5">
+    <testcase classname="ListComposableTrainer Component Form Field it should exist" name="ListComposableTrainer Component Form Field it should exist" time="0.097">
+    </testcase>
+    <testcase classname="ListComposableTrainer Component Form Field should render empty list when nothing selected" name="ListComposableTrainer Component Form Field should render empty list when nothing selected" time="0.076">
+    </testcase>
+    <testcase classname="ListComposableTrainer Component Form Field should render selected from model" name="ListComposableTrainer Component Form Field should render selected from model" time="0.029">
+    </testcase>
+    <testcase classname="ListComposableTrainer Component Form Field should render selected from model with defaults (no props)" name="ListComposableTrainer Component Form Field should render selected from model with defaults (no props)" time="0.026">
+    </testcase>
+    <testcase classname="ListComposableTrainer Component Form Field should render selected from model with changed defaults" name="ListComposableTrainer Component Form Field should render selected from model with changed defaults" time="0.04">
+    </testcase>
+  </testsuite>
+  <testsuite name="ListRenderer" errors="0" failures="0" skipped="0" timestamp="2018-06-26T13:46:47" time="4.818" tests="98">
+    <testcase classname="ListRenderer should render list of items" name="ListRenderer should render list of items" time="0.01">
+    </testcase>
+    <testcase classname="ListRenderer should render samples size list of items" name="ListRenderer should render samples size list of items" time="0.004">
+    </testcase>
+    <testcase classname="ListRenderer should not render rest message if samples size &gt;= items size" name="ListRenderer should not render rest message if samples size &gt;= items size" time="0.003">
+    </testcase>
+    <testcase classname="GenericCellRenderer getText should return string vulae as is" name="GenericCellRenderer getText should return string vulae as is" time="0">
+    </testcase>
+    <testcase classname="GenericCellRenderer getText should JSON.stringify any object" name="GenericCellRenderer getText should JSON.stringify any object" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer init should have a string value as an HTML" name="GenericCellRenderer init should have a string value as an HTML" time="0.002">
+    </testcase>
+    <testcase classname="GenericCellRenderer init should have a list as an HTML when value is an array" name="GenericCellRenderer init should have a list as an HTML when value is an array" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer init should have a string number value as an HTML" name="GenericCellRenderer init should have a string number value as an HTML" time="0">
+    </testcase>
+    <testcase classname="GenericCellRenderer init should have a string number value as an HTML" name="GenericCellRenderer init should have a string number value as an HTML" time="0.002">
+    </testcase>
+    <testcase classname="GenericCellRenderer refresh" name="GenericCellRenderer refresh" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer refresh" name="GenericCellRenderer refresh" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer getTimeSeriesPoints should return correct array of points" name="GenericCellRenderer getTimeSeriesPoints should return correct array of points" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer getTimeSeriesPoints should return empty array of x is not an array" name="GenericCellRenderer getTimeSeriesPoints should return empty array of x is not an array" time="0.002">
+    </testcase>
+    <testcase classname="GenericCellRenderer getTimeSeriesPoints should return empty array of y is not an array" name="GenericCellRenderer getTimeSeriesPoints should return empty array of y is not an array" time="0">
+    </testcase>
+    <testcase classname="GenericCellRenderer getDays should correctly return number of days by milliseconds (2 days)" name="GenericCellRenderer getDays should correctly return number of days by milliseconds (2 days)" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer getDays should correctly return number of days by milliseconds (2 days 6 hours)" name="GenericCellRenderer getDays should correctly return number of days by milliseconds (2 days 6 hours)" time="0.001">
+    </testcase>
+    <testcase classname="GenericCellRenderer getDays should correctly return number of days by milliseconds (0 days)" name="GenericCellRenderer getDays should correctly return number of days by milliseconds (0 days)" time="0">
+    </testcase>
+    <testcase classname="GenericCellRenderer getDays should correctly return number of days by milliseconds (-2 days, no abs)" name="GenericCellRenderer getDays should correctly return number of days by milliseconds (-2 days, no abs)" time="0">
+    </testcase>
+    <testcase classname="GenericCellRenderer getDays should correctly return number of days by milliseconds (-2 days, abs false)" name="GenericCellRenderer getDays should correctly return number of days by milliseconds (-2 days, abs false)" time="0.001">
+    </testcase>
+    <testcase classname="LatLongRenderer should be defined" name="LatLongRenderer should be defined" time="0.001">
+    </testcase>
+    <testcase classname="LatLongRenderer should correctly format Lat/Lng for display" name="LatLongRenderer should correctly format Lat/Lng for display" time="0.002">
+    </testcase>
+    <testcase classname="LatLongRenderer should correctly format Lat/Lng for tooltip" name="LatLongRenderer should correctly format Lat/Lng for tooltip" time="0">
+    </testcase>
+    <testcase classname="LatLongRenderer should return empty string for invalid value (getText, getTooltip)" name="LatLongRenderer should return empty string for invalid value (getText, getTooltip)" time="0.001">
+    </testcase>
+    <testcase classname="LatLongRenderer should correctly create HTML element" name="LatLongRenderer should correctly create HTML element" time="0.001">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer init should have a string value as an HTML" name="TimeWindowCellRenderer init should have a string value as an HTML" time="0.001">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer getText should render dates with default format" name="TimeWindowCellRenderer getText should render dates with default format" time="0.001">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer getText should render dates with supplied format" name="TimeWindowCellRenderer getText should render dates with supplied format" time="0.001">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer getText should render Invalid date when no value supplied" name="TimeWindowCellRenderer getText should render Invalid date when no value supplied" time="0">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer getTooltip should render dates with default format (including timezone)" name="TimeWindowCellRenderer getTooltip should render dates with default format (including timezone)" time="0.001">
+    </testcase>
+    <testcase classname="TimeWindowCellRenderer getTooltip should render Invalid date when no value supplied" name="TimeWindowCellRenderer getTooltip should render Invalid date when no value supplied" time="0.001">
+    </testcase>
+    <testcase classname="KeyedTimeWindowCellRenderer init should have a string value as an HTML" name="KeyedTimeWindowCellRenderer init should have a string value as an HTML" time="0.001">
+    </testcase>
+    <testcase classname="KeyedTimeWindowCellRenderer getText should render dates with default format" name="KeyedTimeWindowCellRenderer getText should render dates with default format" time="0.001">
+    </testcase>
+    <testcase classname="KeyedTimeWindowCellRenderer getText should render dates with supplied format" name="KeyedTimeWindowCellRenderer getText should render dates with supplied format" time="0.002">
+    </testcase>
+    <testcase classname="KeyedTimeWindowCellRenderer getTooltip should render dates with default format (including timezone)" name="KeyedTimeWindowCellRenderer getTooltip should render dates with default format (including timezone)" time="0.001">
+    </testcase>
+    <testcase classname="DateCellRenderer init should have a string value as an HTML" name="DateCellRenderer init should have a string value as an HTML" time="0.001">
+    </testcase>
+    <testcase classname="DateCellRenderer getTooltip should correctly format Date (tooltip) for display" name="DateCellRenderer getTooltip should correctly format Date (tooltip) for display" time="0.001">
+    </testcase>
+    <testcase classname="DateCellRenderer getTooltip should return an original value invalid Date for tooltip" name="DateCellRenderer getTooltip should return an original value invalid Date for tooltip" time="0.04">
+    </testcase>
+    <testcase classname="DateCellRenderer getText should correctly format Date (text) for display" name="DateCellRenderer getText should correctly format Date (text) for display" time="0.001">
+    </testcase>
+    <testcase classname="DateCellRenderer getText should return an empty string for invalid Date" name="DateCellRenderer getText should return an empty string for invalid Date" time="0.001">
+    </testcase>
+    <testcase classname="BasicExplanationRenderer should show a message when list of featureNames is empty" name="BasicExplanationRenderer should show a message when list of featureNames is empty" time="0.001">
+    </testcase>
+    <testcase classname="BasicExplanationRenderer should render correctly regression" name="BasicExplanationRenderer should render correctly regression" time="0.025">
+    </testcase>
+    <testcase classname="BasicExplanationRenderer should render correctly classification" name="BasicExplanationRenderer should render correctly classification" time="0.016">
+    </testcase>
+    <testcase classname="BasicExplanationRenderer should render correctly support &gt; 1" name="BasicExplanationRenderer should render correctly support &gt; 1" time="0.017">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should show a message when list of featureNames is empty" name="ExplanationsRenderer should show a message when list of featureNames is empty" time="0.002">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly regression" name="ExplanationsRenderer should render correctly regression" time="0.013">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly regression brief false" name="ExplanationsRenderer should render correctly regression brief false" time="0.016">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly classification" name="ExplanationsRenderer should render correctly classification" time="0.02">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly classification brief false" name="ExplanationsRenderer should render correctly classification brief false" time="0.016">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly stepLift &gt; 1.0 (brief == false)" name="ExplanationsRenderer should render correctly stepLift &gt; 1.0 (brief == false)" time="0.011">
+    </testcase>
+    <testcase classname="ExplanationsRenderer should render correctly maxLift &gt; 1.0 (brief == true)" name="ExplanationsRenderer should render correctly maxLift &gt; 1.0 (brief == true)" time="0.004">
+    </testcase>
+    <testcase classname="ImageURLCellRenderer init produces correct HTML" name="ImageURLCellRenderer init produces correct HTML" time="0.003">
+    </testcase>
+    <testcase classname="ImageURLCellRenderer init produces correct HTML after image is loaded" name="ImageURLCellRenderer init produces correct HTML after image is loaded" time="0.005">
+    </testcase>
+    <testcase classname="ImageURLCellRenderer init produces correct HTML if image load was unsuccessful" name="ImageURLCellRenderer init produces correct HTML if image load was unsuccessful" time="0.002">
+    </testcase>
+    <testcase classname="HistoryRecordRenderer init" name="HistoryRecordRenderer init" time="0">
+    </testcase>
+    <testcase classname="HistoryRecordRenderer getText" name="HistoryRecordRenderer getText" time="0">
+    </testcase>
+    <testcase classname="HistoryRecordRenderer getTooltip" name="HistoryRecordRenderer getTooltip" time="0">
+    </testcase>
+    <testcase classname="CBURLRenderer init" name="CBURLRenderer init" time="0.001">
+    </testcase>
+    <testcase classname="CBURLRenderer getText" name="CBURLRenderer getText" time="0">
+    </testcase>
+    <testcase classname="CBURLRenderer getTooltip" name="CBURLRenderer getTooltip" time="0">
+    </testcase>
+    <testcase classname="DoubleRenderer init" name="DoubleRenderer init" time="0.001">
+    </testcase>
+    <testcase classname="DoubleRenderer getText a number as is" name="DoubleRenderer getText a number as is" time="0">
+    </testcase>
+    <testcase classname="DoubleRenderer getText max precision is 5" name="DoubleRenderer getText max precision is 5" time="0.001">
+    </testcase>
+    <testcase classname="DoubleRenderer getText null" name="DoubleRenderer getText null" time="0">
+    </testcase>
+    <testcase classname="DoubleRenderer getText &quot;null&quot;" name="DoubleRenderer getText &quot;null&quot;" time="0">
+    </testcase>
+    <testcase classname="DoubleRenderer getText not a number" name="DoubleRenderer getText not a number" time="0">
+    </testcase>
+    <testcase classname="DoubleRenderer getTooltip" name="DoubleRenderer getTooltip" time="0.004">
+    </testcase>
+    <testcase classname="TimeSeriesDateRenderer init" name="TimeSeriesDateRenderer init" time="0.005">
+    </testcase>
+    <testcase classname="TimeSeriesDateRenderer getItems" name="TimeSeriesDateRenderer getItems" time="0.002">
+    </testcase>
+    <testcase classname="TimeSeriesDateRenderer getItems not valid date" name="TimeSeriesDateRenderer getItems not valid date" time="0.008">
+    </testcase>
+    <testcase classname="TimeSeriesDateRenderer getTooltip" name="TimeSeriesDateRenderer getTooltip" time="0.001">
+    </testcase>
+    <testcase classname="TimeSeriesDefaultRenderer init" name="TimeSeriesDefaultRenderer init" time="0.003">
+    </testcase>
+    <testcase classname="TimeSeriesDefaultRenderer getItems" name="TimeSeriesDefaultRenderer getItems" time="0">
+    </testcase>
+    <testcase classname="TimeSeriesDefaultRenderer getTooltip" name="TimeSeriesDefaultRenderer getTooltip" time="0.001">
+    </testcase>
+    <testcase classname="GeomRenderer init no value" name="GeomRenderer init no value" time="0">
+    </testcase>
+    <testcase classname="GeomRenderer init with value, should split by whitespace and get the first one" name="GeomRenderer init with value, should split by whitespace and get the first one" time="0">
+    </testcase>
+    <testcase classname="GeomRenderer init with value empty string" name="GeomRenderer init with value empty string" time="0.001">
+    </testcase>
+    <testcase classname="GeomRenderer getText no value" name="GeomRenderer getText no value" time="0">
+    </testcase>
+    <testcase classname="GeomRenderer getText with value, should split by whitespace and get the first one" name="GeomRenderer getText with value, should split by whitespace and get the first one" time="0">
+    </testcase>
+    <testcase classname="GeomRenderer getText with value empty string" name="GeomRenderer getText with value empty string" time="0">
+    </testcase>
+    <testcase classname="GeomRenderer getTooltip" name="GeomRenderer getTooltip" time="0">
+    </testcase>
+    <testcase classname="SparkLineRenderer init" name="SparkLineRenderer init" time="0.056">
+    </testcase>
+    <testcase classname="SparkLineRenderer normalizePoint should normalize Double point correctly" name="SparkLineRenderer normalizePoint should normalize Double point correctly" time="0">
+    </testcase>
+    <testcase classname="SparkLineRenderer normalizePoint should normalize Int point correctly" name="SparkLineRenderer normalizePoint should normalize Int point correctly" time="0">
+    </testcase>
+    <testcase classname="SparkLineRenderer normalizePoint should normalize Boolean point correctly" name="SparkLineRenderer normalizePoint should normalize Boolean point correctly" time="0">
+    </testcase>
+    <testcase classname="SparkLineRenderer normalizePoint should normalize String Boolean point correctly" name="SparkLineRenderer normalizePoint should normalize String Boolean point correctly" time="0">
+    </testcase>
+    <testcase classname="SparkLineRenderer getTooltip" name="SparkLineRenderer getTooltip" time="0.002">
+    </testcase>
+    <testcase classname="SparkLine render should return &quot;null&quot; when no data given" name="SparkLine render should return &quot;null&quot; when no data given" time="0.011">
+    </testcase>
+    <testcase classname="SparkLine should have passed in height" name="SparkLine should have passed in height" time="0.005">
+    </testcase>
+    <testcase classname="SparkLine should have containers height if passed in height is not a number" name="SparkLine should have containers height if passed in height is not a number" time="0.008">
+    </testcase>
+    <testcase classname="SparkLine should have passed in width" name="SparkLine should have passed in width" time="0.003">
+    </testcase>
+    <testcase classname="SparkLine should have containers width if passed in width is not a number" name="SparkLine should have containers width if passed in width is not a number" time="0.014">
+    </testcase>
+    <testcase classname="SparkLine should have passed in colorScheme" name="SparkLine should have passed in colorScheme" time="0.005">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer init" name="HighlightedTextRenderer init" time="0.003">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer getText" name="HighlightedTextRenderer getText" time="0">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer getTooltip" name="HighlightedTextRenderer getTooltip" time="0">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer highlight defaults" name="HighlightedTextRenderer highlight defaults" time="0.001">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer highlight no trim" name="HighlightedTextRenderer highlight no trim" time="0.001">
+    </testcase>
+    <testcase classname="HighlightedTextRenderer highlight should exncode HTML characters" name="HighlightedTextRenderer highlight should exncode HTML characters" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
